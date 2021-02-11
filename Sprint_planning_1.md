@@ -1,7 +1,5 @@
-# data-pirates-group-project
 
 # Sprint Planning #1
-### Feb 11, 2021
 
 ## Summary of Project
 For our project, we would like to create an app that provides a platform for people who want to get connected with employees/recruiters of tech companies by asking for referral or mentorship to increase their chance of getting hired.
