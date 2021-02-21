@@ -9,9 +9,17 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var textPhoneNumber: UITextField!
+    @IBOutlet weak var textPassword: UITextField!
+    @IBOutlet weak var buttonGo: UIButton!
+    @IBOutlet weak var clickSignUp: UIButton!
+    @IBOutlet weak var clickResetPassword: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        self.buttonGo.layer.cornerRadius = 5
     }
 
 
