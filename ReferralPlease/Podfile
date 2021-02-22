@@ -1,0 +1,21 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'ReferralPlease' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for ReferralPlease
+  pod 'Firebase/Analytics'
+  pod 'FirebaseUI'
+  pod 'FirebaseUI/Phone'
+  target 'ReferralPleaseTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'ReferralPleaseUITests' do
+    # Pods for testing
+  end
+
+end

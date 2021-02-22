@@ -1,0 +1,6 @@
+framework module Pods_ReferralPleaseTests {
+  umbrella header "Pods-ReferralPleaseTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
