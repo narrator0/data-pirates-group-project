@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>600508162520-9c9baq3gdganku8ud837qfqub8n0v03g.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.600508162520-9c9baq3gdganku8ud837qfqub8n0v03g</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD-g-NRHlamMH6oYLRaoC4h-B4PAstHKj4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>600508162520</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>edu.ucdavis.ecs189e.ReferralPlease</string>
+	<key>PROJECT_ID</key>
+	<string>ecs189e-data-pirates</string>
+	<key>STORAGE_BUCKET</key>
+	<string>ecs189e-data-pirates.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:600508162520:ios:2e059062b0f2c7cc2292ad</string>
+</dict>
+</plist>
