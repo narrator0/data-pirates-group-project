@@ -7,13 +7,7 @@ https://trello.com/b/DL6QL9XR/data-pirates
 
 ## Team Members
 
-| Name | GH handle | Image |
-|------|-----------|-------|
-| Hao Huang | @narrator0 | ![avatar](https://avatars.githubusercontent.com/u/12046461?s=460&u=e2aae13f6ae817b98d3dd43dd1fd02f1f2144d3c&v=4) |
-|  Thu Vo | @chloevo26 | ![avatar](https://avatars.githubusercontent.com/u/53985210?s=400&v=4) |
-| Justin Lim | @justinlim1 | ![avatar](https://avatars.githubusercontent.com/u/17295146?s=400&v=4) |
-| Subin Yun | @subyun | ![avatar](https://avatars.githubusercontent.com/u/50339908?s=400&v=4) |
-| Huichueh (Jessica) Lo | @jlo0507 | ![avatar](https://avatars.githubusercontent.com/u/72643524?s=400&u=a1b8c26df3bfe347d28dd031dfa88b1d3fcf3ef4&v=4) |
+See [team members wiki](https://github.com/narrator0/data-pirates-group-project/wiki/Team-Members) for details.
 
 ## Sprint Planning #2
 
