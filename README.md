@@ -9,9 +9,13 @@ https://trello.com/b/DL6QL9XR/data-pirates
 
 See [team members wiki](https://github.com/narrator0/data-pirates-group-project/wiki/Team-Members) for details.
 
+## Milestone 1
+
+See [milestone 1 wiki](https://github.com/narrator0/data-pirates-group-project/wiki/Milestone-1).
+
 ## Sprint Planning #2
 
-See [sprint planner 2 wiki](https://github.com/narrator0/data-pirates-group-project/wiki/Sprint-Planning-2)
+See [sprint planner 2 wiki](https://github.com/narrator0/data-pirates-group-project/wiki/Sprint-Planning-2).
 
 ## Sprint Planning #1
 
