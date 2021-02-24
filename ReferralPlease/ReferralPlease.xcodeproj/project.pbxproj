@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A8524E425E6279000CBE9B9 /* LinkedInEmailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8524E325E6279000CBE9B9 /* LinkedInEmailModel.swift */; };
+		1A8524E925E627B400CBE9B9 /* LinkedInProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8524E825E627B400CBE9B9 /* LinkedInProfileModel.swift */; };
+		1A8524F325E6292C00CBE9B9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8524F225E6292C00CBE9B9 /* Constants.swift */; };
 		1AC3B2F825E31A87006411C9 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC3B2F725E31A87006411C9 /* CreateAccountViewController.swift */; };
 		90EA48B1B7928E8C9C798034 /* Pods_ReferralPlease.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16BBD3FCAA4ED73F922217B3 /* Pods_ReferralPlease.framework */; };
 		AF15D9F94F8284AED74E7403 /* Pods_ReferralPleaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7988A31270773EC1C1985B2E /* Pods_ReferralPleaseTests.framework */; };
@@ -42,6 +45,9 @@
 /* Begin PBXFileReference section */
 		096A496BE69294F952401D8B /* Pods_ReferralPlease_ReferralPleaseUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReferralPlease_ReferralPleaseUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		16BBD3FCAA4ED73F922217B3 /* Pods_ReferralPlease.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReferralPlease.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A8524E325E6279000CBE9B9 /* LinkedInEmailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedInEmailModel.swift; sourceTree = "<group>"; };
+		1A8524E825E627B400CBE9B9 /* LinkedInProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedInProfileModel.swift; sourceTree = "<group>"; };
+		1A8524F225E6292C00CBE9B9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1AC3B2F725E31A87006411C9 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		55A457FB60345CC8712B0E4B /* Pods-ReferralPlease-ReferralPleaseUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReferralPlease-ReferralPleaseUITests.release.xcconfig"; path = "Target Support Files/Pods-ReferralPlease-ReferralPleaseUITests/Pods-ReferralPlease-ReferralPleaseUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6E8DF06113DD6BFC9819D0DD /* Pods-ReferralPlease-ReferralPleaseUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReferralPlease-ReferralPleaseUITests.debug.xcconfig"; path = "Target Support Files/Pods-ReferralPlease-ReferralPleaseUITests/Pods-ReferralPlease-ReferralPleaseUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -152,6 +158,9 @@
 				CD2D9CC025DF602B00EA47DD /* Assets.xcassets */,
 				CD2D9CC225DF602B00EA47DD /* LaunchScreen.storyboard */,
 				CD2D9CC525DF602B00EA47DD /* Info.plist */,
+				1A8524E325E6279000CBE9B9 /* LinkedInEmailModel.swift */,
+				1A8524E825E627B400CBE9B9 /* LinkedInProfileModel.swift */,
+				1A8524F225E6292C00CBE9B9 /* Constants.swift */,
 			);
 			path = ReferralPlease;
 			sourceTree = "<group>";
@@ -185,8 +194,8 @@
 				CD2D9CB025DF602900EA47DD /* Sources */,
 				CD2D9CB125DF602900EA47DD /* Frameworks */,
 				CD2D9CB225DF602900EA47DD /* Resources */,
-				2E25BB8143C3F551460BF9E6 /* [CP] Embed Pods Frameworks */,
-				D92BA6BD27C970E34F5637AB /* [CP] Copy Pods Resources */,
+				A13994AA17F577E70AF085CB /* [CP] Embed Pods Frameworks */,
+				5731BDD76236D71D9E44113B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -224,8 +233,8 @@
 				CD2D9CD125DF602B00EA47DD /* Sources */,
 				CD2D9CD225DF602B00EA47DD /* Frameworks */,
 				CD2D9CD325DF602B00EA47DD /* Resources */,
-				0CE03702663E7C0D42D9DB1E /* [CP] Embed Pods Frameworks */,
-				B195F0D72AF0FB63B6BA851A /* [CP] Copy Pods Resources */,
+				F99EB05DF9DCC4B288EF48BB /* [CP] Embed Pods Frameworks */,
+				8CEA3BBFBF0CA1040C7717D2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -308,38 +317,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0CE03702663E7C0D42D9DB1E /* [CP] Embed Pods Frameworks */ = {
+		5731BDD76236D71D9E44113B /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ReferralPlease-ReferralPleaseUITests/Pods-ReferralPlease-ReferralPleaseUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-ReferralPlease/Pods-ReferralPlease-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ReferralPlease-ReferralPleaseUITests/Pods-ReferralPlease-ReferralPleaseUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-ReferralPlease/Pods-ReferralPlease-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReferralPlease-ReferralPleaseUITests/Pods-ReferralPlease-ReferralPleaseUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2E25BB8143C3F551460BF9E6 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ReferralPlease/Pods-ReferralPlease-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ReferralPlease/Pods-ReferralPlease-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReferralPlease/Pods-ReferralPlease-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReferralPlease/Pods-ReferralPlease-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		671562C82CA06302F8F67E8A /* [CP] Check Pods Manifest.lock */ = {
@@ -364,7 +356,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B195F0D72AF0FB63B6BA851A /* [CP] Copy Pods Resources */ = {
+		8CEA3BBFBF0CA1040C7717D2 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -381,21 +373,21 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReferralPlease-ReferralPleaseUITests/Pods-ReferralPlease-ReferralPleaseUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D92BA6BD27C970E34F5637AB /* [CP] Copy Pods Resources */ = {
+		A13994AA17F577E70AF085CB /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ReferralPlease/Pods-ReferralPlease-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-ReferralPlease/Pods-ReferralPlease-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ReferralPlease/Pods-ReferralPlease-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-ReferralPlease/Pods-ReferralPlease-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReferralPlease/Pods-ReferralPlease-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReferralPlease/Pods-ReferralPlease-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DBEFE38729E4B34530B412CA /* [CP] Check Pods Manifest.lock */ = {
@@ -418,6 +410,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F99EB05DF9DCC4B288EF48BB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReferralPlease-ReferralPleaseUITests/Pods-ReferralPlease-ReferralPleaseUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReferralPlease-ReferralPleaseUITests/Pods-ReferralPlease-ReferralPleaseUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReferralPlease-ReferralPleaseUITests/Pods-ReferralPlease-ReferralPleaseUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FCC516B8A5A6F2686AB7273D /* [CP] Check Pods Manifest.lock */ = {
@@ -449,10 +458,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A8524E425E6279000CBE9B9 /* LinkedInEmailModel.swift in Sources */,
 				1AC3B2F825E31A87006411C9 /* CreateAccountViewController.swift in Sources */,
 				CD2D9CBC25DF602900EA47DD /* ViewController.swift in Sources */,
 				CD2D9CB825DF602900EA47DD /* AppDelegate.swift in Sources */,
 				CD2D9CBA25DF602900EA47DD /* SceneDelegate.swift in Sources */,
+				1A8524E925E627B400CBE9B9 /* LinkedInProfileModel.swift in Sources */,
+				1A8524F325E6292C00CBE9B9 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -630,6 +642,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				"EXCLUDED_ARCHS[sdk=*]" = arm64;
 				INFOPLIST_FILE = ReferralPlease/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

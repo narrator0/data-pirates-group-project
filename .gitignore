@@ -215,3 +215,9 @@ xcuserdata/
 ####
 # UNKNOWN: recommended by others, but I can't discover what these files are
 #
+ReferralPlease/Podfile
+ReferralPlease/Podfile.lock
+ReferralPlease/ReferralPlease.xcodeproj/project.pbxproj
+ReferralPlease/Pods/Pods.xcodeproj/project.pbxproj
+ReferralPlease/Pods/Manifest.lock
+ReferralPlease/ReferralPlease.xcodeproj/xcuserdata/jessicalo.xcuserdatad/xcschemes/xcschememanagement.plist
