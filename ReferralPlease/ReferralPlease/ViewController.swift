@@ -203,75 +203,66 @@ extension ViewController: WKNavigationDelegate {
     }
     
     func fetchLinkedInUserProfile(accessToken: String) {
-            let tokenURLFull = "https://api.linkedin.com/v2/me?projection=(id,firstName,lastName,profilePicture(displayImage~:playableStreams))&oauth2_access_token=\(accessToken)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+
+            let tokenURLFull = "https://api.linkedin.com/v2/me?projection=(id,firstName,lastName,profilePicture,emailAddress(displayImage~:playableStreams))&oauth2_access_token=\(accessToken)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
                 guard let verify: NSURL = NSURL(string: tokenURLFull ?? "") else {
                     print("Invalid URL")
                     return}
    
             let request: NSMutableURLRequest = NSMutableURLRequest(url: verify as URL)
             let task = URLSession.shared.dataTask(with: request as URLRequest) { data, response, error in
+
                 if error == nil {
                     guard let jsonData = data else {
                         print("No data found")
                         return
                     }
-                    let linkedInProfileModel = try? JSONDecoder().decode(LinkedInProfileModel.self, from: jsonData)
                     
+
+
                     
-                    var ref: DocumentReference? = nil
-                    ref = self.db?.collection("users").addDocument(data: [
-                        "userID": linkedInProfileModel?.id,
-                        "first": linkedInProfileModel?.firstName.localized.enUS,
-                        "last": linkedInProfileModel?.lastName.localized.enUS
-                    ]) { err in
-                        if let err = err {
-                            print("Error adding document: \(err)")
-                        } else {
-                            print("Document added with ID")
+                    do {
+            
+    
+                        let linkedInProfileModel = try JSONDecoder().decode(LinkedInProfileModel.self, from: jsonData)
+                        self.db?.collection("users").document(linkedInProfileModel.id).setData([
+                            "userID": linkedInProfileModel.id,
+                            "first": linkedInProfileModel.firstName.localized.enUS,
+                            "last": linkedInProfileModel.lastName.localized.enUS,
+//                            "email": linkedinEmail
+                        ]) { err in
+                            if let err = err {
+                                print("Error adding document: \(err)")
+                            } else {
+                                print("Document added with ID")
+                            }
+                            self.fetchLinkedInEmailAddress(accessToken: accessToken, documentID: linkedInProfileModel.id)
                         }
+                    } catch DecodingError.dataCorrupted(let context) {
+                        print(context)
+                    } catch DecodingError.keyNotFound(let key, let context) {
+                        print("Key '\(key)' not found:", context.debugDescription)
+                        print("codingPath:", context.codingPath)
+                    } catch DecodingError.valueNotFound(let value, let context) {
+                        print("Value '\(value)' not found:", context.debugDescription)
+                        print("codingPath:", context.codingPath)
+                    } catch DecodingError.typeMismatch(let type, let context) {
+                        print("Type '\(type)' mismatch:", context.debugDescription)
+                        print("codingPath:", context.codingPath)
+                    } catch {
+                        print("error: ", error)
                     }
-
                     
-                    //AccessToken
-                    print("LinkedIn Access Token: \(accessToken)")
+     
+    
                     
-//                    // LinkedIn Id
-//                    let linkedinId: String! = linkedInProfileModel?.id
-//                    print("LinkedIn Id: \(linkedinId ?? "")")
-//
-//                    // LinkedIn First Name
-//                    let linkedinFirstName: String! = linkedInProfileModel?.firstName.localized.enUS
-//                    print("LinkedIn First Name: \(linkedinFirstName ?? "")")
-//
-//                    // LinkedIn Last Name
-//                    let linkedinLastName: String! = linkedInProfileModel?.lastName.localized.enUS
-//                    print("LinkedIn Last Name: \(linkedinLastName ?? "")")
-//
-//                    // LinkedIn Profile Picture URL
-//                    let linkedinProfilePic: String!
-
-                    /*
-                     Change row of the 'elements' array to get diffrent size of the profile url
-                     elements[0] = 100x100
-                     elements[1] = 200x200
-                     elements[2] = 400x400
-                     elements[3] = 800x800
-                    */
-//                    if let pictureUrls = linkedInProfileModel?.profilePicture.displayImage.elements[2].identifiers[0].identifier {
-//                        linkedinProfilePic = pictureUrls
-//                    } else {
-//                        linkedinProfilePic = "Not exists"
-//                    }
-//                    print("LinkedIn Profile Avatar URL: \(linkedinProfilePic ?? "")")
-
-                    // Get user's email address
-                    self.fetchLinkedInEmailAddress(accessToken: accessToken)
+                    
                 }
             }
             task.resume()
         }
 
-        func fetchLinkedInEmailAddress(accessToken: String) {
+    func fetchLinkedInEmailAddress(accessToken: String, documentID: String){
             let tokenURLFull = "https://api.linkedin.com/v2/emailAddress?q=members&projection=(elements*(handle~))&oauth2_access_token=\(accessToken)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
             guard let verify: NSURL = NSURL(string: tokenURLFull ?? "") else {
                 print("Invalid NSURL")
@@ -287,14 +278,16 @@ extension ViewController: WKNavigationDelegate {
                     let linkedInEmailModel = try? JSONDecoder().decode(LinkedInEmailModel.self, from: jsonData)
 
                     // LinkedIn Email
-                    let linkedinEmail: String! = linkedInEmailModel?.elements[0].elementHandle.emailAddress
-                    print("LinkedIn Email: \(linkedinEmail ?? "")")
+                    let linkedinEmail = linkedInEmailModel?.elements[0].elementHandle.emailAddress
+                    self.db?.collection("users").document(documentID).setData([ "email": linkedinEmail as Any ], merge: true)
 
-                    DispatchQueue.main.async {
-                        self.performSegue(withIdentifier: "detailseg", sender: self)
-                    }
+                    
+
+                 
                 }
             }
             task.resume()
+         
+          
         }
 }
