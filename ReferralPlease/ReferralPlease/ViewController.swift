@@ -166,26 +166,26 @@ extension ViewController: WKNavigationDelegate {
             let session = URLSession(configuration: URLSessionConfiguration.default)
             let task: URLSessionDataTask = session.dataTask(with: request as URLRequest) { (data, response, error) -> Void in
                 do {
-                let statusCode = (response as? HTTPURLResponse)?.statusCode
-                if statusCode == 200 {
-                    if let jsonData = data{
-                    let results = try JSONSerialization.jsonObject(with: jsonData, options: .allowFragments) as? [AnyHashable: Any]
+                    let statusCode = (response as? HTTPURLResponse)?.statusCode
+                    if statusCode == 200 {
+                        if let jsonData = data {
+                            let results = try JSONSerialization.jsonObject(with: jsonData, options: .allowFragments) as? [AnyHashable: Any]
 
-                    let accessToken = results?["access_token"] as? String
-                        print("accessToken is: \(accessToken ?? "")")
+                            let accessToken = results?["access_token"] as? String
+                            print("accessToken is: \(accessToken ?? "")")
 
-                    let expiresIn = results?["expires_in"] as? Int
-                        print("expires in: \(expiresIn ?? nil)")
+                            let expiresIn = results?["expires_in"] as? Int
+                            print("expires in: \(expiresIn ?? nil)")
 
-                    // Get user's id, first name, last name, profile pic url
-                        if let access = accessToken{
-                    self.fetchLinkedInUserProfile(accessToken: access)
-                        }
-                        else {
-                            print("Invalid access token")
+                            // Get user's id, first name, last name, profile pic url
+                            if let access = accessToken {
+                                self.fetchLinkedInUserProfile(accessToken: access)
+                            }
+                            else {
+                                print("Invalid access token")
+                            }
                         }
                     }
-                }
                 }
                 catch {
                     print("Session Error")
@@ -202,12 +202,24 @@ extension ViewController: WKNavigationDelegate {
         
     }
     
+    func getSTName(data: StName) -> String {
+        if data.preferredLocale.country == "US" {
+            return data.localized.enUS ?? ""
+        }
+        else if data.preferredLocale.country == "TW" {
+            return data.localized.zhTW ?? ""
+        }
+        
+        return ""
+    }
+    
     func fetchLinkedInUserProfile(accessToken: String) {
 
             let tokenURLFull = "https://api.linkedin.com/v2/me?projection=(id,firstName,lastName,profilePicture,emailAddress(displayImage~:playableStreams))&oauth2_access_token=\(accessToken)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
                 guard let verify: NSURL = NSURL(string: tokenURLFull ?? "") else {
                     print("Invalid URL")
-                    return}
+                    return
+                }
    
             let request: NSMutableURLRequest = NSMutableURLRequest(url: verify as URL)
             let task = URLSession.shared.dataTask(with: request as URLRequest) { data, response, error in
@@ -218,23 +230,22 @@ extension ViewController: WKNavigationDelegate {
                         return
                     }
                     
-
-
-                    
                     do {
             
-    
                         let linkedInProfileModel = try JSONDecoder().decode(LinkedInProfileModel.self, from: jsonData)
+                        let firstName = self.getSTName(data: linkedInProfileModel.firstName)
+                        let lastName = self.getSTName(data: linkedInProfileModel.lastName)
+                        
                         self.db?.collection("users").document(linkedInProfileModel.id).setData([
                             "userID": linkedInProfileModel.id,
-                            "first": linkedInProfileModel.firstName.localized.enUS,
-                            "last": linkedInProfileModel.lastName.localized.enUS,
+                            "first": firstName,
+                            "last": lastName,
 //                            "email": linkedinEmail
                         ]) { err in
                             if let err = err {
                                 print("Error adding document: \(err)")
                             } else {
-                                print("Document added with ID")
+                                print("Document added with ID: \(linkedInProfileModel.id)")
                             }
                             self.fetchLinkedInEmailAddress(accessToken: accessToken, documentID: linkedInProfileModel.id)
                         }
@@ -252,11 +263,6 @@ extension ViewController: WKNavigationDelegate {
                     } catch {
                         print("error: ", error)
                     }
-                    
-     
-    
-                    
-                    
                 }
             }
             task.resume()
