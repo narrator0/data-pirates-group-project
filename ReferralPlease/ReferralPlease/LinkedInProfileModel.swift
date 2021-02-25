@@ -10,44 +10,28 @@ import Foundation
 // MARK: - LinkedInProfileModel
 struct LinkedInProfileModel: Codable {
     let firstName, lastName: StName
-    let profilePicture: ProfilePicture
     let id: String
+}
+
+struct PreferredLocale: Codable {
+    let country: String
+    let language: String
 }
 
 // MARK: - StName
 struct StName: Codable {
     let localized: Localized
+    let preferredLocale: PreferredLocale
 }
 
 // MARK: - Localized
 struct Localized: Codable {
-    let enUS: String
+    let enUS: String?
+    let zhTW: String?
 
     enum CodingKeys: String, CodingKey {
         case enUS = "en_US"
+        case zhTW = "zh_TW"
     }
 }
 
-// MARK: - ProfilePicture
-struct ProfilePicture: Codable {
-    let displayImage: DisplayImage
-
-    enum CodingKeys: String, CodingKey {
-        case displayImage = "displayImage~"
-    }
-}
-
-// MARK: - DisplayImage
-struct DisplayImage: Codable {
-    let elements: [ProfilePicElement]
-}
-
-// MARK: - Element
-struct ProfilePicElement: Codable {
-    let identifiers: [ProfilePicIdentifier]
-}
-
-// MARK: - Identifier
-struct ProfilePicIdentifier: Codable {
-    let identifier: String
-}

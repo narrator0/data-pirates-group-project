@@ -10,7 +10,7 @@ import Foundation
 struct LinkedInConstants {
     
     static let CLIENT_ID = "868ukbcl4ehxa1"
-    static let CLIENT_SECRET = "••••••••••••••••"
+    static let CLIENT_SECRET = "a3gzQaVfw8XB3Shp"
     static let REDIRECT_URI = "https://data-pirates.linkedin.oauth/oauth"
     static let SCOPE = "r_liteprofile%20r_emailaddress" //Get lite profile info and e-mail address
     
