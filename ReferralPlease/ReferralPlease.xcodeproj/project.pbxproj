@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		073C5716183B1C6F28E8D658 /* Pods_ReferralPleaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD54E3AD79483784B0A1295 /* Pods_ReferralPleaseTests.framework */; };
 		1A8524E425E6279000CBE9B9 /* LinkedInEmailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8524E325E6279000CBE9B9 /* LinkedInEmailModel.swift */; };
 		1A8524E925E627B400CBE9B9 /* LinkedInProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8524E825E627B400CBE9B9 /* LinkedInProfileModel.swift */; };
 		1A8524F325E6292C00CBE9B9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8524F225E6292C00CBE9B9 /* Constants.swift */; };
 		1AC3B2F825E31A87006411C9 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC3B2F725E31A87006411C9 /* CreateAccountViewController.swift */; };
-		2BE613A51C9F81CBB917B58E /* Pods_ReferralPlease_ReferralPleaseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 725DBADC752D6D8F4DAE44F4 /* Pods_ReferralPlease_ReferralPleaseUITests.framework */; };
-		7B4542D415DB2EC5D463377D /* Pods_ReferralPlease.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFBC0D8D282DAE7CA6973C2C /* Pods_ReferralPlease.framework */; };
-		C002EF9F957AE38CBFC39753 /* Pods_ReferralPleaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD54E3AD79483784B0A1295 /* Pods_ReferralPleaseTests.framework */; };
+		20CBE01425E7764800E03DD2 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CBE01325E7764800E03DD2 /* TableViewCell.swift */; };
+		20CBE01925E7788A00E03DD2 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CBE01825E7788A00E03DD2 /* HomePageViewController.swift */; };
+		20CBE01E25E7933400E03DD2 /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CBE01D25E7933400E03DD2 /* ProfilePageViewController.swift */; };
+		3017246B59ED0915173B5D92 /* Pods_ReferralPlease_ReferralPleaseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021E485234D5FFE251BBB41A /* Pods_ReferralPlease_ReferralPleaseUITests.framework */; };
+		6DBD790C1D881E92885A6C91 /* Pods_ReferralPlease.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFBC0D8D282DAE7CA6973C2C /* Pods_ReferralPlease.framework */; };
 		CD14C74A25E565C000BCED8E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD14C74925E565C000BCED8E /* GoogleService-Info.plist */; };
 		CD2D9CB825DF602900EA47DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2D9CB725DF602900EA47DD /* AppDelegate.swift */; };
 		CD2D9CBA25DF602900EA47DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2D9CB925DF602900EA47DD /* SceneDelegate.swift */; };
@@ -43,16 +46,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		021E485234D5FFE251BBB41A /* Pods_ReferralPlease_ReferralPleaseUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReferralPlease_ReferralPleaseUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0765BA301717989221C5250C /* Pods-ReferralPlease.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReferralPlease.debug.xcconfig"; path = "Target Support Files/Pods-ReferralPlease/Pods-ReferralPlease.debug.xcconfig"; sourceTree = "<group>"; };
 		1A8524E325E6279000CBE9B9 /* LinkedInEmailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedInEmailModel.swift; sourceTree = "<group>"; };
 		1A8524E825E627B400CBE9B9 /* LinkedInProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedInProfileModel.swift; sourceTree = "<group>"; };
 		1A8524F225E6292C00CBE9B9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1AC3B2F725E31A87006411C9 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
-		2708ED3EB8A7D66DB1E510FF /* Pods-ReferralPlease-ReferralPleaseUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReferralPlease-ReferralPleaseUITests.debug.xcconfig"; path = "Target Support Files/Pods-ReferralPlease-ReferralPleaseUITests/Pods-ReferralPlease-ReferralPleaseUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		59427DE0C13280139B9F942D /* Pods-ReferralPleaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReferralPleaseTests.release.xcconfig"; path = "Target Support Files/Pods-ReferralPleaseTests/Pods-ReferralPleaseTests.release.xcconfig"; sourceTree = "<group>"; };
-		725DBADC752D6D8F4DAE44F4 /* Pods_ReferralPlease_ReferralPleaseUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReferralPlease_ReferralPleaseUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8033B291EF86548B7983A75D /* Pods-ReferralPlease.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReferralPlease.release.xcconfig"; path = "Target Support Files/Pods-ReferralPlease/Pods-ReferralPlease.release.xcconfig"; sourceTree = "<group>"; };
-		964ED025390AE398D969DA63 /* Pods-ReferralPlease.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReferralPlease.debug.xcconfig"; path = "Target Support Files/Pods-ReferralPlease/Pods-ReferralPlease.debug.xcconfig"; sourceTree = "<group>"; };
-		BE629022F94D4C107751BBA6 /* Pods-ReferralPleaseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReferralPleaseTests.debug.xcconfig"; path = "Target Support Files/Pods-ReferralPleaseTests/Pods-ReferralPleaseTests.debug.xcconfig"; sourceTree = "<group>"; };
+		20CBE01325E7764800E03DD2 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		20CBE01825E7788A00E03DD2 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
+		20CBE01D25E7933400E03DD2 /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
+		2C498E71FBAF3F4D5FB46C9D /* Pods-ReferralPlease-ReferralPleaseUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReferralPlease-ReferralPleaseUITests.debug.xcconfig"; path = "Target Support Files/Pods-ReferralPlease-ReferralPleaseUITests/Pods-ReferralPlease-ReferralPleaseUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9E7FFD24501C1769A8B559B7 /* Pods-ReferralPleaseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReferralPleaseTests.debug.xcconfig"; path = "Target Support Files/Pods-ReferralPleaseTests/Pods-ReferralPleaseTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A70AFC13D4B37CE6D9D0A24D /* Pods-ReferralPleaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReferralPleaseTests.release.xcconfig"; path = "Target Support Files/Pods-ReferralPleaseTests/Pods-ReferralPleaseTests.release.xcconfig"; sourceTree = "<group>"; };
+		BC5AD4AAF0AB755BF8B2EA77 /* Pods-ReferralPlease.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReferralPlease.release.xcconfig"; path = "Target Support Files/Pods-ReferralPlease/Pods-ReferralPlease.release.xcconfig"; sourceTree = "<group>"; };
 		CD14C74925E565C000BCED8E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CD2D9CB425DF602900EA47DD /* ReferralPlease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReferralPlease.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD2D9CB725DF602900EA47DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,7 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B4542D415DB2EC5D463377D /* Pods_ReferralPlease.framework in Frameworks */,
+				6DBD790C1D881E92885A6C91 /* Pods_ReferralPlease.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C002EF9F957AE38CBFC39753 /* Pods_ReferralPleaseTests.framework in Frameworks */,
+				073C5716183B1C6F28E8D658 /* Pods_ReferralPleaseTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,7 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BE613A51C9F81CBB917B58E /* Pods_ReferralPlease_ReferralPleaseUITests.framework in Frameworks */,
+				3017246B59ED0915173B5D92 /* Pods_ReferralPlease_ReferralPleaseUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,8 +111,8 @@
 			isa = PBXGroup;
 			children = (
 				CFBC0D8D282DAE7CA6973C2C /* Pods_ReferralPlease.framework */,
-				725DBADC752D6D8F4DAE44F4 /* Pods_ReferralPlease_ReferralPleaseUITests.framework */,
 				FCD54E3AD79483784B0A1295 /* Pods_ReferralPleaseTests.framework */,
+				021E485234D5FFE251BBB41A /* Pods_ReferralPlease_ReferralPleaseUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -114,12 +120,12 @@
 		75131B1778D84F0E179CA6A2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				964ED025390AE398D969DA63 /* Pods-ReferralPlease.debug.xcconfig */,
-				8033B291EF86548B7983A75D /* Pods-ReferralPlease.release.xcconfig */,
-				2708ED3EB8A7D66DB1E510FF /* Pods-ReferralPlease-ReferralPleaseUITests.debug.xcconfig */,
 				F456E76FDA5115B7E2A6B105 /* Pods-ReferralPlease-ReferralPleaseUITests.release.xcconfig */,
-				BE629022F94D4C107751BBA6 /* Pods-ReferralPleaseTests.debug.xcconfig */,
-				59427DE0C13280139B9F942D /* Pods-ReferralPleaseTests.release.xcconfig */,
+				0765BA301717989221C5250C /* Pods-ReferralPlease.debug.xcconfig */,
+				BC5AD4AAF0AB755BF8B2EA77 /* Pods-ReferralPlease.release.xcconfig */,
+				2C498E71FBAF3F4D5FB46C9D /* Pods-ReferralPlease-ReferralPleaseUITests.debug.xcconfig */,
+				9E7FFD24501C1769A8B559B7 /* Pods-ReferralPleaseTests.debug.xcconfig */,
+				A70AFC13D4B37CE6D9D0A24D /* Pods-ReferralPleaseTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -155,12 +161,15 @@
 				CD2D9CBB25DF602900EA47DD /* ViewController.swift */,
 				1AC3B2F725E31A87006411C9 /* CreateAccountViewController.swift */,
 				CD2D9CBD25DF602900EA47DD /* Main.storyboard */,
+				20CBE01325E7764800E03DD2 /* TableViewCell.swift */,
 				CD2D9CC025DF602B00EA47DD /* Assets.xcassets */,
 				CD2D9CC225DF602B00EA47DD /* LaunchScreen.storyboard */,
 				CD2D9CC525DF602B00EA47DD /* Info.plist */,
 				1A8524E325E6279000CBE9B9 /* LinkedInEmailModel.swift */,
 				1A8524E825E627B400CBE9B9 /* LinkedInProfileModel.swift */,
 				1A8524F225E6292C00CBE9B9 /* Constants.swift */,
+				20CBE01825E7788A00E03DD2 /* HomePageViewController.swift */,
+				20CBE01D25E7933400E03DD2 /* ProfilePageViewController.swift */,
 			);
 			path = ReferralPlease;
 			sourceTree = "<group>";
@@ -459,8 +468,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A8524E425E6279000CBE9B9 /* LinkedInEmailModel.swift in Sources */,
+				20CBE01425E7764800E03DD2 /* TableViewCell.swift in Sources */,
+				20CBE01925E7788A00E03DD2 /* HomePageViewController.swift in Sources */,
 				1AC3B2F825E31A87006411C9 /* CreateAccountViewController.swift in Sources */,
 				CD2D9CBC25DF602900EA47DD /* ViewController.swift in Sources */,
+				20CBE01E25E7933400E03DD2 /* ProfilePageViewController.swift in Sources */,
 				CD2D9CB825DF602900EA47DD /* AppDelegate.swift in Sources */,
 				CD2D9CBA25DF602900EA47DD /* SceneDelegate.swift in Sources */,
 				1A8524E925E627B400CBE9B9 /* LinkedInProfileModel.swift in Sources */,
@@ -637,7 +649,7 @@
 		};
 		CD2D9CDF25DF602C00EA47DD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 964ED025390AE398D969DA63 /* Pods-ReferralPlease.debug.xcconfig */;
+			baseConfigurationReference = 0765BA301717989221C5250C /* Pods-ReferralPlease.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -657,7 +669,7 @@
 		};
 		CD2D9CE025DF602C00EA47DD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8033B291EF86548B7983A75D /* Pods-ReferralPlease.release.xcconfig */;
+			baseConfigurationReference = BC5AD4AAF0AB755BF8B2EA77 /* Pods-ReferralPlease.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -676,7 +688,7 @@
 		};
 		CD2D9CE225DF602C00EA47DD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BE629022F94D4C107751BBA6 /* Pods-ReferralPleaseTests.debug.xcconfig */;
+			baseConfigurationReference = 9E7FFD24501C1769A8B559B7 /* Pods-ReferralPleaseTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -698,7 +710,7 @@
 		};
 		CD2D9CE325DF602C00EA47DD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 59427DE0C13280139B9F942D /* Pods-ReferralPleaseTests.release.xcconfig */;
+			baseConfigurationReference = A70AFC13D4B37CE6D9D0A24D /* Pods-ReferralPleaseTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -720,7 +732,7 @@
 		};
 		CD2D9CE525DF602C00EA47DD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2708ED3EB8A7D66DB1E510FF /* Pods-ReferralPlease-ReferralPleaseUITests.debug.xcconfig */;
+			baseConfigurationReference = 2C498E71FBAF3F4D5FB46C9D /* Pods-ReferralPlease-ReferralPleaseUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
