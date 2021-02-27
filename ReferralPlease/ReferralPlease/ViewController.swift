@@ -14,12 +14,8 @@ import FirebaseFirestore
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var textPhoneNumber: UITextField!
-    @IBOutlet weak var textPassword: UITextField!
     @IBOutlet weak var buttonGo: UIButton!
-    @IBOutlet weak var clickRegister: UIButton!
     
-    @IBOutlet weak var clickResetPass: UIButton!
     var db: Firestore?
     
     override func viewDidLoad() {
@@ -28,25 +24,18 @@ class ViewController: UIViewController {
         Firestore.firestore().settings = settings
         db = Firestore.firestore()
         self.navigationController?.navigationBar.isHidden = true
+        
+        // for button shape
         self.buttonGo.layer.cornerRadius = 5
-        textPhoneNumber.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: textPhoneNumber.frame.height))
-        textPhoneNumber.leftViewMode = .always
-        textPassword.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: textPassword.frame.height))
-        textPassword.leftViewMode = .always
-    }
+        // for button shadow
+        buttonGo.layer.shadowColor = UIColor.black.cgColor
+        buttonGo.layer.shadowOffset = CGSize(width: 0.0, height: 6.0)
+        buttonGo.layer.shadowRadius = 8
+        buttonGo.layer.shadowOpacity = 0.5
+        
+        // tab bar for the login page should be hidden
+        self.tabBarController?.tabBar.isHidden = true
     
-    
-    @IBAction func clickCreateAccountLabel(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let createAccountVC = storyboard.instantiateViewController(withIdentifier: "CreateAccountVC") as? CreateAccountViewController else{
-            assertionFailure("couldn't find vc")
-            return
-        }
-        if let nav = self.navigationController {
-            nav.pushViewController(createAccountVC, animated: true)
-        } else {
-            assertionFailure("no nav controller")
-        }
     }
     
     
@@ -197,6 +186,15 @@ extension ViewController: WKNavigationDelegate {
             print("Invalid URL")
         }
 
+        // login should go to home vc
+        let storyboard = UIStoryboard (name: "Main", bundle: nil)
+        guard let homeViewController = storyboard.instantiateViewController(withIdentifier: "homeViewController") as? HomePageViewController else
+        {
+            assertionFailure("couldn't find vc")
+            return
+        }
+        
+        navigationController?.pushViewController(homeViewController, animated: true)
 
 
         
@@ -293,7 +291,17 @@ extension ViewController: WKNavigationDelegate {
                 }
             }
             task.resume()
-         
+        
+            
+        // if users login for the first time, go to user profile
+        let storyboard = UIStoryboard (name: "Main", bundle: nil)
+        guard let firstTimeViewController = storyboard.instantiateViewController(withIdentifier: "firstTimeViewController") as? FirstTimeLoginViewController else
+        {
+            assertionFailure("couldn't find vc")
+            return
+        }
+        
+        navigationController?.pushViewController(firstTimeViewController, animated: true)
           
         }
 }
