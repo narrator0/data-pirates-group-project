@@ -15,6 +15,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         tableView.dataSource = self
         print("home page view called")
+
 //        guard let mainTabController = storyboard?.instantiateViewController(withIdentifier: "mainTabController") as? MainTabController else
 //        {
 //            assertionFailure("couldn't find vc")
@@ -48,14 +49,15 @@ class HomePageViewController: UIViewController, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? TableViewCell else {return UITableViewCell()}
-//        cell.layer.cornerRadius = cell.frame.height / 2
+        cell.layer.cornerRadius = 5
         cell.userName.text = "test user name"
         cell.userDescription.text = "user description"
         cell.profileImage.image = UIImage(named: "image1")
         cell.profileImage.layer.cornerRadius = cell.profileImage.frame.size.width / 2
         cell.profileImage.clipsToBounds = true
-        cell.profileImage.layer.borderWidth = 1
-        cell.profileImage.layer.borderColor = UIColor.blue.cgColor
+        
+//        cell.profileImage.layer.borderWidth = 1
+//        cell.profileImage.layer.borderColor = UIColor.blue.cgColor
         return cell
     }
 

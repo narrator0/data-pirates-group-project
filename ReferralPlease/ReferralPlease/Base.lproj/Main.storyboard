@@ -105,16 +105,17 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="as6-z0-8ZX">
                                                     <rect key="frame" x="112" y="38" width="226" height="15"/>
                                                     <fontDescription key="fontDescription" name="ArialHebrew" family="Arial Hebrew" pointSize="14"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="ACY-DX-Grb">
                                                     <rect key="frame" x="112" y="4" width="246" height="24"/>
                                                     <fontDescription key="fontDescription" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="22"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" red="0.93333333333333335" green="0.42352941176470588" blue="0.30196078431372547" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.27450980392156865" green="0.40784313725490196" blue="0.58431372549019611" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="j2p-zm-VFa" secondAttribute="bottom" constant="2" id="1fh-MJ-y3K"/>
                                                 <constraint firstItem="as6-z0-8ZX" firstAttribute="leading" secondItem="j2p-zm-VFa" secondAttribute="trailing" constant="10" id="4Tc-Rv-QZy"/>
