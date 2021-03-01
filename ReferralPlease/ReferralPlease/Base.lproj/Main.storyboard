@@ -103,14 +103,14 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="as6-z0-8ZX">
-                                                    <rect key="frame" x="112" y="38" width="226" height="15"/>
-                                                    <fontDescription key="fontDescription" name="ArialHebrew" family="Arial Hebrew" pointSize="14"/>
+                                                    <rect key="frame" x="112" y="42.333333333333336" width="226" height="21.333333333333336"/>
+                                                    <fontDescription key="fontDescription" name="NotoSansOriya" family="Noto Sans Oriya" pointSize="15"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="ACY-DX-Grb">
-                                                    <rect key="frame" x="112" y="4" width="246" height="24"/>
-                                                    <fontDescription key="fontDescription" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="22"/>
+                                                    <rect key="frame" x="112" y="3.9999999999999982" width="246" height="28.333333333333329"/>
+                                                    <fontDescription key="fontDescription" name="NotoSansOriya-Bold" family="Noto Sans Oriya" pointSize="20"/>
                                                     <color key="textColor" red="0.93333333333333335" green="0.42352941176470588" blue="0.30196078431372547" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -149,7 +149,9 @@
                             <constraint firstItem="iON-tX-N7J" firstAttribute="trailing" secondItem="aZE-IO-Ktb" secondAttribute="trailing" constant="30" id="oLr-ef-qmg"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="Lag-eW-qQ4"/>
+                    <tabBarItem key="tabBarItem" title="" image="homepage" id="Lag-eW-qQ4">
+                        <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" title="Home" id="cMP-Sx-097"/>
                     <connections>
                         <outlet property="tableView" destination="aZE-IO-Ktb" id="KxE-Q4-D01"/>
@@ -159,7 +161,7 @@
             </objects>
             <point key="canvasLocation" x="4668" y="-774"/>
         </scene>
-        <!--Profile-->
+        <!--Profile Page View Controller-->
         <scene sceneID="7cb-NP-ZSc">
             <objects>
                 <viewController storyboardIdentifier="profilePageViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iPW-Ty-2xg" customClass="ProfilePageViewController" customModule="ReferralPlease" customModuleProvider="target" sceneMemberID="viewController">
@@ -173,6 +175,13 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KZj-zN-fH4">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="962"/>
                                         <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gearshape.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="erf-AG-9gC">
+                                                <rect key="frame" x="338" y="10.33333333333333" width="27" height="19.666666666666654"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="27" id="8tz-0j-Tx9"/>
+                                                </constraints>
+                                            </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image1" translatesAutoresizingMaskIntoConstraints="NO" id="GMA-vw-XDN">
                                                 <rect key="frame" x="112.66666666666669" y="9" width="150" height="150"/>
                                                 <constraints>
@@ -184,14 +193,14 @@
                                                 <rect key="frame" x="30" y="192" width="315" height="120"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xej-2o-kh6">
-                                                        <rect key="frame" x="20" y="8" width="275" height="32"/>
-                                                        <fontDescription key="fontDescription" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="30"/>
+                                                        <rect key="frame" x="20" y="8" width="275" height="42.333333333333336"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansOriya-Bold" family="Noto Sans Oriya" pointSize="30"/>
                                                         <color key="textColor" red="0.93333333333333335" green="0.42352941176470588" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ppc-9m-3DM">
-                                                        <rect key="frame" x="20" y="49" width="275" height="21.333333333333329"/>
-                                                        <fontDescription key="fontDescription" name="ArialHebrew" family="Arial Hebrew" pointSize="20"/>
+                                                        <rect key="frame" x="20" y="59.333333333333321" width="275" height="28.333333333333336"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansOriya" family="Noto Sans Oriya" pointSize="20"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -200,12 +209,10 @@
                                                 <constraints>
                                                     <constraint firstItem="xej-2o-kh6" firstAttribute="centerX" secondItem="IwG-1t-QRn" secondAttribute="centerX" id="JOh-nn-b91"/>
                                                     <constraint firstAttribute="height" constant="120" id="MV0-me-urc"/>
-                                                    <constraint firstAttribute="trailing" secondItem="xej-2o-kh6" secondAttribute="trailing" constant="20" id="Q6t-bu-coz"/>
                                                     <constraint firstItem="xej-2o-kh6" firstAttribute="top" secondItem="IwG-1t-QRn" secondAttribute="top" constant="8" id="SqB-to-CZ3"/>
                                                     <constraint firstItem="Ppc-9m-3DM" firstAttribute="centerX" secondItem="IwG-1t-QRn" secondAttribute="centerX" id="W6u-o5-CmT"/>
                                                     <constraint firstItem="Ppc-9m-3DM" firstAttribute="top" secondItem="xej-2o-kh6" secondAttribute="bottom" constant="9" id="h3Z-3J-obt"/>
                                                     <constraint firstItem="Ppc-9m-3DM" firstAttribute="leading" secondItem="IwG-1t-QRn" secondAttribute="leading" constant="20" id="hSY-26-6Eo"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Ppc-9m-3DM" secondAttribute="trailing" constant="20" id="nZf-QE-0UM"/>
                                                     <constraint firstItem="xej-2o-kh6" firstAttribute="leading" secondItem="IwG-1t-QRn" secondAttribute="leading" constant="20" id="vDs-HA-02Y"/>
                                                 </constraints>
                                             </view>
@@ -221,14 +228,14 @@
                                                 <rect key="frame" x="30" y="350" width="315" height="500"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qTF-Yp-3t8">
-                                                        <rect key="frame" x="20" y="30" width="275" height="26.666666666666671"/>
-                                                        <fontDescription key="fontDescription" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="25"/>
+                                                        <rect key="frame" x="20" y="30.000000000000004" width="275" height="35.333333333333343"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansOriya-Bold" family="Noto Sans Oriya" pointSize="25"/>
                                                         <color key="textColor" red="0.93333333333333335" green="0.42352941176470588" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vkR-t6-0iV">
-                                                        <rect key="frame" x="20" y="64.666666666666686" width="275" height="20.333333333333329"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <rect key="frame" x="20" y="73.333333333333314" width="275" height="22.666666666666671"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansOriya" family="Noto Sans Oriya" pointSize="16"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -242,8 +249,6 @@
                                                     <constraint firstItem="vkR-t6-0iV" firstAttribute="centerX" secondItem="6x7-Mp-bp5" secondAttribute="centerX" id="Sed-g2-50E"/>
                                                     <constraint firstItem="vkR-t6-0iV" firstAttribute="top" secondItem="qTF-Yp-3t8" secondAttribute="bottom" constant="8" id="UoV-IQ-UWQ"/>
                                                     <constraint firstItem="qTF-Yp-3t8" firstAttribute="leading" secondItem="6x7-Mp-bp5" secondAttribute="leading" constant="20" id="ZEg-l8-gAH"/>
-                                                    <constraint firstAttribute="trailing" secondItem="vkR-t6-0iV" secondAttribute="trailing" constant="20" id="eMb-os-eUV"/>
-                                                    <constraint firstAttribute="trailing" secondItem="qTF-Yp-3t8" secondAttribute="trailing" constant="20" id="ere-YM-0KW"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -252,12 +257,14 @@
                                             <constraint firstItem="Lrb-kU-Yb6" firstAttribute="top" secondItem="6x7-Mp-bp5" secondAttribute="bottom" constant="63" id="6ky-uo-PG8"/>
                                             <constraint firstItem="IwG-1t-QRn" firstAttribute="leading" secondItem="KZj-zN-fH4" secondAttribute="leading" constant="30" id="Bzs-HD-9ZF"/>
                                             <constraint firstAttribute="bottom" secondItem="Lrb-kU-Yb6" secondAttribute="bottom" constant="15" id="KJ9-Ab-U0W"/>
+                                            <constraint firstAttribute="trailing" secondItem="erf-AG-9gC" secondAttribute="trailing" constant="10" id="SFI-nl-RV8"/>
                                             <constraint firstItem="6x7-Mp-bp5" firstAttribute="leading" secondItem="KZj-zN-fH4" secondAttribute="leading" constant="30" id="XeQ-mB-0Ee"/>
                                             <constraint firstAttribute="trailing" secondItem="IwG-1t-QRn" secondAttribute="trailing" constant="30" id="aiQ-y5-Qbu"/>
                                             <constraint firstItem="IwG-1t-QRn" firstAttribute="centerX" secondItem="KZj-zN-fH4" secondAttribute="centerX" id="b01-MF-OC9"/>
                                             <constraint firstAttribute="trailing" secondItem="6x7-Mp-bp5" secondAttribute="trailing" constant="30" id="cGp-zp-a15"/>
                                             <constraint firstItem="Lrb-kU-Yb6" firstAttribute="centerX" secondItem="KZj-zN-fH4" secondAttribute="centerX" id="fgF-hC-D3F"/>
                                             <constraint firstItem="Lrb-kU-Yb6" firstAttribute="leading" secondItem="KZj-zN-fH4" secondAttribute="leading" constant="30" id="ivf-lN-iYw"/>
+                                            <constraint firstItem="erf-AG-9gC" firstAttribute="top" secondItem="KZj-zN-fH4" secondAttribute="top" constant="10" id="jqd-fd-qsv"/>
                                             <constraint firstItem="6x7-Mp-bp5" firstAttribute="centerX" secondItem="KZj-zN-fH4" secondAttribute="centerX" id="k9X-3q-H3Y"/>
                                             <constraint firstItem="GMA-vw-XDN" firstAttribute="top" secondItem="KZj-zN-fH4" secondAttribute="top" constant="9" id="og5-PU-UHp"/>
                                             <constraint firstItem="IwG-1t-QRn" firstAttribute="top" secondItem="GMA-vw-XDN" secondAttribute="bottom" constant="33" id="p3x-5F-Vdb"/>
@@ -287,7 +294,7 @@
                             <constraint firstItem="n82-nW-JKW" firstAttribute="bottom" secondItem="ejO-8s-oiJ" secondAttribute="bottom" id="n8b-ea-47w"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="xE1-if-el1"/>
+                    <tabBarItem key="tabBarItem" title="" image="user" id="xE1-if-el1"/>
                     <navigationItem key="navigationItem" id="OoP-ze-xal"/>
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
@@ -396,30 +403,49 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Mu-Ru-31n">
-                                <rect key="frame" x="30" y="168" width="368" height="50"/>
+                                <rect key="frame" x="30" y="128" width="368" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="LIo-hp-A20"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="NotoSansOriya-Bold" family="Noto Sans Oriya" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="  test@gmail.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5xz-af-UhJ">
-                                <rect key="frame" x="30" y="228" width="368" height="50"/>
+                                <rect key="frame" x="30" y="231.33333333333334" width="368" height="45.000000000000028"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Mhc-LW-rR7"/>
+                                    <constraint firstAttribute="height" constant="45" id="Mhc-LW-rR7"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="ArialHebrew" family="Arial Hebrew" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TMK-ak-OXN">
+                                <rect key="frame" x="30" y="193" width="368" height="28.333333333333343"/>
+                                <fontDescription key="fontDescription" name="NotoSansOriya-Bold" family="Noto Sans Oriya" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kew-Yx-SlQ">
+                                <rect key="frame" x="30" y="301.33333333333331" width="368" height="28.333333333333314"/>
+                                <fontDescription key="fontDescription" name="NotoSansOriya-Bold" family="Noto Sans Oriya" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="(800)-000-000" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZIr-hU-wgY">
+                                <rect key="frame" x="30" y="339.66666666666669" width="368" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="veF-3u-mAx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialHebrew" family="Arial Hebrew" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vXV-Yh-tIQ">
-                                <rect key="frame" x="30" y="298" width="90" height="40"/>
+                                <rect key="frame" x="30" y="404.66666666666669" width="90" height="38"/>
                                 <color key="backgroundColor" red="0.93333333330000001" green="0.42352941179999998" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Ayt-LI-rAh"/>
                                     <constraint firstAttribute="width" constant="90" id="hSP-gx-1Jn"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="NotoSansOriya-Bold" family="Noto Sans Oriya" pointSize="18"/>
                                 <state key="normal" title="Update">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
@@ -428,23 +454,35 @@
                         <viewLayoutGuide key="safeArea" id="Kd9-Ii-jpR"/>
                         <color key="backgroundColor" red="0.16470588235294117" green="0.24313725490196078" blue="0.3411764705882353" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="vXV-Yh-tIQ" firstAttribute="top" secondItem="5xz-af-UhJ" secondAttribute="bottom" constant="20" id="55R-xL-Owd"/>
-                            <constraint firstItem="vXV-Yh-tIQ" firstAttribute="leading" secondItem="Kd9-Ii-jpR" secondAttribute="leading" constant="30" id="5tV-Hd-bl3"/>
+                            <constraint firstItem="Kd9-Ii-jpR" firstAttribute="trailing" secondItem="ZIr-hU-wgY" secondAttribute="trailing" constant="30" id="5pV-OM-sDw"/>
                             <constraint firstItem="9Mu-Ru-31n" firstAttribute="leading" secondItem="Kd9-Ii-jpR" secondAttribute="leading" constant="30" id="Cgv-JE-hM1"/>
+                            <constraint firstItem="Kd9-Ii-jpR" firstAttribute="trailing" secondItem="TMK-ak-OXN" secondAttribute="trailing" constant="30" id="DZc-ar-qja"/>
                             <constraint firstItem="5xz-af-UhJ" firstAttribute="leading" secondItem="Kd9-Ii-jpR" secondAttribute="leading" constant="30" id="Dxf-RW-DNM"/>
+                            <constraint firstItem="ZIr-hU-wgY" firstAttribute="top" secondItem="Kew-Yx-SlQ" secondAttribute="bottom" constant="10" id="GXy-1n-KQs"/>
                             <constraint firstItem="Kd9-Ii-jpR" firstAttribute="trailing" secondItem="5xz-af-UhJ" secondAttribute="trailing" constant="30" id="M5h-uP-COd"/>
-                            <constraint firstItem="9Mu-Ru-31n" firstAttribute="top" secondItem="Kd9-Ii-jpR" secondAttribute="top" constant="80" id="U9k-V4-2WN"/>
+                            <constraint firstItem="vXV-Yh-tIQ" firstAttribute="top" secondItem="ZIr-hU-wgY" secondAttribute="bottom" constant="20" id="PFV-aL-WZR"/>
+                            <constraint firstItem="9Mu-Ru-31n" firstAttribute="top" secondItem="Kd9-Ii-jpR" secondAttribute="top" constant="40" id="U9k-V4-2WN"/>
+                            <constraint firstItem="TMK-ak-OXN" firstAttribute="top" secondItem="9Mu-Ru-31n" secondAttribute="bottom" constant="15" id="XqH-7q-FoE"/>
+                            <constraint firstItem="ZIr-hU-wgY" firstAttribute="leading" secondItem="Kd9-Ii-jpR" secondAttribute="leading" constant="30" id="YaL-Wi-6eS"/>
                             <constraint firstItem="Kd9-Ii-jpR" firstAttribute="trailing" secondItem="9Mu-Ru-31n" secondAttribute="trailing" constant="30" id="a37-f9-MHk"/>
-                            <constraint firstItem="5xz-af-UhJ" firstAttribute="top" secondItem="9Mu-Ru-31n" secondAttribute="bottom" constant="10" id="czx-u7-c8e"/>
+                            <constraint firstItem="5xz-af-UhJ" firstAttribute="top" secondItem="TMK-ak-OXN" secondAttribute="bottom" constant="10" id="epT-Z7-79U"/>
+                            <constraint firstItem="Kd9-Ii-jpR" firstAttribute="trailing" secondItem="Kew-Yx-SlQ" secondAttribute="trailing" constant="30" id="f5p-nt-y0R"/>
+                            <constraint firstItem="Kew-Yx-SlQ" firstAttribute="top" secondItem="5xz-af-UhJ" secondAttribute="bottom" constant="25" id="h0H-AV-uwI"/>
+                            <constraint firstItem="Kew-Yx-SlQ" firstAttribute="leading" secondItem="Kd9-Ii-jpR" secondAttribute="leading" constant="30" id="mfB-aX-hTO"/>
+                            <constraint firstItem="TMK-ak-OXN" firstAttribute="leading" secondItem="Kd9-Ii-jpR" secondAttribute="leading" constant="30" id="qhE-sQ-1pY"/>
+                            <constraint firstItem="vXV-Yh-tIQ" firstAttribute="leading" secondItem="Kd9-Ii-jpR" secondAttribute="leading" constant="30" id="tlk-Ew-NAM"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="RjG-Ye-jCE"/>
+                    <connections>
+                        <outlet property="updateBtn" destination="vXV-Yh-tIQ" id="CoA-W5-Qj3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YCs-87-bX2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5598.4615384615381" y="804.73933649289097"/>
+            <point key="canvasLocation" x="5597.663551401869" y="804.10367170626353"/>
         </scene>
-        <!--Lists-->
+        <!--Notification View Controller-->
         <scene sceneID="aQO-0R-5sX">
             <objects>
                 <viewController storyboardIdentifier="notificationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4Ya-3r-V51" customClass="NotificationViewController" customModule="ReferralPlease" customModuleProvider="target" sceneMemberID="viewController">
@@ -457,7 +495,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="R5Q-we-px0"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="NotoSansOriya-Bold" family="Noto Sans Oriya" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -467,28 +505,38 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Bg5-ml-5wy"/>
                                     <constraint firstAttribute="height" constant="50" id="WQs-m2-oIN"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="NotoSansOriya-Bold" family="Noto Sans Oriya" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gearshape.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="92r-ht-GKE">
+                                <rect key="frame" x="378" y="60.333333333333329" width="30" height="29.333333333333329"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Mpg-GW-iuj"/>
+                                    <constraint firstAttribute="width" constant="30" id="NIl-SF-YlQ"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TGH-Vh-dfd"/>
                         <color key="backgroundColor" red="0.1647058824" green="0.24313725489999999" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="92r-ht-GKE" firstAttribute="top" secondItem="fyb-Vi-cfG" secondAttribute="top" constant="60" id="CFr-e4-Gwj"/>
                             <constraint firstItem="81B-i8-duZ" firstAttribute="top" secondItem="PtZ-KO-0rp" secondAttribute="bottom" constant="50" id="Cc1-tf-g0H"/>
                             <constraint firstItem="81B-i8-duZ" firstAttribute="leading" secondItem="TGH-Vh-dfd" secondAttribute="leading" constant="20" id="EDJ-Bj-wzs"/>
                             <constraint firstItem="TGH-Vh-dfd" firstAttribute="trailing" secondItem="81B-i8-duZ" secondAttribute="trailing" constant="20" id="GIn-Yt-fFq"/>
                             <constraint firstItem="PtZ-KO-0rp" firstAttribute="leading" secondItem="TGH-Vh-dfd" secondAttribute="leading" constant="20" id="MIh-iv-SqK"/>
                             <constraint firstItem="PtZ-KO-0rp" firstAttribute="top" secondItem="TGH-Vh-dfd" secondAttribute="top" constant="100" id="OhE-Lm-Bwt"/>
+                            <constraint firstItem="TGH-Vh-dfd" firstAttribute="trailing" secondItem="92r-ht-GKE" secondAttribute="trailing" constant="20" id="ZGt-If-u7t"/>
                             <constraint firstItem="TGH-Vh-dfd" firstAttribute="trailing" secondItem="PtZ-KO-0rp" secondAttribute="trailing" constant="20" id="w9e-UE-5Wt"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Lists" id="dLc-Bw-qqs"/>
+                    <tabBarItem key="tabBarItem" title="" image="notification" id="dLc-Bw-qqs"/>
                     <navigationItem key="navigationItem" id="bj2-6a-w87"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hOF-gE-p7u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4634" y="1732"/>
+            <point key="canvasLocation" x="4633.1775700934577" y="1731.9654427645789"/>
         </scene>
         <!--Main Tab Controller-->
         <scene sceneID="M6a-KP-HBA">
@@ -511,11 +559,11 @@
             </objects>
             <point key="canvasLocation" x="2868" y="78"/>
         </scene>
-        <!--Settings-->
+        <!--Navigation Controller-->
         <scene sceneID="ljp-G9-Jz4">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3GP-Fg-DuB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" id="Vsq-Mf-ef3"/>
+                    <tabBarItem key="tabBarItem" title="" image="settings (2)" id="Vsq-Mf-ef3"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6qk-Sq-I1d">
                         <rect key="frame" x="0.0" y="44" width="428" height="44"/>
@@ -532,7 +580,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="gearshape.fill" catalog="system" width="128" height="121"/>
+        <image name="homepage" width="16" height="16"/>
         <image name="image1" width="1920" height="2749"/>
+        <image name="notification" width="16" height="16"/>
+        <image name="settings (2)" width="16" height="16"/>
+        <image name="user" width="16" height="16"/>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

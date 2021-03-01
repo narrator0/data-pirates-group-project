@@ -16,25 +16,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource {
         tableView.dataSource = self
         print("home page view called")
 
-//        guard let mainTabController = storyboard?.instantiateViewController(withIdentifier: "mainTabController") as? MainTabController else
-//        {
-//            assertionFailure("couldn't find vc")
-//            return
-//        }
-//        mainTabController.selectedViewController = mainTabController.viewControllers?[0]
-//        present(mainTabController, animated: true, completion: nil)
-        
-//        guard let mainTabController = storyboard?.instantiateViewController(withIdentifier: "mainTabController") as? MainTabController else
-//        {
-//            assertionFailure("couldn't find vc")
-//            return
-//        }
-//        mainTabController.selectedViewController = mainTabController.viewControllers?[0]
-//        present(mainTabController, animated: true, completion: nil)
-//        UIImageView(frame: CGRectMake(0, 0, 100, 100))
 
-
-        // Do any additional setup after loading the view.
     }
     
 
@@ -55,9 +37,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource {
         cell.profileImage.image = UIImage(named: "image1")
         cell.profileImage.layer.cornerRadius = cell.profileImage.frame.size.width / 2
         cell.profileImage.clipsToBounds = true
-        
-//        cell.profileImage.layer.borderWidth = 1
-//        cell.profileImage.layer.borderColor = UIColor.blue.cgColor
+    
         return cell
     }
 
