@@ -13,16 +13,45 @@ class User {
     var firstName: String
     var lastName: String
     var email: String
-    private var db: Firestore?
+    var db = Firestore.firestore()
+    static var db = Firestore.firestore()
+    
+    static func get(_ userID: String, complete: @escaping (_ user: User) -> Void) -> Void {
+        let docRef = self.db.collection("users").document(userID)
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let data = document.data()
+                let first = data?["first"] as? String
+                let last = data?["last"] as? String
+                let email = data?["email"] as? String
+                let userID = data?["userID"] as? String
+                
+                let user = User()
+                user.firstName = first ?? ""
+                user.lastName = last ?? ""
+                user.email = email ?? ""
+                user.userID = userID ?? ""
+                
+                print(user.userID)
+                
+                DispatchQueue.main.async {
+                    complete(user)
+                }
+            } else {
+                print("Document does not exist")
+                
+                DispatchQueue.main.async {
+                    complete(User())
+                }
+            }
+        }
+    }
     
     init() {
         userID = ""
         firstName = ""
         lastName = ""
         email = ""
-        let settings = FirestoreSettings()
-        Firestore.firestore().settings = settings
-        self.db = Firestore.firestore()
     }
     
     init(_ userID: String, _ firstName: String, _ lastName: String) {
@@ -30,13 +59,10 @@ class User {
         self.firstName = firstName
         self.lastName = lastName
         self.email = ""
-        let settings = FirestoreSettings()
-        Firestore.firestore().settings = settings
-        self.db = Firestore.firestore()
     }
     
     func save() -> Void {
-        self.db?.collection("users").document(self.userID).setData([
+        self.db.collection("users").document(self.userID).setData([
             "userID": self.userID,
             "first": self.firstName,
             "last": self.lastName,

@@ -139,17 +139,38 @@ extension ViewController: WKNavigationDelegate {
         LinkedInOAuth.getAccessToken(code: linkedInAuthorizationCode) { token in
             LinkedInOAuth.getUserProfile(token: token) { user in
                 // login success
-                user.save()
-                
-                // login should go to home vc
-                let storyboard = UIStoryboard (name: "Main", bundle: nil)
-                guard let mainTabController = storyboard.instantiateViewController(withIdentifier: "mainTabViewController") as? MainTabController else
-                {
-                    assertionFailure("couldn't find vc")
-                    return
+                User.get(user.userID) { userRecord in
+                    if userRecord.userID == "" {
+                        print("first time login")
+                        user.save()
+                        self.goToFirstTimeLoginView()
+                    } else {
+                        self.goToHome()
+                    }
                 }
-                (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabController)
             }
         }
+    }
+    
+    func goToFirstTimeLoginView() {
+        let storyboard = UIStoryboard (name: "Main", bundle: nil)
+        guard let firstTimeViewController = storyboard.instantiateViewController(withIdentifier: "firstTimeViewController") as? FirstTimeLoginViewController else
+        {
+            assertionFailure("couldn't find vc")
+            return
+        }
+
+        navigationController?.pushViewController(firstTimeViewController, animated: true)
+    }
+
+    func goToHome() {
+        // login should go to home vc
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let mainTabController = storyboard.instantiateViewController(withIdentifier: "mainTabViewController") as? MainTabController else
+        {
+            assertionFailure("couldn't find vc")
+            return
+        }
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabController)
     }
 }
