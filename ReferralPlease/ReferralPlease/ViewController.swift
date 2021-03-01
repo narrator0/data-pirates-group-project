@@ -140,10 +140,10 @@ extension ViewController: WKNavigationDelegate {
             LinkedInOAuth.getUserProfile(token: token) { user in
                 // login success
                 User.get(user.userID) { userRecord in
-                    if userRecord.userID == "" {
+                    if userRecord.userID == "" || userRecord.role == "" {
                         print("first time login")
                         user.save()
-                        self.goToFirstTimeLoginView()
+                        self.goToFirstTimeLoginView(user)
                     } else {
                         self.goToHome()
                     }
@@ -152,14 +152,15 @@ extension ViewController: WKNavigationDelegate {
         }
     }
     
-    func goToFirstTimeLoginView() {
+    func goToFirstTimeLoginView(_ user: User) {
         let storyboard = UIStoryboard (name: "Main", bundle: nil)
         guard let firstTimeViewController = storyboard.instantiateViewController(withIdentifier: "firstTimeViewController") as? FirstTimeLoginViewController else
         {
             assertionFailure("couldn't find vc")
             return
         }
-
+        
+        firstTimeViewController.user = user
         navigationController?.pushViewController(firstTimeViewController, animated: true)
     }
 

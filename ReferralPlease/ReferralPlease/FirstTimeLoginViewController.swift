@@ -7,12 +7,11 @@
 
 import UIKit
 
-class FirstTimeLoginViewController:
-
-    UIViewController {
+class FirstTimeLoginViewController: UIViewController {
     
     @IBOutlet weak var mentorButton: UIButton!
     @IBOutlet weak var menteeButton: UIButton!
+    var user: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,32 +30,23 @@ class FirstTimeLoginViewController:
         menteeButton.layer.shadowOpacity = 0.5
     }
     
-    
     @IBAction func mentorButtonAction(_ sender: UIButton) {
-        
-        // go to home vc
-        let storyboard = UIStoryboard (name: "Main", bundle: nil)
-        guard let homeViewController = storyboard.instantiateViewController(withIdentifier: "homeViewController") as? HomePageViewController else
-        {
-            assertionFailure("couldn't find vc")
-            return
-        }
-        
-        navigationController?.pushViewController(homeViewController, animated: true)
+        self.user?.update(field: "role", value: "mentor")
+        self.goToHome()
     }
-    
     
     @IBAction func menteeButtonAction(_ sender: UIButton) {
-        
-        // go to home vc
-        let storyboard = UIStoryboard (name: "Main", bundle: nil)
-        guard let homeViewController = storyboard.instantiateViewController(withIdentifier: "homeViewController") as? HomePageViewController else
+        self.user?.update(field: "role", value: "mentee")
+        self.goToHome()
+    }
+    
+    func goToHome() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let mainTabController = storyboard.instantiateViewController(withIdentifier: "mainTabViewController") as? MainTabController else
         {
             assertionFailure("couldn't find vc")
             return
         }
-        
-        navigationController?.pushViewController(homeViewController, animated: true)
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabController)
     }
-    
 }

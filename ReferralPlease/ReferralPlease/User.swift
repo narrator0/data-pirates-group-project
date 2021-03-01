@@ -13,6 +13,7 @@ class User {
     var firstName: String
     var lastName: String
     var email: String
+    var role: String
     var db = Firestore.firestore()
     static var db = Firestore.firestore()
     
@@ -25,14 +26,14 @@ class User {
                 let last = data?["last"] as? String
                 let email = data?["email"] as? String
                 let userID = data?["userID"] as? String
+                let role = data?["role"] as? String
                 
                 let user = User()
                 user.firstName = first ?? ""
                 user.lastName = last ?? ""
                 user.email = email ?? ""
                 user.userID = userID ?? ""
-                
-                print(user.userID)
+                user.role = role ?? ""
                 
                 DispatchQueue.main.async {
                     complete(user)
@@ -52,6 +53,7 @@ class User {
         firstName = ""
         lastName = ""
         email = ""
+        role = ""
     }
     
     init(_ userID: String, _ firstName: String, _ lastName: String) {
@@ -59,6 +61,7 @@ class User {
         self.firstName = firstName
         self.lastName = lastName
         self.email = ""
+        self.role = ""
     }
     
     func save() -> Void {
@@ -67,12 +70,28 @@ class User {
             "first": self.firstName,
             "last": self.lastName,
             "email": self.email
-        ]) { err in
+        ], merge: true) { err in
             if let err = err {
                 print("Error adding document: \(err)")
             } else {
                 print("Document added with ID: \(self.userID)")
             }
+        }
+    }
+    
+    func update(field: String, value: String) -> Void {
+        switch field {
+        case "role":
+            self.db.collection("users").document(self.userID).setData(["role": value], merge: true) { err in
+                if let err = err {
+                    print("Error updating role for: \(self.userID)")
+                    print("Error message \(err)")
+                } else {
+                    print("Updated \(self.userID) to role \(value)")
+                }
+            }
+        default:
+            return
         }
     }
 }
