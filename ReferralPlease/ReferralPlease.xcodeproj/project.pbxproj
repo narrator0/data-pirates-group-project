@@ -28,6 +28,8 @@
 		CD2D9CC425DF602B00EA47DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD2D9CC225DF602B00EA47DD /* LaunchScreen.storyboard */; };
 		CD2D9CCF25DF602B00EA47DD /* ReferralPleaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2D9CCE25DF602B00EA47DD /* ReferralPleaseTests.swift */; };
 		CD2D9CDA25DF602C00EA47DD /* ReferralPleaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2D9CD925DF602C00EA47DD /* ReferralPleaseUITests.swift */; };
+		CD745D4725ECBDFE002FC3D8 /* LinkedInOAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD745D4625ECBDFE002FC3D8 /* LinkedInOAuth.swift */; };
+		CD745D4C25ECC57E002FC3D8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD745D4B25ECC57E002FC3D8 /* User.swift */; };
 		CD7DC2FD25EA1E1700C19F15 /* FirstTimeLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7DC2FC25EA1E1700C19F15 /* FirstTimeLoginViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +81,8 @@
 		CD2D9CD525DF602C00EA47DD /* ReferralPleaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReferralPleaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD2D9CD925DF602C00EA47DD /* ReferralPleaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferralPleaseUITests.swift; sourceTree = "<group>"; };
 		CD2D9CDB25DF602C00EA47DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD745D4625ECBDFE002FC3D8 /* LinkedInOAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedInOAuth.swift; sourceTree = "<group>"; };
+		CD745D4B25ECC57E002FC3D8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CD7DC2FC25EA1E1700C19F15 /* FirstTimeLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstTimeLoginViewController.swift; sourceTree = "<group>"; };
 		CFBC0D8D282DAE7CA6973C2C /* Pods_ReferralPlease.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReferralPlease.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F456E76FDA5115B7E2A6B105 /* Pods-ReferralPlease-ReferralPleaseUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReferralPlease-ReferralPleaseUITests.release.xcconfig"; path = "Target Support Files/Pods-ReferralPlease-ReferralPleaseUITests/Pods-ReferralPlease-ReferralPleaseUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -179,6 +183,8 @@
 				20CBE01D25E7933400E03DD2 /* ProfilePageViewController.swift */,
 				204F4AFE25EA419B00366312 /* MainTabController.swift */,
 				204F4B0325EA572200366312 /* SettingsViewController.swift */,
+				CD745D4625ECBDFE002FC3D8 /* LinkedInOAuth.swift */,
+				CD745D4B25ECC57E002FC3D8 /* User.swift */,
 			);
 			path = ReferralPlease;
 			sourceTree = "<group>";
@@ -479,10 +485,12 @@
 				1A8524E425E6279000CBE9B9 /* LinkedInEmailModel.swift in Sources */,
 				20CBE01425E7764800E03DD2 /* TableViewCell.swift in Sources */,
 				204F4AFF25EA419B00366312 /* MainTabController.swift in Sources */,
+				CD745D4725ECBDFE002FC3D8 /* LinkedInOAuth.swift in Sources */,
 				20CBE01925E7788A00E03DD2 /* HomePageViewController.swift in Sources */,
 				1AC3B2F825E31A87006411C9 /* CreateAccountViewController.swift in Sources */,
 				CD7DC2FD25EA1E1700C19F15 /* FirstTimeLoginViewController.swift in Sources */,
 				CD2D9CBC25DF602900EA47DD /* ViewController.swift in Sources */,
+				CD745D4C25ECC57E002FC3D8 /* User.swift in Sources */,
 				20CBE01E25E7933400E03DD2 /* ProfilePageViewController.swift in Sources */,
 				CD2D9CB825DF602900EA47DD /* AppDelegate.swift in Sources */,
 				CD2D9CBA25DF602900EA47DD /* SceneDelegate.swift in Sources */,
