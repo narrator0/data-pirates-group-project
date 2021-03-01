@@ -12,6 +12,12 @@
 		1A8524E925E627B400CBE9B9 /* LinkedInProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8524E825E627B400CBE9B9 /* LinkedInProfileModel.swift */; };
 		1A8524F325E6292C00CBE9B9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8524F225E6292C00CBE9B9 /* Constants.swift */; };
 		1AC3B2F825E31A87006411C9 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC3B2F725E31A87006411C9 /* CreateAccountViewController.swift */; };
+<<<<<<< Updated upstream
+=======
+		1AFB2EC625EC7B65006F3B06 /* classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFB2EC525EC7B65006F3B06 /* classes.swift */; };
+		204F4AFF25EA419B00366312 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F4AFE25EA419B00366312 /* MainTabController.swift */; };
+		204F4B0425EA572200366312 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F4B0325EA572200366312 /* SettingsViewController.swift */; };
+>>>>>>> Stashed changes
 		20CBE01425E7764800E03DD2 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CBE01325E7764800E03DD2 /* TableViewCell.swift */; };
 		20CBE01925E7788A00E03DD2 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CBE01825E7788A00E03DD2 /* HomePageViewController.swift */; };
 		20CBE01E25E7933400E03DD2 /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CBE01D25E7933400E03DD2 /* ProfilePageViewController.swift */; };
@@ -53,6 +59,12 @@
 		1A8524E825E627B400CBE9B9 /* LinkedInProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedInProfileModel.swift; sourceTree = "<group>"; };
 		1A8524F225E6292C00CBE9B9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1AC3B2F725E31A87006411C9 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+<<<<<<< Updated upstream
+=======
+		1AFB2EC525EC7B65006F3B06 /* classes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = classes.swift; sourceTree = "<group>"; };
+		204F4AFE25EA419B00366312 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
+		204F4B0325EA572200366312 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+>>>>>>> Stashed changes
 		20CBE01325E7764800E03DD2 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		20CBE01825E7788A00E03DD2 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		20CBE01D25E7933400E03DD2 /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
@@ -173,6 +185,12 @@
 				1A8524F225E6292C00CBE9B9 /* Constants.swift */,
 				20CBE01825E7788A00E03DD2 /* HomePageViewController.swift */,
 				20CBE01D25E7933400E03DD2 /* ProfilePageViewController.swift */,
+<<<<<<< Updated upstream
+=======
+				204F4AFE25EA419B00366312 /* MainTabController.swift */,
+				204F4B0325EA572200366312 /* SettingsViewController.swift */,
+				1AFB2EC525EC7B65006F3B06 /* classes.swift */,
+>>>>>>> Stashed changes
 			);
 			path = ReferralPlease;
 			sourceTree = "<group>";
@@ -470,6 +488,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AFB2EC625EC7B65006F3B06 /* classes.swift in Sources */,
 				1A8524E425E6279000CBE9B9 /* LinkedInEmailModel.swift in Sources */,
 				20CBE01425E7764800E03DD2 /* TableViewCell.swift in Sources */,
 				20CBE01925E7788A00E03DD2 /* HomePageViewController.swift in Sources */,

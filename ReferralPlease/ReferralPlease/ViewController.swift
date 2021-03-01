@@ -35,10 +35,8 @@ class ViewController: UIViewController {
         
         // tab bar for the login page should be hidden
         self.tabBarController?.tabBar.isHidden = true
-    
     }
-    
-    
+
     @IBAction func linkedInLoginBtnAction(_ sender: Any) {
         linkedInAuthVC()
     }
@@ -162,6 +160,10 @@ extension ViewController: WKNavigationDelegate {
 
                             let accessToken = results?["access_token"] as? String
                             print("accessToken is: \(accessToken ?? "")")
+                            
+                            // Store accessToken in UserData
+                            
+                            UserData.currentUserToken = accessToken
 
                             let expiresIn = results?["expires_in"] as? Int
                             print("expires in: \(expiresIn ?? nil)")
@@ -234,6 +236,7 @@ extension ViewController: WKNavigationDelegate {
                         let firstName = self.getSTName(data: linkedInProfileModel.firstName)
                         let lastName = self.getSTName(data: linkedInProfileModel.lastName)
                         
+                        
                         self.db?.collection("users").document(linkedInProfileModel.id).setData([
                             "userID": linkedInProfileModel.id,
                             "first": firstName,
@@ -244,7 +247,10 @@ extension ViewController: WKNavigationDelegate {
                                 print("Error adding document: \(err)")
                             } else {
                                 print("Document added with ID: \(linkedInProfileModel.id)")
+                                
+                                UserData.currentUserID = linkedInProfileModel.id
                             }
+                            
                             self.fetchLinkedInEmailAddress(accessToken: accessToken, documentID: linkedInProfileModel.id)
                         }
                     } catch DecodingError.dataCorrupted(let context) {

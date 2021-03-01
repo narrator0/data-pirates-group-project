@@ -217,7 +217,21 @@
                             <constraint firstItem="cCb-h9-G4B" firstAttribute="top" secondItem="QSZ-c2-jm4" secondAttribute="bottom" constant="20" id="pQ3-uD-Onz"/>
                         </constraints>
                     </view>
+<<<<<<< Updated upstream
                     <tabBarItem key="tabBarItem" title="" selectedImage="bell.fill" catalog="system" id="myq-oY-Fl0"/>
+=======
+                    <tabBarItem key="tabBarItem" title="Profile" id="xE1-if-el1"/>
+                    <navigationItem key="navigationItem" id="OoP-ze-xal"/>
+                    <size key="freeformSize" width="375" height="1000"/>
+                    <connections>
+                        <outlet property="aboutText" destination="vkR-t6-0iV" id="TAO-rw-kku"/>
+                        <outlet property="aboutView" destination="6x7-Mp-bp5" id="8sY-Ry-sYo"/>
+                        <outlet property="requestBtn" destination="Lrb-kU-Yb6" id="dxs-Uk-rSY"/>
+                        <outlet property="topView" destination="IwG-1t-QRn" id="cvg-Lo-0To"/>
+                        <outlet property="userImage" destination="GMA-vw-XDN" id="h9f-Vg-DqX"/>
+                        <outlet property="userName" destination="xej-2o-kh6" id="Op1-MA-YHk"/>
+                    </connections>
+>>>>>>> Stashed changes
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YI2-Wr-VwB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
