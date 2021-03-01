@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct UserData {
+struct Storage {
     static var currentUserToken: String? {
         get {
             return UserDefaults.standard.string(forKey: "currentUserToken")
@@ -29,5 +29,4 @@ struct UserData {
             print("Saving the currentUserID: \(UserDefaults.standard.synchronize())")
         }
     }
-    
 }

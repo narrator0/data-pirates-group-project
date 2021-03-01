@@ -78,6 +78,8 @@ struct LinkedInOAuth {
                     let lastName = self.getSTName(data: linkedInProfileModel.lastName)
                     let userID = linkedInProfileModel.id
                     
+                    Storage.currentUserID = userID
+                    
                     let user = User(userID, firstName, lastName)
                     
                     self.getUserEmail(token: token, user: user, complete: complete)
@@ -129,6 +131,7 @@ struct LinkedInOAuth {
 
                             // Get user's id, first name, last name, profile pic url
                             if let accessToken = accessToken {
+                                Storage.currentUserToken = accessToken
                                 DispatchQueue.main.async {
                                     complete(accessToken)
                                 }
