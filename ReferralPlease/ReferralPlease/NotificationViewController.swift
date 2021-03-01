@@ -9,21 +9,25 @@ import UIKit
 
 class NotificationViewController: UIViewController {
 
+    @IBOutlet weak var declineButton: UIButton!
+    @IBOutlet weak var acceptButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // for button shape
+        self.declineButton.layer.cornerRadius = 5
+        self.acceptButton.layer.cornerRadius = 5
+        // for button shadow
+        declineButton.layer.shadowColor = UIColor.black.cgColor
+        declineButton.layer.shadowOffset = CGSize(width: 0.0, height: 6.0)
+        declineButton.layer.shadowRadius = 8
+        declineButton.layer.shadowOpacity = 0.5
+        acceptButton.layer.shadowColor = UIColor.black.cgColor
+        acceptButton.layer.shadowOffset = CGSize(width: 0.0, height: 6.0)
+        acceptButton.layer.shadowRadius = 8
+        acceptButton.layer.shadowOpacity = 0.5
 
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
