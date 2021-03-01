@@ -7,23 +7,38 @@
 
 import UIKit
 
-class HomePageViewController: UIViewController {
+class HomePageViewController: UIViewController, UITableViewDataSource {
+    
 
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.dataSource = self
+        print("home page view called")
 
-        // Do any additional setup after loading the view.
+
     }
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
     }
-    */
+    func tableView(_ tableView: UITableView,
+                   heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? TableViewCell else {return UITableViewCell()}
+        cell.layer.cornerRadius = 5
+        cell.userName.text = "test user name"
+        cell.userDescription.text = "user description"
+        cell.profileImage.image = UIImage(named: "image1")
+        cell.profileImage.layer.cornerRadius = cell.profileImage.frame.size.width / 2
+        cell.profileImage.clipsToBounds = true
+    
+        return cell
+    }
 
 }

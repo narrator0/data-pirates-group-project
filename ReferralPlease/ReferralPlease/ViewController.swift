@@ -186,17 +186,45 @@ extension ViewController: WKNavigationDelegate {
             print("Invalid URL")
         }
 
+        print("here 189")
+
         // login should go to home vc
         let storyboard = UIStoryboard (name: "Main", bundle: nil)
-        guard let homeViewController = storyboard.instantiateViewController(withIdentifier: "homeViewController") as? HomePageViewController else
+        guard let mainTabController = storyboard.instantiateViewController(withIdentifier: "mainTabViewController") as? MainTabController else
         {
             assertionFailure("couldn't find vc")
             return
         }
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabController)
+
         
-        navigationController?.pushViewController(homeViewController, animated: true)
+//        let viewControllers = [mainTabController]
+//        self.navigationController?.setViewControllers(viewControllers, animated: true)
+//        mainTabController.selectedViewController = mainTabController.viewControllers?[0]
+//        present(mainTabController, animated: true, completion: nil)
+//
+//        guard let homeViewController = storyboard.instantiateViewController(withIdentifier: "homeViewController") as? HomePageViewController else
+//        {
+//            assertionFailure("couldn't find vc")
+//            return
+//        }
+//        navigationController?.pushViewController(homeViewController, animated: true)
+//        guard let mainTabController = storyboard?.instantiateViewController(withIdentifier: "mainTabController") as? MainTabController else
+//        {
+//            assertionFailure("couldn't find vc")
+//            return
+//        }
+//        navigationController?.pushViewController(mainTabController, animated: true)
 
-
+//        mainTabController.selectedViewController = mainTabController.viewControllers?[0]
+//        present(mainTabController, animated: true, completion: nil)
+//        guard let mainTabController = storyboard?.instantiateViewController(withIdentifier: "mainTabController") as? MainTabController else
+//        {
+//            assertionFailure("couldn't find vc")
+//            return
+//        }
+//        mainTabController.selectedViewController = mainTabController.viewControllers?[1]
+//        present(mainTabController, animated: true, completion: nil)
         
     }
     
@@ -292,16 +320,16 @@ extension ViewController: WKNavigationDelegate {
             }
             task.resume()
         
-            
-        // if users login for the first time, go to user profile
-        let storyboard = UIStoryboard (name: "Main", bundle: nil)
-        guard let firstTimeViewController = storyboard.instantiateViewController(withIdentifier: "firstTimeViewController") as? FirstTimeLoginViewController else
-        {
-            assertionFailure("couldn't find vc")
-            return
-        }
-        
-        navigationController?.pushViewController(firstTimeViewController, animated: true)
+//        print("here 308")
+//        // if users login for the first time, go to user profile
+//        let storyboard = UIStoryboard (name: "Main", bundle: nil)
+//        guard let firstTimeViewController = storyboard.instantiateViewController(withIdentifier: "firstTimeViewController") as? FirstTimeLoginViewController else
+//        {
+//            assertionFailure("couldn't find vc")
+//            return
+//        }
+//        
+//        navigationController?.pushViewController(firstTimeViewController, animated: true)
           
         }
 }
