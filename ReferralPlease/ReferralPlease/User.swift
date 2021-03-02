@@ -7,6 +7,7 @@
 
 import Foundation
 import Firebase
+import FirebaseFirestore
 
 class User {
     var userID: String
@@ -23,6 +24,33 @@ class User {
     var db = Firestore.firestore()
     static var db = Firestore.firestore()
     
+    static func getAll(complete: @escaping (_ currUsers: [User]) -> Void) -> Void {
+        // dispatch queue
+        var currentUsers: [User]?
+        db.collection("users").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting doc on user: \(err)")
+            } else {
+                // To be fixed: forced unwrap
+                for document in querySnapshot!.documents {
+                    print("\(document.documentID) => \(document.data())")
+                    User.get(document.documentID) { userRecord in
+                        if userRecord.role == "Mentor" {
+                        }
+                        let user = User()
+                        user.firstName = userRecord.firstName
+                        user.lastName = userRecord.lastName
+                        user.email = userRecord.email
+                        user.userID = userRecord.userID
+                        user.role = userRecord.role
+                        
+                        currentUsers?.append(user)
+                    }
+                }
+            }
+        }
+    }
+
     static func currentUser(complete: @escaping (_ user: User) -> Void) -> Void {
         if Storage.currentUserID != nil {
             self.get(Storage.currentUserID ?? "") { user in
@@ -127,4 +155,5 @@ class User {
             return
         }
     }
+    
 }
