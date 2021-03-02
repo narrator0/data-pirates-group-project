@@ -11,10 +11,9 @@ import Firebase
 class MentorRequests {
     // Singleton
     static let shared = MentorRequests()
-
     var db = Firestore.firestore()
-
     private static var requests:Requests? = Requests()
+    
     struct Requests {
         var mentorID: String = ""
         var menteeIDs: [String] = []
@@ -77,5 +76,19 @@ class MentorRequests {
     }
     
     
-
+    static func createStatus(_ mentorID: String, _ menteeID: String) {
+        let db = Firestore.firestore()
+        db.collection("mentorStatus").document().setData([
+            "menteeID": menteeID,
+            "mentorID": mentorID,
+            "accepted": false
+        ], merge: true) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added")
+            }
+        }
+        
+    }
 }
