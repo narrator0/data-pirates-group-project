@@ -15,8 +15,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
-        MentorRequests.setup("id")
-        self.user?.update(field: "role", value: "mentor")
+        MentorRequests.update("id")
 
     }
     

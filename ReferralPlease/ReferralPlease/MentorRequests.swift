@@ -16,6 +16,9 @@ class MentorRequests {
     struct Requests {
         var mentorID: String = ""
         var menteeIDs: [String] = []
+        var requesteeIDs: [String] = []
+        var mentees: [User] = []
+        var requestees: [User] = []
     }
     
     private init(){
@@ -24,10 +27,12 @@ class MentorRequests {
            }
     }
         
-    class func setup(_ userID: String) {
-        MentorRequests.requests?.mentorID = userID
+    class func update(_ userID: String = "") {
+        if (userID != "") {
+            MentorRequests.requests?.mentorID = userID
+        }
         let db = Firestore.firestore()
-        db.collection("mentorStatus").whereField("mentorID", isEqualTo: MentorRequests.requests?.mentorID as Any)
+        db.collection("mentorStatus").whereField("mentorID", isEqualTo: MentorRequests.requests?.mentorID as Any).whereField("mentorID", isEqualTo: true)
                 .getDocuments() { (querySnapshot, err) in
                     if let err = err {
                         print("Error getting documents: \(err)")
@@ -39,24 +44,39 @@ class MentorRequests {
                         }
                     }
             }
+        
+        if let mentees = MentorRequests.requests?.menteeIDs {
+            for mentee in mentees{
+                User.get(mentee) {
+                    userRecord in
+                    MentorRequests.requests?.mentees.append(userRecord)
+                }
+            }
+        }
+        
+        db.collection("mentorStatus").whereField("mentorID", isEqualTo: MentorRequests.requests?.mentorID as Any).whereField("mentorID", isEqualTo: false)
+                .getDocuments() { (querySnapshot, err) in
+                    if let err = err {
+                        print("Error getting documents: \(err)")
+                    } else {
+                        for document in querySnapshot!.documents {
+                            if let menteeID = document.data()["menteeID"] as? String {
+                                MentorRequests.requests?.requesteeIDs.append(menteeID)
+                            }
+                        }
+                    }
+            }
+        
+        if let mentees = MentorRequests.requests?.requesteeIDs {
+            for mentee in mentees{
+                User.get(mentee) {
+                    userRecord in
+                    MentorRequests.requests?.requestees.append(userRecord)
+                }
+            }
+        }
     }
     
-    class func update() {
-        let db = Firestore.firestore()
-        db.collection("mentorStatus").whereField("mentorID", isEqualTo: MentorRequests.requests?.mentorID as Any)
-                .getDocuments() { (querySnapshot, err) in
-                    if let err = err {
-                        print("Error getting documents: \(err)")
-                    } else {
-                        MentorRequests.requests?.menteeIDs = []
-                        for document in querySnapshot!.documents {
-                            if let menteeID = document.data()["menteeID"] as? String {
-                                MentorRequests.requests?.menteeIDs.append(menteeID)
-                            }
-                        }
-                    }
-            }
-    }
     
     func deleteRequest(_ menteeID: String) {
         db.collection("mentorStatus").whereField("mentorID", isEqualTo: MentorRequests.requests?.mentorID as Any).whereField("menteeID", isEqualTo: menteeID).getDocuments() { (querySnapshot, err) in
@@ -87,6 +107,25 @@ class MentorRequests {
         }
         else {
             return ""
+        }
+    }
+    
+    func getRequestees() -> [User] {
+        if let requests = MentorRequests.requests?.requestees {
+            return requests
+        }
+        else {
+            return []
+        }
+    }
+    
+    
+    func getMentees() -> [User] {
+        if let requests = MentorRequests.requests?.mentees {
+            return requests
+        }
+        else {
+            return []
         }
     }
     

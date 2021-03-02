@@ -6,18 +6,22 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 class NotificationViewController: UIViewController {
+    var user = User()
+    let db = Firestore.firestore()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         MentorRequests.update()
-        let requestIDs = MentorRequests.shared.getRequestsIDs()
+
+        let mentees  = MentorRequests.shared.getMentees()
+        let requestees = MentorRequests.shared.getRequestees()
+        
     }
     
 
-    func getRequesteeInfo() {
-        
-    }
 
 }

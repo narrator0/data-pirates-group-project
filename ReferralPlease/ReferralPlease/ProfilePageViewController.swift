@@ -65,4 +65,6 @@ class ProfilePageViewController: UIViewController {
         self.userPositionTextField.text = self.user.position
         self.aboutText.text = self.user.about
     }
+    
+    
 }
