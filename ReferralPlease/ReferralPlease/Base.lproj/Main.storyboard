@@ -166,42 +166,49 @@
             <objects>
                 <viewController storyboardIdentifier="profilePageViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iPW-Ty-2xg" customClass="ProfilePageViewController" customModule="ReferralPlease" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="70o-DQ-7HE">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n82-nW-JKW">
-                                <rect key="frame" x="0.0" y="44" width="375" height="873"/>
+                                <rect key="frame" x="0.0" y="44" width="428" height="799"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KZj-zN-fH4">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="962"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="428" height="962"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gearshape.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="erf-AG-9gC">
-                                                <rect key="frame" x="338" y="10.33333333333333" width="27" height="19.666666666666654"/>
+                                                <rect key="frame" x="391" y="10.33333333333333" width="27" height="19.666666666666654"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="27" id="8tz-0j-Tx9"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image1" translatesAutoresizingMaskIntoConstraints="NO" id="GMA-vw-XDN">
-                                                <rect key="frame" x="112.66666666666669" y="9" width="150" height="150"/>
+                                                <rect key="frame" x="139" y="9" width="150" height="150"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="IQf-98-e1D"/>
                                                     <constraint firstAttribute="height" constant="150" id="rCL-gY-saa"/>
                                                 </constraints>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IwG-1t-QRn">
-                                                <rect key="frame" x="30" y="192" width="315" height="120"/>
+                                                <rect key="frame" x="30" y="192" width="368" height="120"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xej-2o-kh6">
-                                                        <rect key="frame" x="20" y="8" width="275" height="42.333333333333336"/>
-                                                        <fontDescription key="fontDescription" name="NotoSansOriya-Bold" family="Noto Sans Oriya" pointSize="30"/>
-                                                        <color key="textColor" red="0.93333333333333335" green="0.42352941176470588" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USER_POSITION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ppc-9m-3DM">
+                                                        <rect key="frame" x="20" y="51" width="328" height="25.333333333333329"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansOriya" family="Noto Sans Oriya" pointSize="18"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ppc-9m-3DM">
-                                                        <rect key="frame" x="20" y="59.333333333333321" width="275" height="28.333333333333336"/>
-                                                        <fontDescription key="fontDescription" name="NotoSansOriya" family="Noto Sans Oriya" pointSize="20"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="USER_COMPANY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TRb-as-slQ">
+                                                        <rect key="frame" x="20" y="83" width="328" height="29"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansOriya" family="Noto Sans Oriya" pointSize="18"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USER_NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xej-2o-kh6">
+                                                        <rect key="frame" x="20" y="8" width="328" height="34"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansOriya-Bold" family="Noto Sans Oriya" pointSize="24"/>
+                                                        <color key="textColor" red="0.93333333333333335" green="0.42352941176470588" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -217,7 +224,7 @@
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lrb-kU-Yb6">
-                                                <rect key="frame" x="30" y="913" width="315" height="34"/>
+                                                <rect key="frame" x="30" y="913" width="368" height="34"/>
                                                 <color key="backgroundColor" red="0.93333333330000001" green="0.42352941179999998" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="20"/>
                                                 <state key="normal" title="Button">
@@ -225,16 +232,16 @@
                                                 </state>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6x7-Mp-bp5">
-                                                <rect key="frame" x="30" y="350" width="315" height="500"/>
+                                                <rect key="frame" x="30" y="350" width="368" height="500"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qTF-Yp-3t8">
-                                                        <rect key="frame" x="20" y="30.000000000000004" width="275" height="35.333333333333343"/>
+                                                        <rect key="frame" x="20" y="30.000000000000004" width="328" height="35.333333333333343"/>
                                                         <fontDescription key="fontDescription" name="NotoSansOriya-Bold" family="Noto Sans Oriya" pointSize="25"/>
                                                         <color key="textColor" red="0.93333333333333335" green="0.42352941176470588" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vkR-t6-0iV">
-                                                        <rect key="frame" x="20" y="73.333333333333314" width="275" height="22.666666666666671"/>
+                                                        <rect key="frame" x="20" y="73.333333333333314" width="328" height="22.666666666666671"/>
                                                         <fontDescription key="fontDescription" name="NotoSansOriya" family="Noto Sans Oriya" pointSize="16"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -296,18 +303,20 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="user" id="xE1-if-el1"/>
                     <navigationItem key="navigationItem" id="OoP-ze-xal"/>
-                    <size key="freeformSize" width="375" height="1000"/>
+                    <size key="freeformSize" width="428" height="926"/>
                     <connections>
                         <outlet property="aboutText" destination="vkR-t6-0iV" id="TAO-rw-kku"/>
                         <outlet property="aboutView" destination="6x7-Mp-bp5" id="8sY-Ry-sYo"/>
                         <outlet property="requestBtn" destination="Lrb-kU-Yb6" id="dxs-Uk-rSY"/>
                         <outlet property="topView" destination="IwG-1t-QRn" id="cvg-Lo-0To"/>
                         <outlet property="userImage" destination="GMA-vw-XDN" id="h9f-Vg-DqX"/>
+                        <outlet property="userNameText" destination="xej-2o-kh6" id="AWz-pe-vk3"/>
+                        <outlet property="userPositionText" destination="Ppc-9m-3DM" id="aku-zT-lwc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YI2-Wr-VwB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4667.5233644859809" y="95.896328293736502"/>
+            <point key="canvasLocation" x="4667" y="52"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Mf0-7f-7Lk">

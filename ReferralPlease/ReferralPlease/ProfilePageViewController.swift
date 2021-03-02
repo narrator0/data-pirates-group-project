@@ -15,6 +15,10 @@ class ProfilePageViewController: UIViewController {
     @IBOutlet weak var aboutView: UIView!
     @IBOutlet weak var aboutText: UILabel!
     @IBOutlet weak var requestBtn: UIButton!
+    @IBOutlet weak var userPositionText: UILabel!
+    @IBOutlet weak var userNameText: UILabel!
+    
+    var user = User()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,12 +47,14 @@ class ProfilePageViewController: UIViewController {
         requestBtn.layer.shadowOpacity = 0.5
         requestBtn.layer.shadowRadius = 5
         requestBtn.layer.shadowOffset = .zero
-
+        
+        User.currentUser() { user in
+            self.user = user
+            self.renderText()
+        }
     }
     
-
-    
-    
-
-
+    func renderText() {
+        self.userNameText.text = "\(self.user.firstName) \(self.user.lastName)"
+    }
 }

@@ -13,9 +13,20 @@ class User {
     var firstName: String
     var lastName: String
     var email: String
+    var avatarURL: String
     var role: String
     var db = Firestore.firestore()
     static var db = Firestore.firestore()
+    
+    static func currentUser(complete: @escaping (_ user: User) -> Void) -> Void {
+        if Storage.currentUserID != nil {
+            self.get(Storage.currentUserID ?? "") { user in
+                complete(user)
+            }
+        } else {
+            complete(User())
+        }
+    }
     
     static func get(_ userID: String, complete: @escaping (_ user: User) -> Void) -> Void {
         let docRef = self.db.collection("users").document(userID)
@@ -54,14 +65,16 @@ class User {
         lastName = ""
         email = ""
         role = ""
+        avatarURL = ""
     }
     
-    init(_ userID: String, _ firstName: String, _ lastName: String) {
+    init(_ userID: String, _ firstName: String, _ lastName: String, _ avatarURL: String) {
         self.userID = userID
         self.firstName = firstName
         self.lastName = lastName
         self.email = ""
         self.role = ""
+        self.avatarURL = avatarURL
     }
     
     func save() -> Void {
@@ -69,7 +82,8 @@ class User {
             "userID": self.userID,
             "first": self.firstName,
             "last": self.lastName,
-            "email": self.email
+            "email": self.email,
+            "avatarURL": self.avatarURL
         ], merge: true) { err in
             if let err = err {
                 print("Error adding document: \(err)")

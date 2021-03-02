@@ -55,7 +55,7 @@ struct LinkedInOAuth {
     static func getUserProfile(token: String, complete: @escaping (_ user: User) -> Void) -> Void {
         let tokenURLFull = (
             "https://api.linkedin.com/v2/me?" +
-            "projection=(id,firstName,lastName,profilePicture,emailAddress(displayImage~:playableStreams))&" +
+            "projection=(id,firstName,lastName,profilePicture(displayImage~:playableStreams))&" +
             "oauth2_access_token=\(token)"
         ).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         
@@ -77,10 +77,11 @@ struct LinkedInOAuth {
                     let firstName = self.getSTName(data: linkedInProfileModel.firstName)
                     let lastName = self.getSTName(data: linkedInProfileModel.lastName)
                     let userID = linkedInProfileModel.id
+                    let avatarURL = linkedInProfileModel.profilePicture.displayImage.elements[0].identifiers[0].identifier
                     
                     Storage.currentUserID = userID
                     
-                    let user = User(userID, firstName, lastName)
+                    let user = User(userID, firstName, lastName, avatarURL)
                     
                     self.getUserEmail(token: token, user: user, complete: complete)
                 } catch DecodingError.dataCorrupted(let context) {
