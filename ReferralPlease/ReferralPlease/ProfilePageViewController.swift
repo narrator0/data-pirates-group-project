@@ -15,6 +15,7 @@ class ProfilePageViewController: UIViewController {
     @IBOutlet weak var aboutView: UIView!
     @IBOutlet weak var aboutText: UILabel!
     @IBOutlet weak var requestBtn: UIButton!
+    var user: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()

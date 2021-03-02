@@ -14,8 +14,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
-        print("home page view called")
-
+        MentorRequests.setup("sample2")
 
     }
     
