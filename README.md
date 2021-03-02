@@ -11,7 +11,7 @@ See [team members wiki](https://github.com/narrator0/data-pirates-group-project/
 
 ## Milestone 2
 
-See [milestone 1 wiki](https://github.com/narrator0/data-pirates-group-project/wiki/Milestone-2).
+See [milestone 2 wiki](https://github.com/narrator0/data-pirates-group-project/wiki/Milestone-2).
 
 ## Sprint Planning #3
 
