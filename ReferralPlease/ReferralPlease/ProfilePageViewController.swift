@@ -61,5 +61,8 @@ class ProfilePageViewController: UIViewController {
     func renderText() {
         self.userNameText.text = "\(self.user.firstName) \(self.user.lastName)"
         self.userImage.sd_setImage(with: URL(string: self.user.avatarURL), placeholderImage: UIImage(named: "placeholder.png"))
+        self.userCompanyTextField.text = self.user.company
+        self.userPositionTextField.text = self.user.position
+        self.aboutText.text = self.user.about
     }
 }
