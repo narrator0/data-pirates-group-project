@@ -9,12 +9,14 @@ import UIKit
 
 class HomePageViewController: UIViewController, UITableViewDataSource {
     
+    var user: User?
 
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
-        
+        MentorRequests.setup("id")
+        self.user?.update(field: "role", value: "mentor")
 
     }
     

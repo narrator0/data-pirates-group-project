@@ -9,7 +9,6 @@ import Foundation
 import Firebase
 
 class MentorRequests {
-    // Singleton
     static let shared = MentorRequests()
     var db = Firestore.firestore()
     private static var requests:Requests? = Requests()
@@ -21,7 +20,7 @@ class MentorRequests {
     
     private init(){
         guard let _ = MentorRequests.requests else {
-               fatalError("Error - you must call setup before accessing MySingleton.shared")
+               fatalError("Error - you must call setup")
            }
     }
         
@@ -40,7 +39,23 @@ class MentorRequests {
                         }
                     }
             }
-
+    }
+    
+    class func update() {
+        let db = Firestore.firestore()
+        db.collection("mentorStatus").whereField("mentorID", isEqualTo: MentorRequests.requests?.mentorID as Any)
+                .getDocuments() { (querySnapshot, err) in
+                    if let err = err {
+                        print("Error getting documents: \(err)")
+                    } else {
+                        MentorRequests.requests?.menteeIDs = []
+                        for document in querySnapshot!.documents {
+                            if let menteeID = document.data()["menteeID"] as? String {
+                                MentorRequests.requests?.menteeIDs.append(menteeID)
+                            }
+                        }
+                    }
+            }
     }
     
     func deleteRequest(_ menteeID: String) {
