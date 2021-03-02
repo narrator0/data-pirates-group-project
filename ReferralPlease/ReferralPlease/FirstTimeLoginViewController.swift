@@ -32,21 +32,23 @@ class FirstTimeLoginViewController: UIViewController {
     
     @IBAction func mentorButtonAction(_ sender: UIButton) {
         self.user?.update(field: "role", value: "mentor")
-        self.goToHome()
+        self.goNext()
     }
     
     @IBAction func menteeButtonAction(_ sender: UIButton) {
         self.user?.update(field: "role", value: "mentee")
-        self.goToHome()
+        self.goNext()
     }
     
-    func goToHome() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let mainTabController = storyboard.instantiateViewController(withIdentifier: "mainTabViewController") as? MainTabController else
+    func goNext() {
+        let storyboard = UIStoryboard (name: "Main", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "firstTimeFormViewController") as? FirstTimeLoginFormViewController else
         {
             assertionFailure("couldn't find vc")
             return
         }
-        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabController)
+        
+        vc.user = user
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
