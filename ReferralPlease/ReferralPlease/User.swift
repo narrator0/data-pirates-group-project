@@ -26,26 +26,35 @@ class User {
     
     static func getAll(complete: @escaping (_ currUsers: [User]) -> Void) -> Void {
         // dispatch queue
-        var currentUsers: [User]?
-        db.collection("users").getDocuments() { (querySnapshot, err) in
+        var mentors: [User] = []
+        db.collection("users").whereField("role", isEqualTo: "mentor").getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting doc on user: \(err)")
+                
+                DispatchQueue.main.async {
+                    complete([])
+                }
             } else {
-                // To be fixed: forced unwrap
-                for document in querySnapshot!.documents {
-                    print("\(document.documentID) => \(document.data())")
-                    User.get(document.documentID) { userRecord in
-                        if userRecord.role == "Mentor" {
-                        }
+                if let documents = querySnapshot?.documents {
+                    for document in documents {
+                        let data = document.data()
                         let user = User()
-                        user.firstName = userRecord.firstName
-                        user.lastName = userRecord.lastName
-                        user.email = userRecord.email
-                        user.userID = userRecord.userID
-                        user.role = userRecord.role
+                        user.firstName = data["first"] as? String ?? ""
+                        user.lastName = data["last"] as? String ?? ""
+                        user.userID = data["userID"] as? String ?? ""
+                        user.role = data["role"] as? String ?? ""
+                        user.email = data["email"] as? String ?? ""
+                        user.company = data["company"] as? String ?? ""
+                        user.position = data["position"] as? String ?? ""
+                        user.about = data["about"] as? String ?? ""
+                        user.avatarURL = data["avatarURL"] as? String ?? ""
                         
-                        currentUsers?.append(user)
+                        mentors.append(user)
                     }
+                }
+                
+                DispatchQueue.main.async {
+                    complete(mentors)
                 }
             }
         }
