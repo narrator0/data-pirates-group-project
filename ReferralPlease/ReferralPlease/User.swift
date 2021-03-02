@@ -38,6 +38,7 @@ class User {
                 let email = data?["email"] as? String
                 let userID = data?["userID"] as? String
                 let role = data?["role"] as? String
+                let avatarURL = data?["avatarURL"] as? String
                 
                 let user = User()
                 user.firstName = first ?? ""
@@ -45,6 +46,7 @@ class User {
                 user.email = email ?? ""
                 user.userID = userID ?? ""
                 user.role = role ?? ""
+                user.avatarURL = avatarURL ?? ""
                 
                 DispatchQueue.main.async {
                     complete(user)

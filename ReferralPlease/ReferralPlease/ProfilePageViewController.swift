@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ProfilePageViewController: UIViewController {
     
@@ -56,5 +57,6 @@ class ProfilePageViewController: UIViewController {
     
     func renderText() {
         self.userNameText.text = "\(self.user.firstName) \(self.user.lastName)"
+        self.userImage.sd_setImage(with: URL(string: self.user.avatarURL), placeholderImage: UIImage(named: "placeholder.png"))
     }
 }
