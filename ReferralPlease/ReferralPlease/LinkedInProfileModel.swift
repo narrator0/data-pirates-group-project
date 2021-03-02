@@ -11,6 +11,27 @@ import Foundation
 struct LinkedInProfileModel: Codable {
     let firstName, lastName: StName
     let id: String
+    let profilePicture: ProfilePicture
+}
+
+struct ProfilePicture: Codable {
+    let displayImage: DisplayImage
+    
+    enum CodingKeys: String, CodingKey {
+        case displayImage = "displayImage~"
+    }
+}
+
+struct DisplayImage: Codable {
+    let elements: [Elementt]
+}
+
+struct Elementt: Codable {
+    let identifiers: [Identifier]
+}
+
+struct Identifier: Codable {
+    let identifier: String
 }
 
 struct PreferredLocale: Codable {
