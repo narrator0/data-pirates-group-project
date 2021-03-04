@@ -154,7 +154,7 @@ extension ViewController: WKNavigationDelegate {
     
     func goToFirstTimeLoginView(_ user: User) {
         let storyboard = UIStoryboard (name: "Main", bundle: nil)
-        guard let firstTimeViewController = storyboard.instantiateViewController(withIdentifier: "FirstTimeLoginFormViewController") as? FirstTimeLoginViewController else
+        guard let firstTimeViewController = storyboard.instantiateViewController(withIdentifier: "firstTimeViewController") as? FirstTimeLoginViewController else
         {
             assertionFailure("couldn't find vc")
             return
@@ -167,7 +167,7 @@ extension ViewController: WKNavigationDelegate {
     func goToHome() {
         // login should go to home vc
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let mainTabController = storyboard.instantiateViewController(withIdentifier: "FirstTimeLoginFormViewController") as? MainTabController else
+        guard let mainTabController = storyboard.instantiateViewController(withIdentifier: "mainTabViewController") as? MainTabController else
         {
             assertionFailure("couldn't find vc")
             return
