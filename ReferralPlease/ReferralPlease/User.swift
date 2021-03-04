@@ -7,6 +7,7 @@
 
 import Foundation
 import Firebase
+import FirebaseFirestore
 
 class User {
     var userID: String
@@ -23,6 +24,42 @@ class User {
     var db = Firestore.firestore()
     static var db = Firestore.firestore()
     
+    static func getAll(complete: @escaping (_ currUsers: [User]) -> Void) -> Void {
+        // dispatch queue
+        var mentors: [User] = []
+        db.collection("users").whereField("role", isEqualTo: "mentor").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting doc on user: \(err)")
+                
+                DispatchQueue.main.async {
+                    complete([])
+                }
+            } else {
+                if let documents = querySnapshot?.documents {
+                    for document in documents {
+                        let data = document.data()
+                        let user = User()
+                        user.firstName = data["first"] as? String ?? ""
+                        user.lastName = data["last"] as? String ?? ""
+                        user.userID = data["userID"] as? String ?? ""
+                        user.role = data["role"] as? String ?? ""
+                        user.email = data["email"] as? String ?? ""
+                        user.company = data["company"] as? String ?? ""
+                        user.position = data["position"] as? String ?? ""
+                        user.about = data["about"] as? String ?? ""
+                        user.avatarURL = data["avatarURL"] as? String ?? ""
+                        
+                        mentors.append(user)
+                    }
+                }
+                
+                DispatchQueue.main.async {
+                    complete(mentors)
+                }
+            }
+        }
+    }
+
     static func currentUser(complete: @escaping (_ user: User) -> Void) -> Void {
         if Storage.currentUserID != nil {
             self.get(Storage.currentUserID ?? "") { user in
@@ -127,4 +164,5 @@ class User {
             return
         }
     }
+    
 }
