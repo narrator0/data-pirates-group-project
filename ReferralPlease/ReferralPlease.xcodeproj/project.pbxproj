@@ -225,7 +225,7 @@
 				CD2D9CB125DF602900EA47DD /* Frameworks */,
 				CD2D9CB225DF602900EA47DD /* Resources */,
 				34F7FEA8D285EEF9349EBE16 /* [CP] Embed Pods Frameworks */,
-				E5D72B3185136566864EA234 /* [CP] Copy Pods Resources */,
+				04B743962E02B55337FC9899 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -264,7 +264,7 @@
 				CD2D9CD225DF602B00EA47DD /* Frameworks */,
 				CD2D9CD325DF602B00EA47DD /* Resources */,
 				961516C0908A39D808507564 /* [CP] Embed Pods Frameworks */,
-				368D3834A68794D168D9CAED /* [CP] Copy Pods Resources */,
+				0E574AC870AD002D3530F739 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -347,6 +347,40 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		04B743962E02B55337FC9899 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReferralPlease/Pods-ReferralPlease-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReferralPlease/Pods-ReferralPlease-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReferralPlease/Pods-ReferralPlease-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0E574AC870AD002D3530F739 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReferralPlease-ReferralPleaseUITests/Pods-ReferralPlease-ReferralPleaseUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReferralPlease-ReferralPleaseUITests/Pods-ReferralPlease-ReferralPleaseUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReferralPlease-ReferralPleaseUITests/Pods-ReferralPlease-ReferralPleaseUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		1DDF6BD5574D92C6239E5131 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -408,23 +442,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReferralPlease/Pods-ReferralPlease-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		368D3834A68794D168D9CAED /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ReferralPlease-ReferralPleaseUITests/Pods-ReferralPlease-ReferralPleaseUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ReferralPlease-ReferralPleaseUITests/Pods-ReferralPlease-ReferralPleaseUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReferralPlease-ReferralPleaseUITests/Pods-ReferralPlease-ReferralPleaseUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		961516C0908A39D808507564 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -440,23 +457,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReferralPlease-ReferralPleaseUITests/Pods-ReferralPlease-ReferralPleaseUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E5D72B3185136566864EA234 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ReferralPlease/Pods-ReferralPlease-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ReferralPlease/Pods-ReferralPlease-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReferralPlease/Pods-ReferralPlease-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FCF2DC6340BDB9DC2CF7A644 /* [CP] Check Pods Manifest.lock */ = {
@@ -596,6 +596,8 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				EXCLUDED_ARCHS = arm64;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
