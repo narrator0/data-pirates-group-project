@@ -12,6 +12,7 @@
 		1A8524E925E627B400CBE9B9 /* LinkedInProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8524E825E627B400CBE9B9 /* LinkedInProfileModel.swift */; };
 		1A8524F325E6292C00CBE9B9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8524F225E6292C00CBE9B9 /* Constants.swift */; };
 		1AC3B2F825E31A87006411C9 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC3B2F725E31A87006411C9 /* CreateAccountViewController.swift */; };
+		20176E5E25F0E71D00075ED8 /* QuestionaresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20176E5D25F0E71D00075ED8 /* QuestionaresViewController.swift */; };
 		204F4AFF25EA419B00366312 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F4AFE25EA419B00366312 /* MainTabController.swift */; };
 		204F4B0425EA572200366312 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F4B0325EA572200366312 /* SettingsViewController.swift */; };
 		20CBE01425E7764800E03DD2 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CBE01325E7764800E03DD2 /* TableViewCell.swift */; };
@@ -59,6 +60,7 @@
 		1A8524E825E627B400CBE9B9 /* LinkedInProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedInProfileModel.swift; sourceTree = "<group>"; };
 		1A8524F225E6292C00CBE9B9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1AC3B2F725E31A87006411C9 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		20176E5D25F0E71D00075ED8 /* QuestionaresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionaresViewController.swift; sourceTree = "<group>"; };
 		204F4AFE25EA419B00366312 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
 		204F4B0325EA572200366312 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		20CBE01325E7764800E03DD2 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				CD745D4B25ECC57E002FC3D8 /* User.swift */,
 				CD7DC2FC25EA1E1700C19F15 /* FirstTimeLoginViewController.swift */,
 				CDB0956025EE039C00BB0175 /* FirstTimeLoginFormViewController.swift */,
+				20176E5D25F0E71D00075ED8 /* QuestionaresViewController.swift */,
 			);
 			path = ReferralPlease;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 				CD745D4725ECBDFE002FC3D8 /* LinkedInOAuth.swift in Sources */,
 				20CBE01925E7788A00E03DD2 /* HomePageViewController.swift in Sources */,
 				1AC3B2F825E31A87006411C9 /* CreateAccountViewController.swift in Sources */,
+				20176E5E25F0E71D00075ED8 /* QuestionaresViewController.swift in Sources */,
 				CD745D5725ED6954002FC3D8 /* Storage.swift in Sources */,
 				CD7DC2FD25EA1E1700C19F15 /* FirstTimeLoginViewController.swift in Sources */,
 				CD2D9CBC25DF602900EA47DD /* ViewController.swift in Sources */,
