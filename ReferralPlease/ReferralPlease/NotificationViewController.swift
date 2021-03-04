@@ -7,23 +7,53 @@
 
 import UIKit
 
-class NotificationViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+class NotificationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var currentMenteesTableview: UITableView!
+    @IBOutlet weak var pendingRequestsTableview: UITableView!
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
+    }
+    func tableView(_ tableView: UITableView,
+                   heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "currentMenteesCell", for: indexPath) as? TableViewCell else {return UITableViewCell()}
+        cell.layer.cornerRadius = 5
+        // cell.userName.text = "test user name"
+        // cell.userDescription.text = "user description"
+        cell.profileImage.image = UIImage(named: "image1")
+        cell.profileImage.layer.cornerRadius = cell.profileImage.frame.size.width / 2
+        cell.profileImage.clipsToBounds = true
+            
+        return cell
     }
-    */
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    
+        /*
+        // for button shape
+        declineButton.layer.cornerRadius = 5
+        acceptButton.layer.cornerRadius = 5
+        // for button shadow
+        declineButton.layer.shadowColor = UIColor.black.cgColor
+        declineButton.layer.shadowOffset = CGSize(width: 0.0, height: 6.0)
+        declineButton.layer.shadowRadius = 8
+        declineButton.layer.shadowOpacity = 0.5
+        acceptButton.layer.shadowColor = UIColor.black.cgColor
+        acceptButton.layer.shadowOffset = CGSize(width: 0.0, height: 6.0)
+        acceptButton.layer.shadowRadius = 8
+        acceptButton.layer.shadowOpacity = 0.5*/
+        
+        
+
+    }
+    
 
 }
