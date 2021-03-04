@@ -95,15 +95,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="368" height="105"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j2p-zm-VFa">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="j2p-zm-VFa">
                                                     <rect key="frame" x="2" y="2" width="100" height="101"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="100" id="Awm-28-lXJ"/>
                                                         <constraint firstAttribute="width" constant="100" id="emA-Mu-Nc8"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="as6-z0-8ZX">
-                                                    <rect key="frame" x="112" y="42.333333333333336" width="226" height="21.333333333333336"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="as6-z0-8ZX">
+                                                    <rect key="frame" x="112" y="40" width="226" height="21.333333333333336"/>
                                                     <fontDescription key="fontDescription" name="NotoSansOriya" family="Noto Sans Oriya" pointSize="15"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -112,6 +112,13 @@
                                                     <rect key="frame" x="112" y="3.9999999999999982" width="246" height="28.333333333333329"/>
                                                     <fontDescription key="fontDescription" name="NotoSansOriya-Bold" family="Noto Sans Oriya" pointSize="20"/>
                                                     <color key="textColor" red="0.93333333333333335" green="0.42352941176470588" blue="0.30196078431372547" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="position" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="45L-tk-myT">
+                                                    <rect key="frame" x="112" y="69" width="226" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="NotoSansOriya" family="Noto Sans Oriya" pointSize="15"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -132,6 +139,7 @@
                                             <outlet property="profileImage" destination="j2p-zm-VFa" id="x0k-0y-jNl"/>
                                             <outlet property="userDescription" destination="as6-z0-8ZX" id="epz-2p-3Ce"/>
                                             <outlet property="userName" destination="ACY-DX-Grb" id="aPD-Qo-eif"/>
+                                            <outlet property="userPosition" destination="45L-tk-myT" id="u6t-zd-ZPS"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
