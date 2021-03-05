@@ -130,9 +130,9 @@ class MentorRequests {
     }
     
     
-    static func createStatus(_ mentorID: String, _ menteeID: String) {
+    static func createRequest(_ mentorID: String, _ menteeID: String) {
         let db = Firestore.firestore()
-        db.collection("mentorStatus").document().setData([
+        db.collection("mentorStatus").document(mentorID + menteeID).setData([
             "menteeID": menteeID,
             "mentorID": mentorID,
             "accepted": false
@@ -145,4 +145,5 @@ class MentorRequests {
         }
         
     }
+    
 }
