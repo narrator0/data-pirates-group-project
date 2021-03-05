@@ -11,7 +11,7 @@ import FirebaseCore
 import FirebaseFirestore
 import SDWebImage
 
-class HomePageViewController: UIViewController, UITableViewDataSource {
+class HomePageViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var db: Firestore?
     var currentUsers: [User] = []
@@ -25,8 +25,8 @@ class HomePageViewController: UIViewController, UITableViewDataSource {
         Firestore.firestore().settings = settings
         db = Firestore.firestore()
         
-        tableView.dataSource = self
-        print("home page view called")
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
         
         // dispatch queue
         User.getAll() { mentors in
@@ -34,8 +34,6 @@ class HomePageViewController: UIViewController, UITableViewDataSource {
             self.tableView.reloadData()
         }
     }
-    
-
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return currentUsers.count
@@ -61,5 +59,17 @@ class HomePageViewController: UIViewController, UITableViewDataSource {
 
         return cell
     }
-
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard (name: "Main", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "profilePageViewController") as? ProfilePageViewController else
+        {
+            assertionFailure("couldn't find vc")
+            return
+        }
+        
+        vc.user = self.currentUsers[indexPath.row]
+        vc.isPublic = true
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
