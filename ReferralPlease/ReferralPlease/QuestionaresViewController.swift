@@ -29,6 +29,8 @@ class QuestionaresViewController: UIViewController, UIPickerViewDelegate, UIPick
     var racePickerView = UIPickerView()
     var genderPickerView = UIPickerView()
     var yearPickerView = UIPickerView()
+    var user: User?
+
 
     
     
