@@ -32,7 +32,7 @@ class MentorRequests {
             MentorRequests.requests?.mentorID = userID
         }
         let db = Firestore.firestore()
-        db.collection("mentorStatus").whereField("mentorID", isEqualTo: MentorRequests.requests?.mentorID as Any).whereField("status", isEqualTo: true)
+        db.collection("mentorStatus").whereField("mentorID", isEqualTo: MentorRequests.requests?.mentorID as Any).whereField("accepted", isEqualTo: true)
                 .getDocuments() { (querySnapshot, err) in
                     if let err = err {
                         print("Error getting documents: \(err)")
@@ -54,7 +54,7 @@ class MentorRequests {
             }
         }
         
-        db.collection("mentorStatus").whereField("mentorID", isEqualTo: MentorRequests.requests?.mentorID as Any).whereField("status", isEqualTo: false)
+        db.collection("mentorStatus").whereField("mentorID", isEqualTo: MentorRequests.requests?.mentorID as Any).whereField("accepted", isEqualTo: false)
                 .getDocuments() { (querySnapshot, err) in
                     if let err = err {
                         print("Error getting documents: \(err)")

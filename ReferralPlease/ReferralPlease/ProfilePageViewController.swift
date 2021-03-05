@@ -20,6 +20,7 @@ class ProfilePageViewController: UIViewController {
     @IBOutlet weak var userPositionTextField: UITextField!
     @IBOutlet weak var userCompanyTextField: UITextField!
     var user = User()
+    var isPublic = false
 
     
     override func viewDidLoad() {
@@ -52,9 +53,14 @@ class ProfilePageViewController: UIViewController {
         self.userPositionTextField.borderStyle = .none
         self.userCompanyTextField.borderStyle = .none
         
-        User.currentUser() { user in
-            self.user = user
+        if self.isPublic {
             self.renderText()
+        }
+        else {
+            User.currentUser() { user in
+                self.user = user
+                self.renderText()
+            }
         }
     }
     
