@@ -6,11 +6,15 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseCore
+import FirebaseFirestore
 
 class QuestionaresViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    var db: Firestore?
+    @IBOutlet weak var vcTitle: UILabel!
     
-
     @IBOutlet weak var companyTextField: UITextField!
     @IBOutlet weak var raceTextField: UITextField!
     @IBOutlet weak var genderTextField: UITextField!
@@ -30,6 +34,24 @@ class QuestionaresViewController: UIViewController, UIPickerViewDelegate, UIPick
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        let settings = FirestoreSettings()
+        Firestore.firestore().settings = settings
+        db = Firestore.firestore()
+        
+        let docRef = db?.collection("users").document(Storage.currentUserID ?? "")
+
+        docRef?.getDocument { (document, error) in
+            if let document = document, document.exists {
+                if let userRole = document.get("role") {
+                    if (userRole as? String == "mentee") {
+                        self.vcTitle.text = "Your Preferences For Mentor: "
+                    }
+                }
+            }
+        }
+        
         companyTextField.inputView = companyPickerView
         raceTextField.inputView = racePickerView
         genderTextField.inputView = genderPickerView
@@ -115,16 +137,25 @@ class QuestionaresViewController: UIViewController, UIPickerViewDelegate, UIPick
         self.view.endEditing(true)
     }
     
-    
+    @IBAction func nextButtonPressed(_ sender: Any) {
+        let company = self.companyTextField.text ?? "No Preference"
+        let race = self.raceTextField.text ?? "No Preference"
+        let gender = self.genderTextField.text ?? "No Preference"
+        let years = self.yearTextField.text ?? "No Preference"
+        self.db?.collection("users").document(Storage.currentUserID ?? "").setData([
+            "company": company,
+            "race": race,
+            "gender": gender,
+            "years": years
+        ], merge: true) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(String(describing: Storage.currentUserID) )")
+            }
+        }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }
