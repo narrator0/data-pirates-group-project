@@ -9,7 +9,6 @@ import UIKit
 import FirebaseFirestore
 
 
-
 class NotificationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var currentMenteesTableview: UITableView!
@@ -48,6 +47,15 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
     }
     
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        MentorRequests.update()
+
+        let mentees  = MentorRequests.shared.getMentees()
+        let requestees = MentorRequests.shared.getRequestees()
+        
+    }
 
     
         /*
@@ -64,6 +72,12 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
         acceptButton.layer.shadowRadius = 8
         acceptButton.layer.shadowOpacity = 0.5*/
         
+        
+
+
+    }
+    
+
 
 }
 

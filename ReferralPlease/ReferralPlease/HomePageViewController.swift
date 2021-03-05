@@ -12,11 +12,14 @@ import FirebaseFirestore
 import SDWebImage
 
 class HomePageViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+
     
+    
+
     var user: User?
     var db: Firestore?
     var currentUsers: [User] = []
-    
+
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,30 +27,30 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         let settings = FirestoreSettings()
         Firestore.firestore().settings = settings
         db = Firestore.firestore()
-        
-        tableView.dataSource = self
-        User.currentUser() {
-            userRecord in
-            MentorRequests.update(userRecord.userID)
-        }
-       
-
-
         print("home page view called")
         self.tableView.dataSource = self
         self.tableView.delegate = self
 
+        User.currentUser(){
+            userRecord in
+            MentorRequests.update(userRecord.userID)
+        }
+        
         
         // dispatch queue
         User.getAll() { mentors in
             self.currentUsers = mentors
             self.tableView.reloadData()
+            
         }
 
     }
 
+
+    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return currentUsers.count
+        return self.currentUsers.count
     }
     func tableView(_ tableView: UITableView,
                    heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -58,7 +61,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? TableViewCell else {return UITableViewCell()}
         
         cell.layer.cornerRadius = 5
-        let user = currentUsers[indexPath.row]
+        let user = self.currentUsers[indexPath.row]
         let firstname = user.firstName
         let lastname = user.lastName
         cell.userName.text = firstname + " " + lastname
@@ -84,3 +87,4 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         navigationController?.pushViewController(vc, animated: true)
     }
 }
+
