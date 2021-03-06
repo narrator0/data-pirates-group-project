@@ -136,6 +136,7 @@ extension ViewController: WKNavigationDelegate {
     }
 
     func handleAuth(linkedInAuthorizationCode: String) {
+       
         LinkedInOAuth.getAccessToken(code: linkedInAuthorizationCode) { token in
             LinkedInOAuth.getUserProfile(token: token) { user in
                 // login success

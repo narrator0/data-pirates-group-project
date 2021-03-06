@@ -6,12 +6,24 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 
 class NotificationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var currentMenteesTableview: UITableView!
     @IBOutlet weak var pendingRequestsTableview: UITableView!
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        MentorRequests.update()
+
+        let mentees  = MentorRequests.shared.getMentees()
+        let requestees = MentorRequests.shared.getRequestees()
+        
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4
@@ -34,8 +46,17 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
         return cell
     }
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        MentorRequests.update()
+
+        let mentees  = MentorRequests.shared.getMentees()
+        let requestees = MentorRequests.shared.getRequestees()
+        
+    }
+
     
         /*
         // for button shape
@@ -53,7 +74,10 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
         
         
 
+
     }
     
 
+
 }
+

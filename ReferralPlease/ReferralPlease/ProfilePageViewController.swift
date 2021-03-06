@@ -19,9 +19,9 @@ class ProfilePageViewController: UIViewController {
     @IBOutlet weak var userNameText: UILabel!
     @IBOutlet weak var userPositionTextField: UITextField!
     @IBOutlet weak var userCompanyTextField: UITextField!
-    
     var user = User()
     var isPublic = false
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +54,14 @@ class ProfilePageViewController: UIViewController {
         self.userCompanyTextField.borderStyle = .none
         
         if self.isPublic {
+            
             self.renderText()
+            User.currentUser() { user in
+                if (user.role == "mentee" && self.user.role == "mentor") {
+                    self.requestBtn.isHidden = false
+                }
+                
+            }
         }
         else {
             User.currentUser() { user in
@@ -71,4 +78,11 @@ class ProfilePageViewController: UIViewController {
         self.userPositionTextField.text = self.user.position
         self.aboutText.text = self.user.about
     }
+    
+    @IBAction func sendRequest() {
+        User.currentUser() { user in
+            MentorRequests.createRequest(self.user.userID, user.userID)
+        }
+    }
+    
 }
