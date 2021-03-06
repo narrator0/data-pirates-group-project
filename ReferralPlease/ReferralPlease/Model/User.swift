@@ -151,7 +151,7 @@ class User {
     
     func update(field: String, value: String) -> Void {
         switch field {
-        case "role", "company", "position", "about":
+        case "role", "company", "position", "about", "race", "gender", "years":
             self.db.collection("users").document(self.userID).setData([field: value], merge: true) { err in
                 if let err = err {
                     print("Error updating \(field) for: \(self.userID)")
