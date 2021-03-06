@@ -175,31 +175,16 @@
 		CD2D9CB625DF602900EA47DD /* ReferralPlease */ = {
 			isa = PBXGroup;
 			children = (
-				CD745D5625ED6954002FC3D8 /* Storage.swift */,
+				CD2D9CC025DF602B00EA47DD /* Assets.xcassets */,
 				CD14C74925E565C000BCED8E /* GoogleService-Info.plist */,
+				CD2D9CC525DF602B00EA47DD /* Info.plist */,
+				CDE6D31125F3297100D934D7 /* Utils */,
+				CDE6D31025F3296300D934D7 /* Model */,
+				CDE6D30F25F3293900D934D7 /* View */,
 				CD2D9CB725DF602900EA47DD /* AppDelegate.swift */,
 				CD2D9CB925DF602900EA47DD /* SceneDelegate.swift */,
-				CD2D9CBB25DF602900EA47DD /* ViewController.swift */,
-				1AC3B2F725E31A87006411C9 /* CreateAccountViewController.swift */,
 				CD2D9CBD25DF602900EA47DD /* Main.storyboard */,
-				20CBE01325E7764800E03DD2 /* TableViewCell.swift */,
-				CD2D9CC025DF602B00EA47DD /* Assets.xcassets */,
 				CD2D9CC225DF602B00EA47DD /* LaunchScreen.storyboard */,
-				CD2D9CC525DF602B00EA47DD /* Info.plist */,
-				1A8524E325E6279000CBE9B9 /* LinkedInEmailModel.swift */,
-				1A8524E825E627B400CBE9B9 /* LinkedInProfileModel.swift */,
-				1A8524F225E6292C00CBE9B9 /* Constants.swift */,
-				20CBE01825E7788A00E03DD2 /* HomePageViewController.swift */,
-				20CBE01D25E7933400E03DD2 /* ProfilePageViewController.swift */,
-				204F4AFE25EA419B00366312 /* MainTabController.swift */,
-				204F4B0325EA572200366312 /* SettingsViewController.swift */,
-				CD745D4625ECBDFE002FC3D8 /* LinkedInOAuth.swift */,
-				CD745D4B25ECC57E002FC3D8 /* User.swift */,
-				5EC145B725EDDD0000748196 /* MentorRequests.swift */,
-				CD7DC2FC25EA1E1700C19F15 /* FirstTimeLoginViewController.swift */,
-				CDB0956025EE039C00BB0175 /* FirstTimeLoginFormViewController.swift */,
-				20176E5D25F0E71D00075ED8 /* QuestionaresViewController.swift */,
-				2017645625F2206300E6900B /* MatchingViewController.swift */,
 			);
 			path = ReferralPlease;
 			sourceTree = "<group>";
@@ -220,6 +205,45 @@
 				CD2D9CDB25DF602C00EA47DD /* Info.plist */,
 			);
 			path = ReferralPleaseUITests;
+			sourceTree = "<group>";
+		};
+		CDE6D30F25F3293900D934D7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1AC3B2F725E31A87006411C9 /* CreateAccountViewController.swift */,
+				CD2D9CBB25DF602900EA47DD /* ViewController.swift */,
+				20CBE01325E7764800E03DD2 /* TableViewCell.swift */,
+				20CBE01825E7788A00E03DD2 /* HomePageViewController.swift */,
+				20CBE01D25E7933400E03DD2 /* ProfilePageViewController.swift */,
+				204F4AFE25EA419B00366312 /* MainTabController.swift */,
+				204F4B0325EA572200366312 /* SettingsViewController.swift */,
+				CD7DC2FC25EA1E1700C19F15 /* FirstTimeLoginViewController.swift */,
+				CDB0956025EE039C00BB0175 /* FirstTimeLoginFormViewController.swift */,
+				20176E5D25F0E71D00075ED8 /* QuestionaresViewController.swift */,
+				2017645625F2206300E6900B /* MatchingViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CDE6D31025F3296300D934D7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1A8524E325E6279000CBE9B9 /* LinkedInEmailModel.swift */,
+				1A8524E825E627B400CBE9B9 /* LinkedInProfileModel.swift */,
+				CD745D4B25ECC57E002FC3D8 /* User.swift */,
+				5EC145B725EDDD0000748196 /* MentorRequests.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CDE6D31125F3297100D934D7 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CD745D5625ED6954002FC3D8 /* Storage.swift */,
+				1A8524F225E6292C00CBE9B9 /* Constants.swift */,
+				CD745D4625ECBDFE002FC3D8 /* LinkedInOAuth.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
