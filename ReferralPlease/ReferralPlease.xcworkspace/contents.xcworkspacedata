@@ -4,6 +4,105 @@
    <FileRef
       location = "group:ReferralPlease.xcodeproj">
    </FileRef>
+   <Group
+      location = "group:ReferralPlease"
+      name = "ReferralPlease">
+      <FileRef
+         location = "group:ReferralPlease/Assets.xcassets">
+      </FileRef>
+      <FileRef
+         location = "group:ReferralPlease/GoogleService-Info.plist">
+      </FileRef>
+      <FileRef
+         location = "group:ReferralPlease/Info.plist">
+      </FileRef>
+      <Group
+         location = "group:ReferralPlease/Utils"
+         name = "Utils">
+         <FileRef
+            location = "group:ReferralPlease/Utils/Storage.swift">
+         </FileRef>
+         <FileRef
+            location = "group:ReferralPlease/Utils/Constants.swift">
+         </FileRef>
+         <FileRef
+            location = "group:ReferralPlease/Utils/LinkedInOAuth.swift">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:ReferralPlease/Model"
+         name = "Model">
+         <FileRef
+            location = "group:ReferralPlease/Model/LinkedInEmailModel.swift">
+         </FileRef>
+         <FileRef
+            location = "group:ReferralPlease/Model/LinkedInProfileModel.swift">
+         </FileRef>
+         <FileRef
+            location = "group:ReferralPlease/Model/User.swift">
+         </FileRef>
+         <FileRef
+            location = "group:ReferralPlease/Model/MentorRequests.swift">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:ReferralPlease/View"
+         name = "View">
+         <FileRef
+            location = "group:ReferralPlease/View/CreateAccountViewController.swift">
+         </FileRef>
+         <FileRef
+            location = "group:ReferralPlease/View/ViewController.swift">
+         </FileRef>
+         <FileRef
+            location = "group:ReferralPlease/View/TableViewCell.swift">
+         </FileRef>
+         <FileRef
+            location = "group:ReferralPlease/View/HomePageViewController.swift">
+         </FileRef>
+         <FileRef
+            location = "group:ReferralPlease/View/ProfilePageViewController.swift">
+         </FileRef>
+         <FileRef
+            location = "group:ReferralPlease/View/MainTabController.swift">
+         </FileRef>
+         <FileRef
+            location = "group:ReferralPlease/View/SettingsViewController.swift">
+         </FileRef>
+         <FileRef
+            location = "group:ReferralPlease/View/FirstTimeLoginViewController.swift">
+         </FileRef>
+         <FileRef
+            location = "group:ReferralPlease/View/FirstTimeLoginFormViewController.swift">
+         </FileRef>
+         <FileRef
+            location = "group:ReferralPlease/View/QuestionaresViewController.swift">
+         </FileRef>
+         <FileRef
+            location = "group:ReferralPlease/View/MatchingViewController.swift">
+         </FileRef>
+      </Group>
+      <FileRef
+         location = "group:ReferralPlease/AppDelegate.swift">
+      </FileRef>
+      <FileRef
+         location = "group:ReferralPlease/SceneDelegate.swift">
+      </FileRef>
+      <Group
+         location = "group:ReferralPlease"
+         name = "Main.storyboard">
+         <FileRef
+            location = "group:ReferralPlease/Base.lproj/Main.storyboard">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:ReferralPlease"
+         name = "LaunchScreen.storyboard">
+         <FileRef
+            location = "group:ReferralPlease/Base.lproj/LaunchScreen.storyboard">
+         </FileRef>
+      </Group>
+   </Group>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>

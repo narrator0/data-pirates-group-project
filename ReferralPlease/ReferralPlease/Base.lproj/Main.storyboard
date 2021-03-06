@@ -743,27 +743,167 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="pLY-ax-NTl">
+                                <rect key="frame" x="139" y="172.33333333333334" width="150" height="150.00000000000003"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="TzV-B8-Ogd"/>
+                                    <constraint firstAttribute="width" constant="150" id="bIp-J4-So8"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="MENTOR_NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9k1-gT-sCa">
+                                <rect key="frame" x="145" y="357.33333333333331" width="138" height="26"/>
+                                <fontDescription key="fontDescription" name="NotoSansOriya" family="Noto Sans Oriya" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="COMPANY_NAME @ POSITION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pq9-IR-PTo">
+                                <rect key="frame" x="79.666666666666686" y="403.33333333333331" width="269" height="26"/>
+                                <fontDescription key="fontDescription" name="NotoSansOriya" family="Noto Sans Oriya" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0cF-LX-8Yc">
+                                <rect key="frame" x="101.66666666666669" y="520.33333333333337" width="225" height="35"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="No">
+                                            <attributes>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <font key="NSFont" size="16" name="Helvetica"/>
+                                                <integer key="NSUnderline" value="1"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content=" ">
+                                            <attributes>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <font key="NSFont" size="16" name="NotoSansOriya"/>
+                                                <integer key="NSUnderline" value="1"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="thanks">
+                                            <attributes>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <font key="NSFont" size="16" name="Helvetica"/>
+                                                <integer key="NSUnderline" value="1"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="! ">
+                                            <attributes>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <font key="NSFont" size="16" name="NotoSansOriya"/>
+                                                <integer key="NSUnderline" value="1"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="I">
+                                            <attributes>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <font key="NSFont" size="16" name="Helvetica"/>
+                                                <integer key="NSUnderline" value="1"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content=" ">
+                                            <attributes>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <font key="NSFont" size="16" name="NotoSansOriya"/>
+                                                <integer key="NSUnderline" value="1"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="can">
+                                            <attributes>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <font key="NSFont" size="16" name="Helvetica"/>
+                                                <integer key="NSUnderline" value="1"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content=" ">
+                                            <attributes>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <font key="NSFont" size="16" name="NotoSansOriya"/>
+                                                <integer key="NSUnderline" value="1"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="find">
+                                            <attributes>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <font key="NSFont" size="16" name="Helvetica"/>
+                                                <integer key="NSUnderline" value="1"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content=" ">
+                                            <attributes>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <font key="NSFont" size="16" name="NotoSansOriya"/>
+                                                <integer key="NSUnderline" value="1"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="my">
+                                            <attributes>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <font key="NSFont" size="16" name="Helvetica"/>
+                                                <integer key="NSUnderline" value="1"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content=" ">
+                                            <attributes>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <font key="NSFont" size="16" name="NotoSansOriya"/>
+                                                <integer key="NSUnderline" value="1"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="own">
+                                            <attributes>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <font key="NSFont" size="16" name="Helvetica"/>
+                                                <integer key="NSUnderline" value="1"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content=".">
+                                            <attributes>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <font key="NSFont" size="16" name="NotoSansOriya"/>
+                                                <integer key="NSUnderline" value="1"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="cancelButtonPressed:" destination="dY1-lB-wy6" eventType="touchUpInside" id="RFX-oQ-7xE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="W5s-R3-zGD"/>
                         <color key="backgroundColor" red="0.23921568627450979" green="0.3529411764705882" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="GeK-JV-cWU" firstAttribute="top" secondItem="W5s-R3-zGD" secondAttribute="top" constant="40" id="09W-of-xIB"/>
                             <constraint firstItem="zGC-nN-C9Q" firstAttribute="centerX" secondItem="Tbl-lY-jfZ" secondAttribute="centerX" id="610-5I-WsC"/>
+                            <constraint firstItem="pLY-ax-NTl" firstAttribute="centerX" secondItem="Tbl-lY-jfZ" secondAttribute="centerX" id="6aQ-VT-YzL"/>
+                            <constraint firstItem="Pq9-IR-PTo" firstAttribute="top" secondItem="9k1-gT-sCa" secondAttribute="bottom" constant="20" id="Jsk-88-tqx"/>
+                            <constraint firstItem="9k1-gT-sCa" firstAttribute="top" secondItem="pLY-ax-NTl" secondAttribute="bottom" constant="35" id="Kcf-zI-zAD"/>
                             <constraint firstItem="GeK-JV-cWU" firstAttribute="centerX" secondItem="Tbl-lY-jfZ" secondAttribute="centerX" id="LF1-Ea-JVf"/>
+                            <constraint firstItem="9k1-gT-sCa" firstAttribute="centerX" secondItem="Tbl-lY-jfZ" secondAttribute="centerX" id="MZ7-xE-Cdx"/>
+                            <constraint firstItem="pLY-ax-NTl" firstAttribute="centerX" secondItem="Tbl-lY-jfZ" secondAttribute="centerX" id="OMT-Hs-Z4c"/>
+                            <constraint firstItem="0cF-LX-8Yc" firstAttribute="top" secondItem="zGC-nN-C9Q" secondAttribute="bottom" constant="8" id="Vh4-we-tmN"/>
+                            <constraint firstItem="0cF-LX-8Yc" firstAttribute="centerX" secondItem="Tbl-lY-jfZ" secondAttribute="centerX" id="ZW9-EM-r6G"/>
+                            <constraint firstItem="zGC-nN-C9Q" firstAttribute="top" secondItem="Pq9-IR-PTo" secondAttribute="bottom" constant="40" id="axZ-TX-3om"/>
                             <constraint firstItem="zGC-nN-C9Q" firstAttribute="top" secondItem="GeK-JV-cWU" secondAttribute="bottom" constant="360" id="bys-9O-OVf"/>
+                            <constraint firstItem="Pq9-IR-PTo" firstAttribute="centerX" secondItem="Tbl-lY-jfZ" secondAttribute="centerX" id="eyZ-69-kPn"/>
+                            <constraint firstItem="pLY-ax-NTl" firstAttribute="top" secondItem="GeK-JV-cWU" secondAttribute="bottom" constant="60" id="fIK-sx-ATH"/>
                             <constraint firstItem="W5s-R3-zGD" firstAttribute="trailing" secondItem="zGC-nN-C9Q" secondAttribute="trailing" constant="50" id="giU-tI-qtB"/>
                             <constraint firstItem="zGC-nN-C9Q" firstAttribute="leading" secondItem="W5s-R3-zGD" secondAttribute="leading" constant="50" id="omN-i8-n8W"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="iZl-c5-ckO"/>
                     <connections>
-                        <outlet property="matchingBtn" destination="zGC-nN-C9Q" id="eZ4-vW-eHS"/>
+                        <outlet property="matchingBtn" destination="zGC-nN-C9Q" id="ZGP-ai-yVM"/>
                         <outlet property="matchingLabel" destination="GeK-JV-cWU" id="VX9-l9-t8o"/>
+                        <outlet property="mentorImage" destination="pLY-ax-NTl" id="Gb8-jq-cyu"/>
+                        <outlet property="mentorNameLabel" destination="9k1-gT-sCa" id="1KL-cw-kyF"/>
+                        <outlet property="mentorSubtitle" destination="Pq9-IR-PTo" id="hq4-QQ-J43"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="57X-1A-O4L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2417" y="87"/>
+            <point key="canvasLocation" x="2416.8224299065419" y="86.825053995680349"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ljp-G9-Jz4">
