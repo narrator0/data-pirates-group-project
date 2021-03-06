@@ -141,25 +141,21 @@ class QuestionaresViewController: UIViewController, UIPickerViewDelegate, UIPick
         let race = self.raceTextField.text ?? "No Preference"
         let gender = self.genderTextField.text ?? "No Preference"
         let years = self.yearTextField.text ?? "No Preference"
-        self.db?.collection("users").document(Storage.currentUserID ?? "").setData([
-            "company": company,
-            "race": race,
-            "gender": gender,
-            "years": years
-        ], merge: true) { err in
-            if let err = err {
-                print("Error adding document: \(err)")
-            } else {
-                print("Document added with ID: \(String(describing: Storage.currentUserID) )")
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                guard let vc = storyboard.instantiateViewController(withIdentifier: "matchingViewController") as? MatchingViewController else
-                {
-                    assertionFailure("couldn't find vc")
-                    return
-                }
-                
-                self.navigationController?.pushViewController(vc, animated: true)
+        
+        User.currentUser() { user in
+            user.update(field: "company", value: company)
+            user.update(field: "race", value: race)
+            user.update(field: "gender", value: gender)
+            user.update(field: "years", value: years)
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            guard let vc = storyboard.instantiateViewController(withIdentifier: "matchingViewController") as? MatchingViewController else
+            {
+                assertionFailure("couldn't find vc")
+                return
             }
+            
+            self.navigationController?.pushViewController(vc, animated: true)
         }
 
     }
