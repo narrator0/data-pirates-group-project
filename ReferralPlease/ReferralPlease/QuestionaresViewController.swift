@@ -29,6 +29,8 @@ class QuestionaresViewController: UIViewController, UIPickerViewDelegate, UIPick
     var racePickerView = UIPickerView()
     var genderPickerView = UIPickerView()
     var yearPickerView = UIPickerView()
+    var user: User?
+
 
     
     
@@ -152,6 +154,14 @@ class QuestionaresViewController: UIViewController, UIPickerViewDelegate, UIPick
                 print("Error adding document: \(err)")
             } else {
                 print("Document added with ID: \(String(describing: Storage.currentUserID) )")
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                guard let vc = storyboard.instantiateViewController(withIdentifier: "matchingViewController") as? MatchingViewController else
+                {
+                    assertionFailure("couldn't find vc")
+                    return
+                }
+                
+                self.navigationController?.pushViewController(vc, animated: true)
             }
         }
 
