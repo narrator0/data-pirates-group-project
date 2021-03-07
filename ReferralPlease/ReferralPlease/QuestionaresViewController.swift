@@ -20,7 +20,7 @@ class QuestionaresViewController: UIViewController, UIPickerViewDelegate, UIPick
     @IBOutlet weak var genderTextField: UITextField!
     @IBOutlet weak var yearTextField: UITextField!
     
-    var companyList = ["FAANG", "No Preference"]
+    var companyList = ["Facebook", "Apple", "Amazon", "Netflix", "Google", "No Preference"]
     var raceList = ["White", "Asian", "Black or African American", "Native Hawaiian or Other Pacific Islander", "American Indian or Alaska Native", "No Preference"]
     var genderList = ["Male", "Female", "No Preference"]
     var yearList = ["1-3 yrs", "4-9 yrs", "10+ yrs",  "No Preference"]
@@ -30,9 +30,6 @@ class QuestionaresViewController: UIViewController, UIPickerViewDelegate, UIPick
     var genderPickerView = UIPickerView()
     var yearPickerView = UIPickerView()
     var user: User?
-
-
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,10 +56,10 @@ class QuestionaresViewController: UIViewController, UIPickerViewDelegate, UIPick
         genderTextField.inputView = genderPickerView
         yearTextField.inputView = yearPickerView
         
-        companyTextField.placeholder = "Select company"
-        raceTextField.placeholder = "Select race and ethnicity"
-        genderTextField.placeholder = "Select gender"
-        yearTextField.placeholder = "Select year of experience"
+        companyTextField.text = self.companyList[0]
+        raceTextField.text = self.raceList[0]
+        genderTextField.text = self.genderList[0]
+        yearTextField.text = self.yearList[0]
         
         companyPickerView.delegate = self
         companyPickerView.dataSource = self
