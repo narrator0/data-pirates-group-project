@@ -46,21 +46,18 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
 
     }
 
-
-    
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.currentUsers.count
     }
     func tableView(_ tableView: UITableView,
                    heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 120
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? TableViewCell else {return UITableViewCell()}
         
-        cell.layer.cornerRadius = 5
+//        cell.layer.cornerRadius = 5
         let user = self.currentUsers[indexPath.row]
         let firstname = user.firstName
         let lastname = user.lastName
@@ -70,6 +67,10 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         cell.profileImage.layer.cornerRadius = cell.profileImage.frame.size.width / 2
         cell.profileImage.clipsToBounds = true
         cell.userPosition.text = user.position
+        cell.layer.cornerRadius = 10
+        cell.layer.shadowOpacity = 0.25
+        cell.layer.shadowRadius = 7.0
+        cell.layer.shadowOffset = CGSize(width: 0, height: 6.0)
 
         return cell
     }
@@ -85,6 +86,19 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         vc.user = self.currentUsers[indexPath.row]
         vc.isPublic = true
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath)
+    {
+        let verticalPadding: CGFloat = 20
+
+        let maskLayer = CALayer()
+        maskLayer.cornerRadius = 10    //if you want round edges
+        maskLayer.backgroundColor = UIColor.black.cgColor
+        maskLayer.frame = CGRect(x: cell.bounds.origin.x, y: cell.bounds.origin.y, width: cell.bounds.width, height: cell.bounds.height).insetBy(dx: 0, dy: verticalPadding/2)
+        cell.layer.mask = maskLayer
+        self.tableView.contentInset.bottom = -verticalPadding/2
+        self.tableView.contentInset.top = -verticalPadding/2
     }
 }
 
