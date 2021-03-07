@@ -19,6 +19,9 @@ class User {
     var company: String
     var position: String
     var about: String
+    var race: String
+    var gender: String
+    var years: String
     
     var role: String
     var db = Firestore.firestore()
@@ -48,6 +51,9 @@ class User {
                         user.position = data["position"] as? String ?? ""
                         user.about = data["about"] as? String ?? ""
                         user.avatarURL = data["avatarURL"] as? String ?? ""
+                        user.race = data["race"] as? String ?? ""
+                        user.gender = data["gender"] as? String ?? ""
+                        user.years = data["years"] as? String ?? ""
                         
                         mentors.append(user)
                     }
@@ -119,6 +125,9 @@ class User {
         company = ""
         position = ""
         about = ""
+        race = ""
+        gender = ""
+        years = ""
     }
     
     init(_ userID: String, _ firstName: String, _ lastName: String, _ avatarURL: String) {
@@ -131,6 +140,9 @@ class User {
         self.company = ""
         self.position = ""
         self.about = ""
+        self.gender = ""
+        self.race = ""
+        self.years = ""
     }
     
     func save() -> Void {
@@ -151,7 +163,7 @@ class User {
     
     func update(field: String, value: String) -> Void {
         switch field {
-        case "role", "company", "position", "about":
+        case "role", "company", "position", "about", "race", "gender", "years":
             self.db.collection("users").document(self.userID).setData([field: value], merge: true) { err in
                 if let err = err {
                     print("Error updating \(field) for: \(self.userID)")
@@ -165,4 +177,30 @@ class User {
         }
     }
     
+    func matchMentor(complete: @escaping (_ mentor: User) -> Void) -> Void {
+        User.getAll() { mentors in
+            var found = false
+            for mentor in mentors {
+                if (
+                    self.company == mentor.company &&
+                    self.race == mentor.race &&
+                    self.gender == mentor.gender &&
+                    self.years == mentor.years
+                ) {
+                    found = true
+                    DispatchQueue.main.async {
+                        complete(mentor)
+                    }
+                    break
+                }
+            }
+            
+            if !found {
+                let mentor = mentors[Int.random(in: 0..<(mentors.count))]
+                DispatchQueue.main.async {
+                    complete(mentor)
+                }
+            }
+        }
+    }
 }
