@@ -88,51 +88,54 @@
                                 <rect key="frame" x="30" y="182" width="368" height="641"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="105" id="Gxg-s2-EZF" customClass="TableViewCell" customModule="ReferralPlease" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="368" height="105"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="110" id="Gxg-s2-EZF" customClass="TableViewCell" customModule="ReferralPlease" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="368" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gxg-s2-EZF" id="TO4-tA-gHu">
-                                            <rect key="frame" x="0.0" y="0.0" width="368" height="105"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="368" height="110"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="j2p-zm-VFa">
-                                                    <rect key="frame" x="2" y="2" width="100" height="101"/>
+                                                    <rect key="frame" x="2" y="10" width="100" height="90"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="100" id="Awm-28-lXJ"/>
                                                         <constraint firstAttribute="width" constant="100" id="emA-Mu-Nc8"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="as6-z0-8ZX">
-                                                    <rect key="frame" x="112" y="40" width="226" height="21.333333333333336"/>
-                                                    <fontDescription key="fontDescription" name="NotoSansOriya" family="Noto Sans Oriya" pointSize="15"/>
+                                                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="as6-z0-8ZX">
+                                                    <rect key="frame" x="112" y="48.666666666666664" width="226" height="18.333333333333336"/>
+                                                    <fontDescription key="fontDescription" name="NotoSansOriya" family="Noto Sans Oriya" pointSize="13"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="ACY-DX-Grb">
-                                                    <rect key="frame" x="112" y="4.0000000000000018" width="246" height="28.666666666666671"/>
+                                                    <rect key="frame" x="112" y="15.000000000000002" width="246" height="28.666666666666671"/>
                                                     <fontDescription key="fontDescription" name="NotoSansOriya-Bold" family="Noto Sans Oriya" pointSize="20"/>
                                                     <color key="textColor" red="0.93333333333333335" green="0.42352941176470588" blue="0.30196078431372547" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="position" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="45L-tk-myT">
-                                                    <rect key="frame" x="112" y="69" width="226" height="22"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="NotoSansOriya" family="Noto Sans Oriya" pointSize="15"/>
+                                                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="position" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="45L-tk-myT">
+                                                    <rect key="frame" x="112" y="72" width="226" height="18.333333333333329"/>
+                                                    <fontDescription key="fontDescription" name="NotoSansOriya" family="Noto Sans Oriya" pointSize="13"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.27450980392156865" green="0.40784313725490196" blue="0.58431372549019611" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="0.23921568627450979" green="0.3529411764705882" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="j2p-zm-VFa" secondAttribute="bottom" constant="2" id="1fh-MJ-y3K"/>
+                                                <constraint firstItem="45L-tk-myT" firstAttribute="leading" secondItem="j2p-zm-VFa" secondAttribute="trailing" constant="10" id="10E-zy-mdf"/>
+                                                <constraint firstAttribute="bottom" secondItem="j2p-zm-VFa" secondAttribute="bottom" constant="10" id="1fh-MJ-y3K"/>
+                                                <constraint firstItem="45L-tk-myT" firstAttribute="top" secondItem="as6-z0-8ZX" secondAttribute="bottom" constant="5" id="1gH-wM-sum"/>
                                                 <constraint firstItem="as6-z0-8ZX" firstAttribute="leading" secondItem="j2p-zm-VFa" secondAttribute="trailing" constant="10" id="4Tc-Rv-QZy"/>
-                                                <constraint firstItem="ACY-DX-Grb" firstAttribute="top" secondItem="TO4-tA-gHu" secondAttribute="top" constant="4" id="4bY-GT-4cc"/>
+                                                <constraint firstItem="ACY-DX-Grb" firstAttribute="top" secondItem="TO4-tA-gHu" secondAttribute="top" constant="15" id="4bY-GT-4cc"/>
                                                 <constraint firstItem="j2p-zm-VFa" firstAttribute="leading" secondItem="TO4-tA-gHu" secondAttribute="leading" constant="2" id="6lt-hJ-nVt"/>
                                                 <constraint firstItem="ACY-DX-Grb" firstAttribute="leading" secondItem="j2p-zm-VFa" secondAttribute="trailing" constant="10" id="CHc-Qu-VE7"/>
                                                 <constraint firstAttribute="trailing" secondItem="ACY-DX-Grb" secondAttribute="trailing" constant="10" id="ZhZ-Qz-jTr"/>
-                                                <constraint firstItem="j2p-zm-VFa" firstAttribute="top" secondItem="TO4-tA-gHu" secondAttribute="top" constant="2" id="g5B-IM-vUa"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="as6-z0-8ZX" secondAttribute="trailing" constant="10" id="Zu8-FG-Xs8"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="45L-tk-myT" secondAttribute="trailing" constant="10" id="bRW-9q-70g"/>
+                                                <constraint firstItem="j2p-zm-VFa" firstAttribute="top" secondItem="TO4-tA-gHu" secondAttribute="top" constant="10" id="g5B-IM-vUa"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="as6-z0-8ZX" secondAttribute="trailing" constant="10" id="hlP-ti-79E"/>
-                                                <constraint firstItem="as6-z0-8ZX" firstAttribute="top" secondItem="ACY-DX-Grb" secondAttribute="bottom" constant="10" id="htv-B8-Tfe"/>
+                                                <constraint firstItem="as6-z0-8ZX" firstAttribute="top" secondItem="ACY-DX-Grb" secondAttribute="bottom" constant="5" id="htv-B8-Tfe"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -164,7 +167,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ga3-Hw-HYS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5566.8224299065414" y="-774.29805615550765"/>
+            <point key="canvasLocation" x="5565.4205607476633" y="-774.29805615550765"/>
         </scene>
         <!--Profile Page View Controller-->
         <scene sceneID="7cb-NP-ZSc">
