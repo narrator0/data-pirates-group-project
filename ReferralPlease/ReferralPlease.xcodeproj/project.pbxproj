@@ -35,7 +35,7 @@
 		CD745D4C25ECC57E002FC3D8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD745D4B25ECC57E002FC3D8 /* User.swift */; };
 		CD745D5725ED6954002FC3D8 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD745D5625ED6954002FC3D8 /* Storage.swift */; };
 		CD7DC2FD25EA1E1700C19F15 /* FirstTimeLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7DC2FC25EA1E1700C19F15 /* FirstTimeLoginViewController.swift */; };
-		CDB0956125EE039C00BB0175 /* FirstTimeLoginFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB0956025EE039C00BB0175 /* FirstTimeLoginFormViewController.swift */; };
+		CDE268F925F5CCF500C99E73 /* AboutMenteeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE268F825F5CCF500C99E73 /* AboutMenteeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,7 +93,7 @@
 		CD745D4B25ECC57E002FC3D8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CD745D5625ED6954002FC3D8 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		CD7DC2FC25EA1E1700C19F15 /* FirstTimeLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstTimeLoginViewController.swift; sourceTree = "<group>"; };
-		CDB0956025EE039C00BB0175 /* FirstTimeLoginFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTimeLoginFormViewController.swift; sourceTree = "<group>"; };
+		CDE268F825F5CCF500C99E73 /* AboutMenteeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMenteeViewController.swift; sourceTree = "<group>"; };
 		CFBC0D8D282DAE7CA6973C2C /* Pods_ReferralPlease.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReferralPlease.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F456E76FDA5115B7E2A6B105 /* Pods-ReferralPlease-ReferralPleaseUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReferralPlease-ReferralPleaseUITests.release.xcconfig"; path = "Target Support Files/Pods-ReferralPlease-ReferralPleaseUITests/Pods-ReferralPlease-ReferralPleaseUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FCD54E3AD79483784B0A1295 /* Pods_ReferralPleaseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReferralPleaseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -218,9 +218,9 @@
 				204F4AFE25EA419B00366312 /* MainTabController.swift */,
 				204F4B0325EA572200366312 /* SettingsViewController.swift */,
 				CD7DC2FC25EA1E1700C19F15 /* FirstTimeLoginViewController.swift */,
-				CDB0956025EE039C00BB0175 /* FirstTimeLoginFormViewController.swift */,
 				20176E5D25F0E71D00075ED8 /* QuestionaresViewController.swift */,
 				2017645625F2206300E6900B /* MatchingViewController.swift */,
+				CDE268F825F5CCF500C99E73 /* AboutMenteeViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -534,8 +534,8 @@
 				CD7DC2FD25EA1E1700C19F15 /* FirstTimeLoginViewController.swift in Sources */,
 				CD2D9CBC25DF602900EA47DD /* ViewController.swift in Sources */,
 				CD745D4C25ECC57E002FC3D8 /* User.swift in Sources */,
+				CDE268F925F5CCF500C99E73 /* AboutMenteeViewController.swift in Sources */,
 				20CBE01E25E7933400E03DD2 /* ProfilePageViewController.swift in Sources */,
-				CDB0956125EE039C00BB0175 /* FirstTimeLoginFormViewController.swift in Sources */,
 				CD2D9CB825DF602900EA47DD /* AppDelegate.swift in Sources */,
 				CD2D9CBA25DF602900EA47DD /* SceneDelegate.swift in Sources */,
 				204F4B0425EA572200366312 /* SettingsViewController.swift in Sources */,

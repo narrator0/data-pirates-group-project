@@ -42,13 +42,12 @@ class FirstTimeLoginViewController: UIViewController {
     
     func goNext() {
         let storyboard = UIStoryboard (name: "Main", bundle: nil)
-        guard let vc = storyboard.instantiateViewController(withIdentifier: "questionareViewController") as? QuestionaresViewController else
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "aboutMenteeViewController") as? AboutMenteeViewController else
         {
             assertionFailure("couldn't find vc")
             return
         }
         
-//        vc.user = user
         navigationController?.pushViewController(vc, animated: true)
     }
 }
