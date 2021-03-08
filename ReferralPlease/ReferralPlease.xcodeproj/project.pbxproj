@@ -31,6 +31,7 @@
 		CD2D9CC425DF602B00EA47DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD2D9CC225DF602B00EA47DD /* LaunchScreen.storyboard */; };
 		CD2D9CCF25DF602B00EA47DD /* ReferralPleaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2D9CCE25DF602B00EA47DD /* ReferralPleaseTests.swift */; };
 		CD2D9CDA25DF602C00EA47DD /* ReferralPleaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2D9CD925DF602C00EA47DD /* ReferralPleaseUITests.swift */; };
+		CD73768625F6DC5E00FF7A1C /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD73768525F6DC5E00FF7A1C /* NotificationViewController.swift */; };
 		CD745D4725ECBDFE002FC3D8 /* LinkedInOAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD745D4625ECBDFE002FC3D8 /* LinkedInOAuth.swift */; };
 		CD745D4C25ECC57E002FC3D8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD745D4B25ECC57E002FC3D8 /* User.swift */; };
 		CD745D5725ED6954002FC3D8 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD745D5625ED6954002FC3D8 /* Storage.swift */; };
@@ -91,6 +92,7 @@
 		CD2D9CD525DF602C00EA47DD /* ReferralPleaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReferralPleaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD2D9CD925DF602C00EA47DD /* ReferralPleaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferralPleaseUITests.swift; sourceTree = "<group>"; };
 		CD2D9CDB25DF602C00EA47DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD73768525F6DC5E00FF7A1C /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationViewController.swift; path = ReferralPlease/NotificationViewController.swift; sourceTree = SOURCE_ROOT; };
 		CD745D4625ECBDFE002FC3D8 /* LinkedInOAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedInOAuth.swift; sourceTree = "<group>"; };
 		CD745D4B25ECC57E002FC3D8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CD745D5625ED6954002FC3D8 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 		CDE6D30F25F3293900D934D7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CD73768525F6DC5E00FF7A1C /* NotificationViewController.swift */,
 				1AC3B2F725E31A87006411C9 /* CreateAccountViewController.swift */,
 				CD2D9CBB25DF602900EA47DD /* ViewController.swift */,
 				20CBE01325E7764800E03DD2 /* TableViewCell.swift */,
@@ -533,6 +536,7 @@
 				5EC145B825EDDD0000748196 /* MentorRequests.swift in Sources */,
 				CDE2690625F5D84100C99E73 /* LogoutViewController.swift in Sources */,
 				CD745D4725ECBDFE002FC3D8 /* LinkedInOAuth.swift in Sources */,
+				CD73768625F6DC5E00FF7A1C /* NotificationViewController.swift in Sources */,
 				20CBE01925E7788A00E03DD2 /* HomePageViewController.swift in Sources */,
 				1AC3B2F825E31A87006411C9 /* CreateAccountViewController.swift in Sources */,
 				20176E5E25F0E71D00075ED8 /* QuestionaresViewController.swift in Sources */,

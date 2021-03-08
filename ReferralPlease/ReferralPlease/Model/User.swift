@@ -10,6 +10,7 @@ import Firebase
 import FirebaseFirestore
 
 class User {
+    var phone: String = ""
     var userID: String = ""
     var firstName: String = ""
     var lastName: String = ""
@@ -48,6 +49,7 @@ class User {
                     for document in documents {
                         let data = document.data()
                         let user = User()
+                        user.phone = data["phone"] as? String ?? ""
                         user.firstName = data["first"] as? String ?? ""
                         user.lastName = data["last"] as? String ?? ""
                         user.userID = data["userID"] as? String ?? ""
@@ -93,6 +95,7 @@ class User {
             if let document = document, document.exists {
                 let data = document.data()
                 let user = User()
+                user.phone = data?["phone"] as? String ?? ""
                 user.firstName = data?["first"] as? String ?? ""
                 user.lastName = data?["last"] as? String ?? ""
                 user.userID = data?["userID"] as? String ?? ""
@@ -152,7 +155,7 @@ class User {
     
     func update(field: String, value: String) -> Void {
         switch field {
-        case "role", "company", "position", "about", "race", "gender", "years", "companyPreference", "racePreference", "genderPreference", "yearsPreference":
+        case "role", "company", "position", "about", "race", "gender", "years", "companyPreference", "racePreference", "genderPreference", "yearsPreference", "phone":
             self.db.collection("users").document(self.userID).setData([field: value], merge: true) { err in
                 if let err = err {
                     print("Error updating \(field) for: \(self.userID)")

@@ -77,13 +77,12 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
     }*/
     
     @IBAction func settingButtonAction(_ sender: Any) {
-        /*
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let vc = storyboard.instantiateViewController(withIdentifier:"settingsViewController") as? SettingsViewController else {
             assertionFailure("couldn't find vc")
             return
         }
-        self.navigationController?.pushViewController(vc, animated: true)*/
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 
