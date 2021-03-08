@@ -1,31 +1,30 @@
 //
-//  QuestionaresViewController.swift
+//  AboutMentorViewController.swift
 //  ReferralPlease
 //
-//  Created by Chloe Vo on 3/4/21.
+//  Created by arfullight on 3/7/21.
 //
 
 import UIKit
 
-class QuestionaresViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-    
-    @IBOutlet weak var vcTitle: UILabel!
+class AboutMentorViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var companyTextField: UITextField!
     @IBOutlet weak var raceTextField: UITextField!
     @IBOutlet weak var genderTextField: UITextField!
     @IBOutlet weak var yearTextField: UITextField!
+    @IBOutlet weak var positionTextField: UITextField!
+    @IBOutlet weak var aboutTextField: UILabel!
     
-    var companyList = ["No Preference", "Facebook", "Apple", "Amazon", "Netflix", "Google"]
-    var raceList = ["No Preference", "White", "Asian", "Black or African American", "Native Hawaiian or Other Pacific Islander", "American Indian or Alaska Native"]
-    var genderList = ["No Preference", "Male", "Female"]
-    var yearList = ["No Preference", "1-3 yrs", "4-9 yrs", "10+ yrs"]
+    var companyList = ["Facebook", "Apple", "Amazon", "Netflix", "Google"]
+    var raceList = ["Prefer not to answer", "White", "Asian", "Black or African American", "Native Hawaiian or Other Pacific Islander", "American Indian or Alaska Native"]
+    var genderList = ["Prefer not to answer", "Male", "Female"]
+    var yearList = ["Prefer not to answer", "1-3 yrs", "4-9 yrs", "10+ yrs"]
     
     var companyPickerView = UIPickerView()
     var racePickerView = UIPickerView()
     var genderPickerView = UIPickerView()
     var yearPickerView = UIPickerView()
-    var user: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -122,22 +121,22 @@ class QuestionaresViewController: UIViewController, UIPickerViewDelegate, UIPick
         let years = self.yearTextField.text ?? "No Preference"
         
         User.currentUser() { user in
-            user.update(field: "companyPreference", value: company)
-            user.update(field: "racePreference", value: race)
-            user.update(field: "genderPreference", value: gender)
-            user.update(field: "yearsPreference", value: years)
+            user.update(field: "company", value: company)
+            user.update(field: "race", value: race)
+            user.update(field: "gender", value: gender)
+            user.update(field: "years", value: years)
+            user.update(field: "position", value: self.positionTextField.text ?? "")
+            user.update(field: "about", value: self.aboutTextField.text ?? "")
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            guard let vc = storyboard.instantiateViewController(withIdentifier: "matchingViewController") as? MatchingViewController else
+            guard let mainTabController = storyboard.instantiateViewController(withIdentifier: "mainTabViewController") as? MainTabController else
             {
                 assertionFailure("couldn't find vc")
                 return
             }
-            
-            self.navigationController?.pushViewController(vc, animated: true)
+            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabController)
         }
 
     }
-    
 
 }
