@@ -37,6 +37,7 @@
 		CD7DC2FD25EA1E1700C19F15 /* FirstTimeLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7DC2FC25EA1E1700C19F15 /* FirstTimeLoginViewController.swift */; };
 		CDE268F925F5CCF500C99E73 /* AboutMenteeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE268F825F5CCF500C99E73 /* AboutMenteeViewController.swift */; };
 		CDE2690125F5D07600C99E73 /* AboutMentorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE2690025F5D07600C99E73 /* AboutMentorViewController.swift */; };
+		CDE2690625F5D84100C99E73 /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE2690525F5D84100C99E73 /* LogoutViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		CD7DC2FC25EA1E1700C19F15 /* FirstTimeLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstTimeLoginViewController.swift; sourceTree = "<group>"; };
 		CDE268F825F5CCF500C99E73 /* AboutMenteeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMenteeViewController.swift; sourceTree = "<group>"; };
 		CDE2690025F5D07600C99E73 /* AboutMentorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMentorViewController.swift; sourceTree = "<group>"; };
+		CDE2690525F5D84100C99E73 /* LogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
 		CFBC0D8D282DAE7CA6973C2C /* Pods_ReferralPlease.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReferralPlease.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F456E76FDA5115B7E2A6B105 /* Pods-ReferralPlease-ReferralPleaseUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReferralPlease-ReferralPleaseUITests.release.xcconfig"; path = "Target Support Files/Pods-ReferralPlease-ReferralPleaseUITests/Pods-ReferralPlease-ReferralPleaseUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FCD54E3AD79483784B0A1295 /* Pods_ReferralPleaseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReferralPleaseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -224,6 +226,7 @@
 				2017645625F2206300E6900B /* MatchingViewController.swift */,
 				CDE268F825F5CCF500C99E73 /* AboutMenteeViewController.swift */,
 				CDE2690025F5D07600C99E73 /* AboutMentorViewController.swift */,
+				CDE2690525F5D84100C99E73 /* LogoutViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 				20CBE01425E7764800E03DD2 /* TableViewCell.swift in Sources */,
 				204F4AFF25EA419B00366312 /* MainTabController.swift in Sources */,
 				5EC145B825EDDD0000748196 /* MentorRequests.swift in Sources */,
+				CDE2690625F5D84100C99E73 /* LogoutViewController.swift in Sources */,
 				CD745D4725ECBDFE002FC3D8 /* LinkedInOAuth.swift in Sources */,
 				20CBE01925E7788A00E03DD2 /* HomePageViewController.swift in Sources */,
 				1AC3B2F825E31A87006411C9 /* CreateAccountViewController.swift in Sources */,
