@@ -69,6 +69,9 @@ class ProfilePageViewController: UIViewController {
                 self.renderText()
             }
         }
+        
+        // change the color of the navigation back button
+        self.navigationController?.navigationBar.tintColor = .orange
     }
     
     func renderText() {
