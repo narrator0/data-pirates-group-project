@@ -440,7 +440,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="Mhc-LW-rR7"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ArialHebrew" family="Arial Hebrew" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TMK-ak-OXN">
@@ -460,7 +460,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="veF-3u-mAx"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ArialHebrew" family="Arial Hebrew" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vXV-Yh-tIQ">
@@ -499,10 +499,17 @@
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="RjG-Ye-jCE"/>
                     <connections>
+                        <outlet property="emailText" destination="5xz-af-UhJ" id="a3C-Xp-lhJ"/>
+                        <outlet property="phoneText" destination="ZIr-hU-wgY" id="VNO-FL-O2p"/>
                         <outlet property="updateBtn" destination="vXV-Yh-tIQ" id="CoA-W5-Qj3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YCs-87-bX2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="9hQ-5E-5s3">
+                    <connections>
+                        <action selector="tap:" destination="WpL-RJ-hAa" id="Zd2-wE-wrL"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="6408" y="52"/>
         </scene>
@@ -548,14 +555,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gearshape.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="92r-ht-GKE">
-                                <rect key="frame" x="378" y="60.333333333333329" width="30" height="29.333333333333329"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Mpg-GW-iuj"/>
-                                    <constraint firstAttribute="width" constant="30" id="NIl-SF-YlQ"/>
-                                </constraints>
-                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eRB-hQ-6LS">
                                 <rect key="frame" x="20" y="194" width="388" height="197"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -688,12 +687,19 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f4F-WO-gSX">
+                                <rect key="frame" x="387.33333333333331" y="44" width="20.666666666666686" height="22"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="gearshape.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="settingButtonAction:" destination="4Ya-3r-V51" eventType="touchUpInside" id="alb-op-AYC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TGH-Vh-dfd"/>
                         <color key="backgroundColor" red="0.1647058824" green="0.24313725489999999" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="81B-i8-duZ" firstAttribute="top" secondItem="eRB-hQ-6LS" secondAttribute="bottom" id="6DT-s1-q5v"/>
-                            <constraint firstItem="92r-ht-GKE" firstAttribute="top" secondItem="fyb-Vi-cfG" secondAttribute="top" constant="60" id="CFr-e4-Gwj"/>
                             <constraint firstItem="81B-i8-duZ" firstAttribute="leading" secondItem="TGH-Vh-dfd" secondAttribute="leading" constant="20" id="EDJ-Bj-wzs"/>
                             <constraint firstItem="TGH-Vh-dfd" firstAttribute="trailing" secondItem="eRB-hQ-6LS" secondAttribute="trailing" constant="20" id="Fxy-Da-yJx"/>
                             <constraint firstItem="TGH-Vh-dfd" firstAttribute="trailing" secondItem="81B-i8-duZ" secondAttribute="trailing" constant="20" id="GIn-Yt-fFq"/>
@@ -701,7 +707,8 @@
                             <constraint firstItem="PtZ-KO-0rp" firstAttribute="leading" secondItem="TGH-Vh-dfd" secondAttribute="leading" constant="20" id="MIh-iv-SqK"/>
                             <constraint firstItem="PtZ-KO-0rp" firstAttribute="top" secondItem="TGH-Vh-dfd" secondAttribute="top" constant="100" id="OhE-Lm-Bwt"/>
                             <constraint firstItem="TcO-MR-vgC" firstAttribute="top" secondItem="81B-i8-duZ" secondAttribute="bottom" id="VqI-jR-HEl"/>
-                            <constraint firstItem="TGH-Vh-dfd" firstAttribute="trailing" secondItem="92r-ht-GKE" secondAttribute="trailing" constant="20" id="ZGt-If-u7t"/>
+                            <constraint firstItem="f4F-WO-gSX" firstAttribute="top" secondItem="TGH-Vh-dfd" secondAttribute="top" id="aBs-zk-xFS"/>
+                            <constraint firstItem="TGH-Vh-dfd" firstAttribute="trailing" secondItem="f4F-WO-gSX" secondAttribute="trailing" constant="20" id="aqq-IL-QXa"/>
                             <constraint firstItem="TGH-Vh-dfd" firstAttribute="trailing" secondItem="TcO-MR-vgC" secondAttribute="trailing" constant="20" id="mA0-ha-reS"/>
                             <constraint firstItem="eRB-hQ-6LS" firstAttribute="leading" secondItem="TGH-Vh-dfd" secondAttribute="leading" constant="20" id="ro5-XN-KfU"/>
                             <constraint firstItem="TGH-Vh-dfd" firstAttribute="bottom" secondItem="TcO-MR-vgC" secondAttribute="bottom" constant="20" id="tkN-Om-x23"/>
