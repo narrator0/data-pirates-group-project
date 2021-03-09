@@ -17,6 +17,15 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var pendingRequestsTableview: UITableView!
     var mentees: [User] = []
     var requestees: [User] = []
+
+    @IBAction func settingButtonAction(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier:"settingsViewController") as? SettingsViewController else {
+            assertionFailure("couldn't find vc")
+            return
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,6 +86,7 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
     }
     
 
+
     func reloadData() {
 
         MentorRequests.update()
@@ -87,28 +97,7 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
             self.currentMenteesTableview.reloadData()
             self.pendingRequestsTableview.reloadData()
     }
-
     
-        /*
-        // for button shape
-        declineButton.layer.cornerRadius = 5
-        acceptButton.layer.cornerRadius = 5
-        // for button shadow
-        declineButton.layer.shadowColor = UIColor.black.cgColor
-        declineButton.layer.shadowOffset = CGSize(width: 0.0, height: 6.0)
-        declineButton.layer.shadowRadius = 8
-        declineButton.layer.shadowOpacity = 0.5
-        acceptButton.layer.shadowColor = UIColor.black.cgColor
-        acceptButton.layer.shadowOffset = CGSize(width: 0.0, height: 6.0)
-        acceptButton.layer.shadowRadius = 8
-        acceptButton.layer.shadowOpacity = 0.5*/
-        
-        
-
-
     }
-    
-
-
 }
 

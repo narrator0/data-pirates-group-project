@@ -32,23 +32,25 @@ class FirstTimeLoginViewController: UIViewController {
     
     @IBAction func mentorButtonAction(_ sender: UIButton) {
         self.user?.update(field: "role", value: "mentor")
-        self.goNext()
-    }
-    
-    @IBAction func menteeButtonAction(_ sender: UIButton) {
-        self.user?.update(field: "role", value: "mentee")
-        self.goNext()
-    }
-    
-    func goNext() {
         let storyboard = UIStoryboard (name: "Main", bundle: nil)
-        guard let vc = storyboard.instantiateViewController(withIdentifier: "questionareViewController") as? QuestionaresViewController else
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "aboutMentorViewController") as? AboutMentorViewController else
         {
             assertionFailure("couldn't find vc")
             return
         }
         
-//        vc.user = user
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func menteeButtonAction(_ sender: UIButton) {
+        self.user?.update(field: "role", value: "mentee")
+        let storyboard = UIStoryboard (name: "Main", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "aboutMenteeViewController") as? AboutMenteeViewController else
+        {
+            assertionFailure("couldn't find vc")
+            return
+        }
+        
         navigationController?.pushViewController(vc, animated: true)
     }
 }

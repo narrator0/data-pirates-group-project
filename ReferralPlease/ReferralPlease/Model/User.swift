@@ -10,17 +10,27 @@ import Firebase
 import FirebaseFirestore
 
 class User {
-    var userID: String
-    var firstName: String
-    var lastName: String
-    var email: String
-    var avatarURL: String
+    var phone: String = ""
+    var userID: String = ""
+    var firstName: String = ""
+    var lastName: String = ""
+    var email: String = ""
+    var avatarURL: String = ""
     
-    var company: String
-    var position: String
-    var about: String
+    var company: String = ""
+    var position: String = ""
+    var about: String = ""
+    var race: String = ""
+    var gender: String = ""
+    var years: String = ""
     
-    var role: String
+    var companyPreference: String = ""
+    var racePreference: String = ""
+    var genderPreference: String = ""
+    var yearsPreference: String = ""
+    
+    var role: String = ""
+    
     var db = Firestore.firestore()
     static var db = Firestore.firestore()
     
@@ -39,6 +49,7 @@ class User {
                     for document in documents {
                         let data = document.data()
                         let user = User()
+                        user.phone = data["phone"] as? String ?? ""
                         user.firstName = data["first"] as? String ?? ""
                         user.lastName = data["last"] as? String ?? ""
                         user.userID = data["userID"] as? String ?? ""
@@ -48,6 +59,14 @@ class User {
                         user.position = data["position"] as? String ?? ""
                         user.about = data["about"] as? String ?? ""
                         user.avatarURL = data["avatarURL"] as? String ?? ""
+                        user.race = data["race"] as? String ?? ""
+                        user.gender = data["gender"] as? String ?? ""
+                        user.years = data["years"] as? String ?? ""
+                        
+                        user.companyPreference = data["companyPreference"] as? String ?? ""
+                        user.racePreference = data["racePreference"] as? String ?? ""
+                        user.genderPreference = data["genderPreference"] as? String ?? ""
+                        user.yearsPreference = data["yearsPreference"] as? String ?? ""
                         
                         mentors.append(user)
                     }
@@ -75,26 +94,25 @@ class User {
         docRef.getDocument { (document, error) in
             if let document = document, document.exists {
                 let data = document.data()
-                let first = data?["first"] as? String
-                let last = data?["last"] as? String
-                let email = data?["email"] as? String
-                let userID = data?["userID"] as? String
-                let role = data?["role"] as? String
-                let avatarURL = data?["avatarURL"] as? String
-                let company = data?["company"] as? String
-                let position = data?["position"] as? String
-                let about = data?["about"] as? String
-                
                 let user = User()
-                user.firstName = first ?? ""
-                user.lastName = last ?? ""
-                user.email = email ?? ""
-                user.userID = userID ?? ""
-                user.role = role ?? ""
-                user.avatarURL = avatarURL ?? ""
-                user.company = company ?? ""
-                user.position = position ?? ""
-                user.about = about ?? ""
+                user.phone = data?["phone"] as? String ?? ""
+                user.firstName = data?["first"] as? String ?? ""
+                user.lastName = data?["last"] as? String ?? ""
+                user.userID = data?["userID"] as? String ?? ""
+                user.role = data?["role"] as? String ?? ""
+                user.email = data?["email"] as? String ?? ""
+                user.company = data?["company"] as? String ?? ""
+                user.position = data?["position"] as? String ?? ""
+                user.about = data?["about"] as? String ?? ""
+                user.avatarURL = data?["avatarURL"] as? String ?? ""
+                user.race = data?["race"] as? String ?? ""
+                user.gender = data?["gender"] as? String ?? ""
+                user.years = data?["years"] as? String ?? ""
+                
+                user.companyPreference = data?["companyPreference"] as? String ?? ""
+                user.racePreference = data?["racePreference"] as? String ?? ""
+                user.genderPreference = data?["genderPreference"] as? String ?? ""
+                user.yearsPreference = data?["yearsPreference"] as? String ?? ""
                 
                 DispatchQueue.main.async {
                     complete(user)
@@ -110,27 +128,13 @@ class User {
     }
     
     init() {
-        userID = ""
-        firstName = ""
-        lastName = ""
-        email = ""
-        role = ""
-        avatarURL = ""
-        company = ""
-        position = ""
-        about = ""
     }
     
     init(_ userID: String, _ firstName: String, _ lastName: String, _ avatarURL: String) {
         self.userID = userID
         self.firstName = firstName
         self.lastName = lastName
-        self.email = ""
-        self.role = ""
         self.avatarURL = avatarURL
-        self.company = ""
-        self.position = ""
-        self.about = ""
     }
     
     func save() -> Void {
@@ -151,7 +155,7 @@ class User {
     
     func update(field: String, value: String) -> Void {
         switch field {
-        case "role", "company", "position", "about":
+        case "role", "company", "position", "about", "race", "gender", "years", "companyPreference", "racePreference", "genderPreference", "yearsPreference", "phone":
             self.db.collection("users").document(self.userID).setData([field: value], merge: true) { err in
                 if let err = err {
                     print("Error updating \(field) for: \(self.userID)")
@@ -165,4 +169,30 @@ class User {
         }
     }
     
+    func matchMentor(complete: @escaping (_ mentor: User) -> Void) -> Void {
+        User.getAll() { mentors in
+            var found = false
+            for mentor in mentors {
+                if (
+                    self.companyPreference == mentor.company &&
+                    self.racePreference == mentor.race &&
+                    self.genderPreference == mentor.gender &&
+                    self.yearsPreference == mentor.years
+                ) {
+                    found = true
+                    DispatchQueue.main.async {
+                        complete(mentor)
+                    }
+                    break
+                }
+            }
+            
+            if !found {
+                let mentor = mentors[Int.random(in: 0..<(mentors.count))]
+                DispatchQueue.main.async {
+                    complete(mentor)
+                }
+            }
+        }
+    }
 }

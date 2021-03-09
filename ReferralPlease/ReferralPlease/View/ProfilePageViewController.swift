@@ -33,16 +33,16 @@ class ProfilePageViewController: UIViewController {
         userImage.layer.shadowOffset = .zero
 
 
-        topView.layer.cornerRadius = 5
+        topView.layer.cornerRadius = 10
         topView.layer.shadowOpacity = 0.25
         topView.layer.shadowRadius = 7.0
-        topView.layer.shadowOffset = CGSize(width: 0, height: 8)
+        topView.layer.shadowOffset = CGSize(width: 0, height: 6.0)
 
 
         aboutView.layer.cornerRadius = 10
-        aboutView.layer.shadowOpacity = 0.5
-        aboutView.layer.shadowPath = UIBezierPath(rect: aboutView.bounds).cgPath
-        aboutView.layer.shadowRadius = 8
+        aboutView.layer.shadowOpacity = 0.25
+//        aboutView.layer.shadowPath = UIBezierPath(rect: aboutView.bounds).cgPath
+        aboutView.layer.shadowRadius = 7.0
         aboutView.layer.shadowOffset = CGSize(width: 0.0, height: 6.0)
         aboutText.text = "Entrepreneur and professor, research interests include computer security, financial fraud, and digital identity. As a professor, I made fundamental contributions to computer security. You can find more information, including articles in the popular press here: https://bob.cs.ucdavis.edu/research.html. And here is a lecture I gave about some of my research in hardware security: http://vimeo.com/23836967. And here is a link to my academic website, which includes my full publication list (in case you are having trouble sleeping: https://bob.cs.ucdavis.edu/publications.html"
         requestBtn.layer.cornerRadius = 5
@@ -69,6 +69,9 @@ class ProfilePageViewController: UIViewController {
                 self.renderText()
             }
         }
+        
+        // change the color of the navigation back button
+        self.navigationController?.navigationBar.tintColor = .orange
     }
     
     func renderText() {
@@ -83,6 +86,17 @@ class ProfilePageViewController: UIViewController {
         User.currentUser() { user in
             MentorRequests.createRequest(self.user.userID, user.userID)
         }
+    }
+    
+    @IBAction func settingsButtonPressed(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "settingsViewController") as? SettingsViewController else
+        {
+            assertionFailure("couldn't find vc")
+            return
+        }
+        
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }
