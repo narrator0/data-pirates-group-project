@@ -9,6 +9,8 @@ import UIKit
 
 class MenteeTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var menteeName: UILabel!
+    @IBOutlet weak var profilePicture: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

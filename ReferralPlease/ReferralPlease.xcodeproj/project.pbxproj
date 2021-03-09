@@ -21,6 +21,9 @@
 		20CBE01E25E7933400E03DD2 /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CBE01D25E7933400E03DD2 /* ProfilePageViewController.swift */; };
 		3017246B59ED0915173B5D92 /* Pods_ReferralPlease_ReferralPleaseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021E485234D5FFE251BBB41A /* Pods_ReferralPlease_ReferralPleaseUITests.framework */; };
 		5EC145B825EDDD0000748196 /* MentorRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC145B725EDDD0000748196 /* MentorRequests.swift */; };
+		5EC148AE25F7188B00748196 /* MenteeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC148AD25F7188B00748196 /* MenteeTableViewCell.swift */; };
+		5EC148DC25F719EC00748196 /* RequesteeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC148DB25F719EC00748196 /* RequesteeTableCell.swift */; };
+		5EC148E125F71A6C00748196 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC148E025F71A6C00748196 /* NotificationViewController.swift */; };
 		6DBD790C1D881E92885A6C91 /* Pods_ReferralPlease.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFBC0D8D282DAE7CA6973C2C /* Pods_ReferralPlease.framework */; };
 		CD14C74A25E565C000BCED8E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD14C74925E565C000BCED8E /* GoogleService-Info.plist */; };
 		CD2D9CB825DF602900EA47DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2D9CB725DF602900EA47DD /* AppDelegate.swift */; };
@@ -71,6 +74,9 @@
 		20CBE01D25E7933400E03DD2 /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
 		2C498E71FBAF3F4D5FB46C9D /* Pods-ReferralPlease-ReferralPleaseUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReferralPlease-ReferralPleaseUITests.debug.xcconfig"; path = "Target Support Files/Pods-ReferralPlease-ReferralPleaseUITests/Pods-ReferralPlease-ReferralPleaseUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5EC145B725EDDD0000748196 /* MentorRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorRequests.swift; sourceTree = "<group>"; };
+		5EC148AD25F7188B00748196 /* MenteeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MenteeTableViewCell.swift; path = "/Users/justinlim/Desktop/ECS189E/data-pirates-group-project/ReferralPlease/ReferralPlease/MenteeTableViewCell.swift"; sourceTree = "<absolute>"; };
+		5EC148DB25F719EC00748196 /* RequesteeTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequesteeTableCell.swift; sourceTree = "<group>"; };
+		5EC148E025F71A6C00748196 /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		9E7FFD24501C1769A8B559B7 /* Pods-ReferralPleaseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReferralPleaseTests.debug.xcconfig"; path = "Target Support Files/Pods-ReferralPleaseTests/Pods-ReferralPleaseTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A70AFC13D4B37CE6D9D0A24D /* Pods-ReferralPleaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReferralPleaseTests.release.xcconfig"; path = "Target Support Files/Pods-ReferralPleaseTests/Pods-ReferralPleaseTests.release.xcconfig"; sourceTree = "<group>"; };
 		BC5AD4AAF0AB755BF8B2EA77 /* Pods-ReferralPlease.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReferralPlease.release.xcconfig"; path = "Target Support Files/Pods-ReferralPlease/Pods-ReferralPlease.release.xcconfig"; sourceTree = "<group>"; };
@@ -175,7 +181,10 @@
 		CD2D9CB625DF602900EA47DD /* ReferralPlease */ = {
 			isa = PBXGroup;
 			children = (
+				5EC148E025F71A6C00748196 /* NotificationViewController.swift */,
 				CD745D5625ED6954002FC3D8 /* Storage.swift */,
+				5EC148AD25F7188B00748196 /* MenteeTableViewCell.swift */,
+				5EC148DB25F719EC00748196 /* RequesteeTableCell.swift */,
 				CD14C74925E565C000BCED8E /* GoogleService-Info.plist */,
 				CD2D9CB725DF602900EA47DD /* AppDelegate.swift */,
 				CD2D9CB925DF602900EA47DD /* SceneDelegate.swift */,
@@ -503,6 +512,7 @@
 				5EC145B825EDDD0000748196 /* MentorRequests.swift in Sources */,
 				CD745D4725ECBDFE002FC3D8 /* LinkedInOAuth.swift in Sources */,
 				20CBE01925E7788A00E03DD2 /* HomePageViewController.swift in Sources */,
+				5EC148E125F71A6C00748196 /* NotificationViewController.swift in Sources */,
 				1AC3B2F825E31A87006411C9 /* CreateAccountViewController.swift in Sources */,
 				20176E5E25F0E71D00075ED8 /* QuestionaresViewController.swift in Sources */,
 				CD745D5725ED6954002FC3D8 /* Storage.swift in Sources */,
@@ -511,7 +521,9 @@
 				CD2D9CBC25DF602900EA47DD /* ViewController.swift in Sources */,
 				CD745D4C25ECC57E002FC3D8 /* User.swift in Sources */,
 				20CBE01E25E7933400E03DD2 /* ProfilePageViewController.swift in Sources */,
+				5EC148AE25F7188B00748196 /* MenteeTableViewCell.swift in Sources */,
 				CDB0956125EE039C00BB0175 /* FirstTimeLoginFormViewController.swift in Sources */,
+				5EC148DC25F719EC00748196 /* RequesteeTableCell.swift in Sources */,
 				CD2D9CB825DF602900EA47DD /* AppDelegate.swift in Sources */,
 				CD2D9CBA25DF602900EA47DD /* SceneDelegate.swift in Sources */,
 				204F4B0425EA572200366312 /* SettingsViewController.swift in Sources */,

@@ -28,6 +28,13 @@ class MentorRequests {
     }
         
     class func update(_ userID: String = "") {
+        MentorRequests.requests?.mentees = []
+        MentorRequests.requests?.requestees = []
+        MentorRequests.requests?.menteeIDs = []
+        MentorRequests.requests?.requesteeIDs = []
+        var m: [String] = []
+        var l = "the"
+        let semaphore = DispatchSemaphore(value: 0)
         if (userID != "") {
             MentorRequests.requests?.mentorID = userID
         }
@@ -37,44 +44,47 @@ class MentorRequests {
                     if let err = err {
                         print("Error getting documents: \(err)")
                     } else {
-                        for document in querySnapshot!.documents {
+                        if let documents = querySnapshot?.documents{
+                        for document in documents {
                             if let menteeID = document.data()["menteeID"] as? String {
-                                MentorRequests.requests?.menteeIDs.append(menteeID)
+                             
+                                User.get(menteeID) {
+                                    userRecord in
+                                    MentorRequests.requests?.mentees.append(userRecord)
+                               
+                                }
                             }
                         }
+                        }
+                     
+            
+                        
                     }
             }
-        
-        if let mentees = MentorRequests.requests?.menteeIDs {
-            for mentee in mentees{
-                User.get(mentee) {
-                    userRecord in
-                    MentorRequests.requests?.mentees.append(userRecord)
-                }
-            }
-        }
+
+
+
+    
         
         db.collection("mentorStatus").whereField("mentorID", isEqualTo: MentorRequests.requests?.mentorID as Any).whereField("accepted", isEqualTo: false)
                 .getDocuments() { (querySnapshot, err) in
                     if let err = err {
                         print("Error getting documents: \(err)")
                     } else {
-                        for document in querySnapshot!.documents {
+                        if let documents = querySnapshot?.documents{
+                        for document in documents {
                             if let menteeID = document.data()["menteeID"] as? String {
-                                MentorRequests.requests?.requesteeIDs.append(menteeID)
+                                User.get(menteeID) {
+                                    userRecord in
+                                    MentorRequests.requests?.requestees.append(userRecord)
+                                }
                             }
+                        }
                         }
                     }
             }
         
-        if let mentees = MentorRequests.requests?.requesteeIDs {
-            for mentee in mentees{
-                User.get(mentee) {
-                    userRecord in
-                    MentorRequests.requests?.requestees.append(userRecord)
-                }
-            }
-        }
+
     }
     
     

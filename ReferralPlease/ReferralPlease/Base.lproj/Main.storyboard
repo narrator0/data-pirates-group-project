@@ -544,7 +544,7 @@
                                     <constraint firstAttribute="height" constant="197" id="X3r-CK-w4a"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="currentMenteesCell" rowHeight="80" id="jwR-Dq-Pxx">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="80" id="jwR-Dq-Pxx" customClass="MenteeTableViewCell" customModule="ReferralPlease" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="388" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jwR-Dq-Pxx" id="Y8r-Zg-hkj">
@@ -588,6 +588,10 @@
                                                 <constraint firstItem="OzI-Pn-4vw" firstAttribute="top" secondItem="Y8r-Zg-hkj" secondAttribute="top" id="oGC-wm-crt"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="menteeName" destination="3Rl-fR-RPL" id="l6L-3P-yDH"/>
+                                            <outlet property="profilePicture" destination="yXV-QM-1dO" id="Q0P-PI-bth"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -595,7 +599,7 @@
                                 <rect key="frame" x="20" y="441" width="388" height="382"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="pendingRequestsCell" rowHeight="80" id="IO0-mD-Efd">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="80" id="IO0-mD-Efd" customClass="RequesteeTableCell" customModule="ReferralPlease" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="388" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IO0-mD-Efd" id="5gT-IO-U9R">
@@ -629,6 +633,9 @@
                                                             <state key="normal" title="accept">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="acceptRequest" destination="IO0-mD-Efd" eventType="touchUpInside" id="4Cm-ct-DY2"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qHz-Tg-5rL">
                                                             <rect key="frame" x="208" y="40" width="70" height="30"/>
@@ -641,6 +648,9 @@
                                                             <state key="normal" title="decline">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="declineRequest:" destination="IO0-mD-Efd" eventType="touchUpInside" id="zNo-oj-byf"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.27450980392156865" green="0.40784313725490196" blue="0.58431372549019611" alpha="1" colorSpace="calibratedRGB"/>
@@ -666,6 +676,10 @@
                                                 <constraint firstAttribute="trailing" secondItem="ZL7-QR-kXz" secondAttribute="trailing" id="lEw-yY-kqv"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="message" destination="f71-VE-Xsj" id="6eG-ao-y3M"/>
+                                            <outlet property="profilePicture" destination="St7-tg-6Fn" id="7sh-HC-dU4"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -692,6 +706,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="notification" id="dLc-Bw-qqs"/>
                     <navigationItem key="navigationItem" id="bj2-6a-w87"/>
+                    <connections>
+                        <outlet property="currentMenteesTableview" destination="eRB-hQ-6LS" id="i3a-jp-1vt"/>
+                        <outlet property="pendingRequestsTableview" destination="TcO-MR-vgC" id="6ML-MJ-GFH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hOF-gE-p7u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
