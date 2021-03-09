@@ -35,9 +35,10 @@ class RequesteeTableCell: UITableViewCell {
                 print("Error adding document: \(err)")
             } else {
                 print("Document added")
+                self.view.reloadData()
             }
         }
-        self.view.reloadData()
+        
     }
     @IBAction func declineRequest(_ sender: Any) {
         db.collection("mentorStatus").document(self.documentID).delete() { err in
@@ -45,8 +46,9 @@ class RequesteeTableCell: UITableViewCell {
                 print("Error removing document: \(err)")
             } else {
                 print("Document successfully removed!")
+                self.view.reloadData()
             }
         }
-        self.view.reloadData()
+        
     }
 }

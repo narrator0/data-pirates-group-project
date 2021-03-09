@@ -66,6 +66,7 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
             cell.profilePicture.sd_setImage(with: URL(string: user.avatarURL), placeholderImage: UIImage(named: "placeholder.png"))
             cell.profilePicture.layer.cornerRadius = cell.profilePicture.frame.size.width / 2
             cell.profilePicture.clipsToBounds = true
+            cell.view = self
             
             return cell
         }
@@ -94,8 +95,8 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
             self.mentees  = MentorRequests.shared.getMentees()
             self.requestees = MentorRequests.shared.getRequestees()
             print(self.mentees)
-            self.currentMenteesTableview.reloadData()
-            self.pendingRequestsTableview.reloadData()
+            self.currentMenteesTableview?.reloadData()
+            self.pendingRequestsTableview?.reloadData()
     }
     
     }

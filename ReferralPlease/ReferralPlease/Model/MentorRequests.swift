@@ -32,9 +32,6 @@ class MentorRequests {
         MentorRequests.requests?.requestees = []
         MentorRequests.requests?.menteeIDs = []
         MentorRequests.requests?.requesteeIDs = []
-        var m: [String] = []
-        var l = "the"
-        let semaphore = DispatchSemaphore(value: 0)
         if (userID != "") {
             MentorRequests.requests?.mentorID = userID
         }
