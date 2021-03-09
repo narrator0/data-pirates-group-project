@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/justinlim/Desktop/ECS189E/data-pirates-group-project/ReferralPlease/ReferralPlease/MenteeTableViewCell.swift">
+   </FileRef>
+   <FileRef
       location = "group:ReferralPlease.xcodeproj">
    </FileRef>
    <FileRef

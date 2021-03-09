@@ -9,6 +9,7 @@ target 'ReferralPlease' do
   pod 'Firebase/Analytics'
   pod 'FirebaseUI'
   pod 'Firebase/Firestore'
+  pod 'SDWebImage', :modular_headers => true
 
   target 'ReferralPleaseTests' do
     inherit! :search_paths
