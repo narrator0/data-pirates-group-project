@@ -18,16 +18,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
         
-        if Storage.currentUserToken != nil && Storage.currentUserID != nil {
-            // login should go to home vc
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            guard let mainTabController = storyboard.instantiateViewController(withIdentifier: "mainTabViewController") as? MainTabController else
-            {
-                assertionFailure("couldn't find vc")
-                return
-            }
-            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabController)
-        }
+//        if Storage.currentUserToken != nil && Storage.currentUserID != nil {
+//            // login should go to home vc
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            guard let mainTabController = storyboard.instantiateViewController(withIdentifier: "mainTabViewController") as? MainTabController else
+//            {
+//                assertionFailure("couldn't find vc")
+//                return
+//            }
+//            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabController)
+//        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

@@ -64,8 +64,6 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
             let user = self.requestees[indexPath.row]
             let firstname = user.firstName
             let lastname = user.lastName
-          
-            
             
             User.currentUser(){
                 userRecord in

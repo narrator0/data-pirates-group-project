@@ -231,7 +231,7 @@
                                                 <rect key="frame" x="30" y="913" width="368" height="34"/>
                                                 <color key="backgroundColor" red="0.93333333330000001" green="0.42352941179999998" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="20"/>
-                                                <state key="normal" title="Button">
+                                                <state key="normal" title="Request Mentorship">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
@@ -791,6 +791,9 @@
                                 <state key="normal" title="Request Mentorship">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="sendRequest:" destination="dY1-lB-wy6" eventType="touchUpInside" id="WfR-rz-yF0"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="pLY-ax-NTl">
                                 <rect key="frame" x="139" y="172.33333333333334" width="150" height="150.00000000000003"/>
@@ -943,11 +946,11 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="iZl-c5-ckO"/>
                     <connections>
-                        <outlet property="matchingBtn" destination="zGC-nN-C9Q" id="ZGP-ai-yVM"/>
                         <outlet property="matchingLabel" destination="GeK-JV-cWU" id="VX9-l9-t8o"/>
                         <outlet property="mentorImage" destination="pLY-ax-NTl" id="Gb8-jq-cyu"/>
                         <outlet property="mentorNameLabel" destination="9k1-gT-sCa" id="1KL-cw-kyF"/>
                         <outlet property="mentorSubtitle" destination="Pq9-IR-PTo" id="hq4-QQ-J43"/>
+                        <outlet property="requestBtn" destination="zGC-nN-C9Q" id="pEi-pj-vIf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="57X-1A-O4L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
