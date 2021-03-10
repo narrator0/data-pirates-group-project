@@ -16,6 +16,9 @@
       <FileRef
          location = "container:ReferralPlease/Info.plist">
       </FileRef>
+      <FileRef
+         location = "group:/Users/arfullight/Desktop/data-pirates-group-project/ReferralPlease/ReferralPlease/NotificationViewController.swift">
+      </FileRef>
       <Group
          location = "container:ReferralPlease/Utils"
          name = "Utils">
@@ -48,9 +51,6 @@
       <Group
          location = "container:ReferralPlease/View"
          name = "View">
-         <FileRef
-            location = "group:/Users/arfullight/Desktop/data-pirates-group-project/ReferralPlease/ReferralPlease/View/NotificationViewController.swift">
-         </FileRef>
          <FileRef
             location = "container:ReferralPlease/View/CreateAccountViewController.swift">
          </FileRef>

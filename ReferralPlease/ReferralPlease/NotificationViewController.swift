@@ -21,9 +21,6 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
 
         let mentees  = MentorRequests.shared.getMentees()
         let requestees = MentorRequests.shared.getRequestees()
-
-        print("testsete")
-
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
