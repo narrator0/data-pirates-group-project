@@ -7,6 +7,7 @@
 
 import UIKit
 import SDWebImage
+import NotificationBannerSwift
 
 class MatchingViewController: UIViewController {
     
@@ -20,6 +21,9 @@ class MatchingViewController: UIViewController {
     @IBOutlet weak var mentorImage: UIImageView!
     @IBOutlet weak var requestBtn: UIButton!
     var mentorId : String = ""
+    
+    let requestQueue = DispatchQueue(label: "requestQueue")
+
     override func viewDidLoad() {
         super.viewDidLoad()
         matchingLabel.text = "Congratulations! \n We find your matching mentor!"
@@ -33,9 +37,11 @@ class MatchingViewController: UIViewController {
         self.mentorImage.layer.shadowOpacity = 0.5
         self.mentorImage.layer.shadowRadius = 5
         self.mentorImage.layer.shadowOffset = .zero
+        
+       
 
         // Do any additional setup after loading the view.
-        
+      
         User.currentUser() { user in
             user.matchMentor() { mentor in
                 self.mentor = mentor
@@ -61,9 +67,43 @@ class MatchingViewController: UIViewController {
     @IBAction func sendRequest(_ sender: Any) {
         print("Request btn clicked")
         User.currentUser() { user in
-            MentorRequests.createRequest(self.mentorId, user.userID)
-            print("congrats")
+            self.requestQueue.async {
+                MentorRequests.createRequest(self.mentorId, user.userID)
+            }
+            
+            DispatchQueue.main.async {
+                print("congrats")
+                self.requestBtn.setTitle("Sent!", for: .normal)
+                self.showNotificationBanner()
+                
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                guard let vc = storyboard.instantiateViewController(withIdentifier: "mainTabViewController") as? MainTabController else
+                {
+                    assertionFailure("couldn't find vc")
+                    return
+                }
+    
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            
+            
+//            print("congrats")
+//
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            guard let vc = storyboard.instantiateViewController(withIdentifier: "homeViewController") as? HomePageViewController else
+//            {
+//                assertionFailure("couldn't find vc")
+//                return
+//            }
+//
+//            self.navigationController?.pushViewController(vc, animated: true)
         }
+    }
+    
+    func showNotificationBanner(){
+        let banner = StatusBarNotificationBanner(title: "Request sent", style: .success, colors: nil)
+   
+        banner.show()
     }
     
     /*

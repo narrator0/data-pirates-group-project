@@ -541,7 +541,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current mentees" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PtZ-KO-0rp">
-                                <rect key="frame" x="20" y="188" width="388" height="50"/>
+                                <rect key="frame" x="20" y="138" width="388" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="R5Q-we-px0"/>
                                 </constraints>
@@ -550,7 +550,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pending requests" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="81B-i8-duZ">
-                                <rect key="frame" x="20" y="435" width="388" height="50"/>
+                                <rect key="frame" x="20" y="385" width="388" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="WQs-m2-oIN"/>
                                 </constraints>
@@ -559,7 +559,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eRB-hQ-6LS">
-                                <rect key="frame" x="20" y="238" width="388" height="197"/>
+                                <rect key="frame" x="20" y="188" width="388" height="197"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="197" id="X3r-CK-w4a"/>
@@ -617,7 +617,7 @@
                                 </prototypes>
                             </tableView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TcO-MR-vgC">
-                                <rect key="frame" x="20" y="485" width="388" height="338"/>
+                                <rect key="frame" x="20" y="435" width="388" height="388"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="80" id="IO0-mD-Efd" customClass="RequesteeTableCell" customModule="ReferralPlease" customModuleProvider="target">
@@ -707,7 +707,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f4F-WO-gSX">
-                                <rect key="frame" x="387.33333333333331" y="88" width="20.666666666666686" height="22"/>
+                                <rect key="frame" x="387.33333333333331" y="106" width="20.666666666666686" height="22"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="gearshape.fill" catalog="system"/>
                                 <connections>
@@ -724,9 +724,9 @@
                             <constraint firstItem="TGH-Vh-dfd" firstAttribute="trailing" secondItem="81B-i8-duZ" secondAttribute="trailing" constant="20" id="GIn-Yt-fFq"/>
                             <constraint firstItem="TcO-MR-vgC" firstAttribute="leading" secondItem="TGH-Vh-dfd" secondAttribute="leading" constant="20" id="LwU-LN-nWu"/>
                             <constraint firstItem="PtZ-KO-0rp" firstAttribute="leading" secondItem="TGH-Vh-dfd" secondAttribute="leading" constant="20" id="MIh-iv-SqK"/>
-                            <constraint firstItem="PtZ-KO-0rp" firstAttribute="top" secondItem="TGH-Vh-dfd" secondAttribute="top" constant="100" id="OhE-Lm-Bwt"/>
+                            <constraint firstItem="PtZ-KO-0rp" firstAttribute="top" secondItem="TGH-Vh-dfd" secondAttribute="top" constant="50" id="OhE-Lm-Bwt"/>
                             <constraint firstItem="TcO-MR-vgC" firstAttribute="top" secondItem="81B-i8-duZ" secondAttribute="bottom" id="VqI-jR-HEl"/>
-                            <constraint firstItem="f4F-WO-gSX" firstAttribute="top" secondItem="TGH-Vh-dfd" secondAttribute="top" id="aBs-zk-xFS"/>
+                            <constraint firstItem="f4F-WO-gSX" firstAttribute="top" secondItem="TGH-Vh-dfd" secondAttribute="top" constant="18" id="aBs-zk-xFS"/>
                             <constraint firstItem="TGH-Vh-dfd" firstAttribute="trailing" secondItem="f4F-WO-gSX" secondAttribute="trailing" constant="20" id="aqq-IL-QXa"/>
                             <constraint firstItem="TGH-Vh-dfd" firstAttribute="trailing" secondItem="TcO-MR-vgC" secondAttribute="trailing" constant="20" id="mA0-ha-reS"/>
                             <constraint firstItem="eRB-hQ-6LS" firstAttribute="leading" secondItem="TGH-Vh-dfd" secondAttribute="leading" constant="20" id="ro5-XN-KfU"/>

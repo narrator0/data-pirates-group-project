@@ -10,6 +10,7 @@ target 'ReferralPlease' do
   pod 'FirebaseUI'
   pod 'Firebase/Firestore'
   pod 'SDWebImage', :modular_headers => true
+  pod 'NotificationBannerSwift', '~> 3.0.0'
 
   target 'ReferralPleaseTests' do
     inherit! :search_paths
