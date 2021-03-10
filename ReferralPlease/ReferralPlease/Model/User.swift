@@ -79,6 +79,47 @@ class User {
         }
     }
 
+    static func getAllStatus(_ userID: String, _ role: String, _ accepted: Bool, complete: @escaping (_ currUsers: [User]) -> Void) -> Void {
+        // dispatch queue
+        var mentors: [User] = []
+        let group = DispatchGroup()
+        db.collection("mentorStatus").whereField(role, isEqualTo: userID).whereField("accepted", isEqualTo: accepted).getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting doc on user: \(err)")
+                
+                DispatchQueue.main.async {
+                    complete([])
+                }
+            } else {
+                if let documents = querySnapshot?.documents {
+                    for document in documents {
+                        let data = document.data()
+                        let userRole = role == "mentorID" ? "menteeID" : "mentorID"
+                        let userID = data[userRole] as? String
+                        group.enter()
+                        
+                        User.get(userID ?? "") {
+                            userRecord in
+                            mentors.append(userRecord)
+                            group.leave()
+                            
+                        }
+                    
+                       
+                    }
+                   
+                    group.notify(queue: .main) {
+                        print(mentors)
+                            complete(mentors)
+                        
+                    }
+                        
+                }
+
+            }
+        }
+    }
+    
     static func currentUser(complete: @escaping (_ user: User) -> Void) -> Void {
         if Storage.currentUserID != nil {
             self.get(Storage.currentUserID ?? "") { user in

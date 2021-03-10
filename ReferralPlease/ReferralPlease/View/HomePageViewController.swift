@@ -31,10 +31,9 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         self.tableView.dataSource = self
         self.tableView.delegate = self
 
-        User.currentUser(){
-            userRecord in
-            MentorRequests.update(userRecord.userID)
-        }
+        
+        MentorRequests.update()
+        
         
         
         // dispatch queue

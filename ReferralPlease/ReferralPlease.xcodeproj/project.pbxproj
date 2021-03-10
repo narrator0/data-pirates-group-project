@@ -11,34 +11,42 @@
 		1A8524E425E6279000CBE9B9 /* LinkedInEmailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8524E325E6279000CBE9B9 /* LinkedInEmailModel.swift */; };
 		1A8524E925E627B400CBE9B9 /* LinkedInProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8524E825E627B400CBE9B9 /* LinkedInProfileModel.swift */; };
 		1A8524F325E6292C00CBE9B9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8524F225E6292C00CBE9B9 /* Constants.swift */; };
-		1AC3B2F825E31A87006411C9 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC3B2F725E31A87006411C9 /* CreateAccountViewController.swift */; };
-		2017645725F2206300E6900B /* MatchingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2017645625F2206300E6900B /* MatchingViewController.swift */; };
-		20176E5E25F0E71D00075ED8 /* QuestionaresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20176E5D25F0E71D00075ED8 /* QuestionaresViewController.swift */; };
-		204F4AFF25EA419B00366312 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F4AFE25EA419B00366312 /* MainTabController.swift */; };
-		204F4B0425EA572200366312 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F4B0325EA572200366312 /* SettingsViewController.swift */; };
-		20CBE01425E7764800E03DD2 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CBE01325E7764800E03DD2 /* TableViewCell.swift */; };
-		20CBE01925E7788A00E03DD2 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CBE01825E7788A00E03DD2 /* HomePageViewController.swift */; };
-		20CBE01E25E7933400E03DD2 /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CBE01D25E7933400E03DD2 /* ProfilePageViewController.swift */; };
 		3017246B59ED0915173B5D92 /* Pods_ReferralPlease_ReferralPleaseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021E485234D5FFE251BBB41A /* Pods_ReferralPlease_ReferralPleaseUITests.framework */; };
 		5EC145B825EDDD0000748196 /* MentorRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC145B725EDDD0000748196 /* MentorRequests.swift */; };
+		5EC148E925F7420400748196 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC148E825F7420400748196 /* Storage.swift */; };
+		5EC1498B25F7FFEC00748196 /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC1497525F7FFEB00748196 /* LogoutViewController.swift */; };
+		5EC1498C25F7FFEC00748196 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC1497625F7FFEB00748196 /* ViewController.swift */; };
+		5EC1498D25F7FFEC00748196 /* AboutMentorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC1497725F7FFEC00748196 /* AboutMentorViewController.swift */; };
+		5EC1498E25F7FFEC00748196 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC1497825F7FFEC00748196 /* ProfileViewController.swift */; };
+		5EC1498F25F7FFEC00748196 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC1497925F7FFEC00748196 /* CreateAccountViewController.swift */; };
+		5EC1499025F7FFEC00748196 /* MainTabControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC1497A25F7FFEC00748196 /* MainTabControllerViewController.swift */; };
+		5EC1499125F7FFEC00748196 /* MatchingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC1497B25F7FFEC00748196 /* MatchingViewController.swift */; };
+		5EC1499225F7FFEC00748196 /* AboutMenteeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC1497C25F7FFEC00748196 /* AboutMenteeViewController.swift */; };
+		5EC1499325F7FFEC00748196 /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC1497D25F7FFEC00748196 /* ProfilePageViewController.swift */; };
+		5EC1499425F7FFEC00748196 /* FirstTimeLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC1497E25F7FFEC00748196 /* FirstTimeLoginViewController.swift */; };
+		5EC1499525F7FFEC00748196 /* RequesteeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC1497F25F7FFEC00748196 /* RequesteeTableCell.swift */; };
+		5EC1499625F7FFEC00748196 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC1498025F7FFEC00748196 /* TableViewCell.swift */; };
+		5EC1499725F7FFEC00748196 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC1498125F7FFEC00748196 /* HomeViewController.swift */; };
+		5EC1499825F7FFEC00748196 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC1498225F7FFEC00748196 /* SettingViewController.swift */; };
+		5EC1499925F7FFEC00748196 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC1498325F7FFEC00748196 /* SettingsViewController.swift */; };
+		5EC1499A25F7FFEC00748196 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC1498425F7FFEC00748196 /* NotificationViewController.swift */; };
+		5EC1499B25F7FFEC00748196 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC1498525F7FFEC00748196 /* MainTabController.swift */; };
+		5EC1499C25F7FFEC00748196 /* QuestionaresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC1498625F7FFEC00748196 /* QuestionaresViewController.swift */; };
+		5EC1499D25F7FFEC00748196 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC1498725F7FFEC00748196 /* ResetPasswordViewController.swift */; };
+		5EC1499E25F7FFEC00748196 /* MenteeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC1498825F7FFEC00748196 /* MenteeTableViewCell.swift */; };
+		5EC1499F25F7FFEC00748196 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC1498925F7FFEC00748196 /* HomePageViewController.swift */; };
+		5EC149A025F7FFEC00748196 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC1498A25F7FFEC00748196 /* UserTableViewCell.swift */; };
 		6DBD790C1D881E92885A6C91 /* Pods_ReferralPlease.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFBC0D8D282DAE7CA6973C2C /* Pods_ReferralPlease.framework */; };
 		CD14C74A25E565C000BCED8E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD14C74925E565C000BCED8E /* GoogleService-Info.plist */; };
 		CD2D9CB825DF602900EA47DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2D9CB725DF602900EA47DD /* AppDelegate.swift */; };
 		CD2D9CBA25DF602900EA47DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2D9CB925DF602900EA47DD /* SceneDelegate.swift */; };
-		CD2D9CBC25DF602900EA47DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2D9CBB25DF602900EA47DD /* ViewController.swift */; };
 		CD2D9CBF25DF602900EA47DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD2D9CBD25DF602900EA47DD /* Main.storyboard */; };
 		CD2D9CC125DF602B00EA47DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD2D9CC025DF602B00EA47DD /* Assets.xcassets */; };
 		CD2D9CC425DF602B00EA47DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD2D9CC225DF602B00EA47DD /* LaunchScreen.storyboard */; };
 		CD2D9CCF25DF602B00EA47DD /* ReferralPleaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2D9CCE25DF602B00EA47DD /* ReferralPleaseTests.swift */; };
 		CD2D9CDA25DF602C00EA47DD /* ReferralPleaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2D9CD925DF602C00EA47DD /* ReferralPleaseUITests.swift */; };
-		CD73768625F6DC5E00FF7A1C /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD73768525F6DC5E00FF7A1C /* NotificationViewController.swift */; };
 		CD745D4725ECBDFE002FC3D8 /* LinkedInOAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD745D4625ECBDFE002FC3D8 /* LinkedInOAuth.swift */; };
 		CD745D4C25ECC57E002FC3D8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD745D4B25ECC57E002FC3D8 /* User.swift */; };
-		CD745D5725ED6954002FC3D8 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD745D5625ED6954002FC3D8 /* Storage.swift */; };
-		CD7DC2FD25EA1E1700C19F15 /* FirstTimeLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7DC2FC25EA1E1700C19F15 /* FirstTimeLoginViewController.swift */; };
-		CDE268F925F5CCF500C99E73 /* AboutMenteeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE268F825F5CCF500C99E73 /* AboutMenteeViewController.swift */; };
-		CDE2690125F5D07600C99E73 /* AboutMentorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE2690025F5D07600C99E73 /* AboutMentorViewController.swift */; };
-		CDE2690625F5D84100C99E73 /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE2690525F5D84100C99E73 /* LogoutViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,16 +72,31 @@
 		1A8524E325E6279000CBE9B9 /* LinkedInEmailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedInEmailModel.swift; sourceTree = "<group>"; };
 		1A8524E825E627B400CBE9B9 /* LinkedInProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedInProfileModel.swift; sourceTree = "<group>"; };
 		1A8524F225E6292C00CBE9B9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		1AC3B2F725E31A87006411C9 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
-		2017645625F2206300E6900B /* MatchingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingViewController.swift; sourceTree = "<group>"; };
-		20176E5D25F0E71D00075ED8 /* QuestionaresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionaresViewController.swift; sourceTree = "<group>"; };
-		204F4AFE25EA419B00366312 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
-		204F4B0325EA572200366312 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		20CBE01325E7764800E03DD2 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		20CBE01825E7788A00E03DD2 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
-		20CBE01D25E7933400E03DD2 /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
 		2C498E71FBAF3F4D5FB46C9D /* Pods-ReferralPlease-ReferralPleaseUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReferralPlease-ReferralPleaseUITests.debug.xcconfig"; path = "Target Support Files/Pods-ReferralPlease-ReferralPleaseUITests/Pods-ReferralPlease-ReferralPleaseUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5EC145B725EDDD0000748196 /* MentorRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorRequests.swift; sourceTree = "<group>"; };
+		5EC148E825F7420400748196 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		5EC1497525F7FFEB00748196 /* LogoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
+		5EC1497625F7FFEB00748196 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5EC1497725F7FFEC00748196 /* AboutMentorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutMentorViewController.swift; sourceTree = "<group>"; };
+		5EC1497825F7FFEC00748196 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		5EC1497925F7FFEC00748196 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		5EC1497A25F7FFEC00748196 /* MainTabControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabControllerViewController.swift; sourceTree = "<group>"; };
+		5EC1497B25F7FFEC00748196 /* MatchingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchingViewController.swift; sourceTree = "<group>"; };
+		5EC1497C25F7FFEC00748196 /* AboutMenteeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutMenteeViewController.swift; sourceTree = "<group>"; };
+		5EC1497D25F7FFEC00748196 /* ProfilePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
+		5EC1497E25F7FFEC00748196 /* FirstTimeLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstTimeLoginViewController.swift; sourceTree = "<group>"; };
+		5EC1497F25F7FFEC00748196 /* RequesteeTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequesteeTableCell.swift; sourceTree = "<group>"; };
+		5EC1498025F7FFEC00748196 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		5EC1498125F7FFEC00748196 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		5EC1498225F7FFEC00748196 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		5EC1498325F7FFEC00748196 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		5EC1498425F7FFEC00748196 /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		5EC1498525F7FFEC00748196 /* MainTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
+		5EC1498625F7FFEC00748196 /* QuestionaresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionaresViewController.swift; sourceTree = "<group>"; };
+		5EC1498725F7FFEC00748196 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		5EC1498825F7FFEC00748196 /* MenteeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenteeTableViewCell.swift; sourceTree = "<group>"; };
+		5EC1498925F7FFEC00748196 /* HomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
+		5EC1498A25F7FFEC00748196 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		9E7FFD24501C1769A8B559B7 /* Pods-ReferralPleaseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReferralPleaseTests.debug.xcconfig"; path = "Target Support Files/Pods-ReferralPleaseTests/Pods-ReferralPleaseTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A70AFC13D4B37CE6D9D0A24D /* Pods-ReferralPleaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReferralPleaseTests.release.xcconfig"; path = "Target Support Files/Pods-ReferralPleaseTests/Pods-ReferralPleaseTests.release.xcconfig"; sourceTree = "<group>"; };
 		BC5AD4AAF0AB755BF8B2EA77 /* Pods-ReferralPlease.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReferralPlease.release.xcconfig"; path = "Target Support Files/Pods-ReferralPlease/Pods-ReferralPlease.release.xcconfig"; sourceTree = "<group>"; };
@@ -81,7 +104,6 @@
 		CD2D9CB425DF602900EA47DD /* ReferralPlease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReferralPlease.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD2D9CB725DF602900EA47DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD2D9CB925DF602900EA47DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CD2D9CBB25DF602900EA47DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CD2D9CBE25DF602900EA47DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CD2D9CC025DF602B00EA47DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD2D9CC325DF602B00EA47DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -92,14 +114,8 @@
 		CD2D9CD525DF602C00EA47DD /* ReferralPleaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReferralPleaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD2D9CD925DF602C00EA47DD /* ReferralPleaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferralPleaseUITests.swift; sourceTree = "<group>"; };
 		CD2D9CDB25DF602C00EA47DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CD73768525F6DC5E00FF7A1C /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationViewController.swift; path = ReferralPlease/NotificationViewController.swift; sourceTree = SOURCE_ROOT; };
 		CD745D4625ECBDFE002FC3D8 /* LinkedInOAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedInOAuth.swift; sourceTree = "<group>"; };
 		CD745D4B25ECC57E002FC3D8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		CD745D5625ED6954002FC3D8 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
-		CD7DC2FC25EA1E1700C19F15 /* FirstTimeLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstTimeLoginViewController.swift; sourceTree = "<group>"; };
-		CDE268F825F5CCF500C99E73 /* AboutMenteeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMenteeViewController.swift; sourceTree = "<group>"; };
-		CDE2690025F5D07600C99E73 /* AboutMentorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMentorViewController.swift; sourceTree = "<group>"; };
-		CDE2690525F5D84100C99E73 /* LogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
 		CFBC0D8D282DAE7CA6973C2C /* Pods_ReferralPlease.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReferralPlease.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F456E76FDA5115B7E2A6B105 /* Pods-ReferralPlease-ReferralPleaseUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReferralPlease-ReferralPleaseUITests.release.xcconfig"; path = "Target Support Files/Pods-ReferralPlease-ReferralPleaseUITests/Pods-ReferralPlease-ReferralPleaseUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FCD54E3AD79483784B0A1295 /* Pods_ReferralPleaseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReferralPleaseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -216,20 +232,28 @@
 		CDE6D30F25F3293900D934D7 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CD73768525F6DC5E00FF7A1C /* NotificationViewController.swift */,
-				1AC3B2F725E31A87006411C9 /* CreateAccountViewController.swift */,
-				CD2D9CBB25DF602900EA47DD /* ViewController.swift */,
-				20CBE01325E7764800E03DD2 /* TableViewCell.swift */,
-				20CBE01825E7788A00E03DD2 /* HomePageViewController.swift */,
-				20CBE01D25E7933400E03DD2 /* ProfilePageViewController.swift */,
-				204F4AFE25EA419B00366312 /* MainTabController.swift */,
-				204F4B0325EA572200366312 /* SettingsViewController.swift */,
-				CD7DC2FC25EA1E1700C19F15 /* FirstTimeLoginViewController.swift */,
-				20176E5D25F0E71D00075ED8 /* QuestionaresViewController.swift */,
-				2017645625F2206300E6900B /* MatchingViewController.swift */,
-				CDE268F825F5CCF500C99E73 /* AboutMenteeViewController.swift */,
-				CDE2690025F5D07600C99E73 /* AboutMentorViewController.swift */,
-				CDE2690525F5D84100C99E73 /* LogoutViewController.swift */,
+				5EC1497C25F7FFEC00748196 /* AboutMenteeViewController.swift */,
+				5EC1497725F7FFEC00748196 /* AboutMentorViewController.swift */,
+				5EC1497925F7FFEC00748196 /* CreateAccountViewController.swift */,
+				5EC1497E25F7FFEC00748196 /* FirstTimeLoginViewController.swift */,
+				5EC1498925F7FFEC00748196 /* HomePageViewController.swift */,
+				5EC1498125F7FFEC00748196 /* HomeViewController.swift */,
+				5EC1497525F7FFEB00748196 /* LogoutViewController.swift */,
+				5EC1498525F7FFEC00748196 /* MainTabController.swift */,
+				5EC1497A25F7FFEC00748196 /* MainTabControllerViewController.swift */,
+				5EC1497B25F7FFEC00748196 /* MatchingViewController.swift */,
+				5EC1498825F7FFEC00748196 /* MenteeTableViewCell.swift */,
+				5EC1498425F7FFEC00748196 /* NotificationViewController.swift */,
+				5EC1497D25F7FFEC00748196 /* ProfilePageViewController.swift */,
+				5EC1497825F7FFEC00748196 /* ProfileViewController.swift */,
+				5EC1498625F7FFEC00748196 /* QuestionaresViewController.swift */,
+				5EC1497F25F7FFEC00748196 /* RequesteeTableCell.swift */,
+				5EC1498725F7FFEC00748196 /* ResetPasswordViewController.swift */,
+				5EC1498325F7FFEC00748196 /* SettingsViewController.swift */,
+				5EC1498225F7FFEC00748196 /* SettingViewController.swift */,
+				5EC1498025F7FFEC00748196 /* TableViewCell.swift */,
+				5EC1498A25F7FFEC00748196 /* UserTableViewCell.swift */,
+				5EC1497625F7FFEB00748196 /* ViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -248,7 +272,7 @@
 		CDE6D31125F3297100D934D7 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				CD745D5625ED6954002FC3D8 /* Storage.swift */,
+				5EC148E825F7420400748196 /* Storage.swift */,
 				1A8524F225E6292C00CBE9B9 /* Constants.swift */,
 				CD745D4625ECBDFE002FC3D8 /* LinkedInOAuth.swift */,
 			);
@@ -530,29 +554,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EC1499C25F7FFEC00748196 /* QuestionaresViewController.swift in Sources */,
+				5EC1499725F7FFEC00748196 /* HomeViewController.swift in Sources */,
 				1A8524E425E6279000CBE9B9 /* LinkedInEmailModel.swift in Sources */,
-				20CBE01425E7764800E03DD2 /* TableViewCell.swift in Sources */,
-				204F4AFF25EA419B00366312 /* MainTabController.swift in Sources */,
 				5EC145B825EDDD0000748196 /* MentorRequests.swift in Sources */,
-				CDE2690625F5D84100C99E73 /* LogoutViewController.swift in Sources */,
+				5EC1499825F7FFEC00748196 /* SettingViewController.swift in Sources */,
 				CD745D4725ECBDFE002FC3D8 /* LinkedInOAuth.swift in Sources */,
-				CD73768625F6DC5E00FF7A1C /* NotificationViewController.swift in Sources */,
-				20CBE01925E7788A00E03DD2 /* HomePageViewController.swift in Sources */,
-				1AC3B2F825E31A87006411C9 /* CreateAccountViewController.swift in Sources */,
-				20176E5E25F0E71D00075ED8 /* QuestionaresViewController.swift in Sources */,
-				CD745D5725ED6954002FC3D8 /* Storage.swift in Sources */,
-				2017645725F2206300E6900B /* MatchingViewController.swift in Sources */,
-				CD7DC2FD25EA1E1700C19F15 /* FirstTimeLoginViewController.swift in Sources */,
-				CD2D9CBC25DF602900EA47DD /* ViewController.swift in Sources */,
-				CDE2690125F5D07600C99E73 /* AboutMentorViewController.swift in Sources */,
+				5EC1499D25F7FFEC00748196 /* ResetPasswordViewController.swift in Sources */,
+				5EC1498D25F7FFEC00748196 /* AboutMentorViewController.swift in Sources */,
+				5EC1499425F7FFEC00748196 /* FirstTimeLoginViewController.swift in Sources */,
+				5EC1498C25F7FFEC00748196 /* ViewController.swift in Sources */,
+				5EC1498E25F7FFEC00748196 /* ProfileViewController.swift in Sources */,
+				5EC1499A25F7FFEC00748196 /* NotificationViewController.swift in Sources */,
+				5EC1498F25F7FFEC00748196 /* CreateAccountViewController.swift in Sources */,
+				5EC1499625F7FFEC00748196 /* TableViewCell.swift in Sources */,
+				5EC1499125F7FFEC00748196 /* MatchingViewController.swift in Sources */,
+				5EC148E925F7420400748196 /* Storage.swift in Sources */,
+				5EC1499225F7FFEC00748196 /* AboutMenteeViewController.swift in Sources */,
+				5EC1499025F7FFEC00748196 /* MainTabControllerViewController.swift in Sources */,
 				CD745D4C25ECC57E002FC3D8 /* User.swift in Sources */,
-				CDE268F925F5CCF500C99E73 /* AboutMenteeViewController.swift in Sources */,
-				20CBE01E25E7933400E03DD2 /* ProfilePageViewController.swift in Sources */,
+				5EC1499E25F7FFEC00748196 /* MenteeTableViewCell.swift in Sources */,
+				5EC1499525F7FFEC00748196 /* RequesteeTableCell.swift in Sources */,
 				CD2D9CB825DF602900EA47DD /* AppDelegate.swift in Sources */,
+				5EC1498B25F7FFEC00748196 /* LogoutViewController.swift in Sources */,
 				CD2D9CBA25DF602900EA47DD /* SceneDelegate.swift in Sources */,
-				204F4B0425EA572200366312 /* SettingsViewController.swift in Sources */,
 				1A8524E925E627B400CBE9B9 /* LinkedInProfileModel.swift in Sources */,
+				5EC1499325F7FFEC00748196 /* ProfilePageViewController.swift in Sources */,
+				5EC1499F25F7FFEC00748196 /* HomePageViewController.swift in Sources */,
+				5EC1499B25F7FFEC00748196 /* MainTabController.swift in Sources */,
 				1A8524F325E6292C00CBE9B9 /* Constants.swift in Sources */,
+				5EC149A025F7FFEC00748196 /* UserTableViewCell.swift in Sources */,
+				5EC1499925F7FFEC00748196 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
