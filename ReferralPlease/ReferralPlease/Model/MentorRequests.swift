@@ -14,11 +14,11 @@ class MentorRequests {
     private static var requests:Requests? = Requests()
     
     struct Requests {
-        var mentorID: String = ""
-        var menteeIDs: [String] = []
-        var requesteeIDs: [String] = []
         var mentees: [User] = []
         var requestees: [User] = []
+        var userID: String = ""
+        var role: String = ""
+        
     }
     
     private init(){
@@ -27,66 +27,48 @@ class MentorRequests {
            }
     }
         
-    class func update(_ userID: String = "") {
+    class func update() {
         MentorRequests.requests?.mentees = []
         MentorRequests.requests?.requestees = []
-        MentorRequests.requests?.menteeIDs = []
-        MentorRequests.requests?.requesteeIDs = []
-        if (userID != "") {
-            MentorRequests.requests?.mentorID = userID
+     
+      
+        User.currentUser() {
+            userRecord in
+            MentorRequests.requests?.userID = userRecord.userID
+            MentorRequests.requests?.role = userRecord.role
         }
-        let db = Firestore.firestore()
-        db.collection("mentorStatus").whereField("mentorID", isEqualTo: MentorRequests.requests?.mentorID as Any).whereField("accepted", isEqualTo: true)
-                .getDocuments() { (querySnapshot, err) in
-                    if let err = err {
-                        print("Error getting documents: \(err)")
-                    } else {
-                        if let documents = querySnapshot?.documents{
-                        for document in documents {
-                            if let menteeID = document.data()["menteeID"] as? String {
-                             
-                                User.get(menteeID) {
-                                    userRecord in
-                                    MentorRequests.requests?.mentees.append(userRecord)
-                               
-                                }
-                            }
-                        }
-                        }
-                     
-            
-                        
-                    }
+            if (MentorRequests.requests?.role == "mentor") {
+                User.getAllStatus(MentorRequests.requests?.userID ?? "" , "mentorID", true ) {
+            userRecords in
+            print(userRecords)
+            MentorRequests.requests?.mentees = userRecords
+        }
+        
+                User.getAllStatus(MentorRequests.requests?.userID ?? "", "mentorID", false ) {
+            userRecords in
+            MentorRequests.requests?.requestees = userRecords
+        }
+        }
+            else {
+                User.getAllStatus(MentorRequests.requests?.userID ?? "" , "menteeID", true ) {
+                    userRecords in
+                    print(userRecords)
+                    MentorRequests.requests?.mentees = userRecords
+                }
+                
+                User.getAllStatus(MentorRequests.requests?.userID ?? "", "menteeID", false ) {
+                    userRecords in
+                    MentorRequests.requests?.requestees = userRecords
+                }
             }
-
-
+        }
 
     
-        
-        db.collection("mentorStatus").whereField("mentorID", isEqualTo: MentorRequests.requests?.mentorID as Any).whereField("accepted", isEqualTo: false)
-                .getDocuments() { (querySnapshot, err) in
-                    if let err = err {
-                        print("Error getting documents: \(err)")
-                    } else {
-                        if let documents = querySnapshot?.documents{
-                        for document in documents {
-                            if let menteeID = document.data()["menteeID"] as? String {
-                                User.get(menteeID) {
-                                    userRecord in
-                                    MentorRequests.requests?.requestees.append(userRecord)
-                                }
-                            }
-                        }
-                        }
-                    }
-            }
-        
 
-    }
-    
+
     
     func deleteRequest(_ menteeID: String) {
-        db.collection("mentorStatus").whereField("mentorID", isEqualTo: MentorRequests.requests?.mentorID as Any).whereField("menteeID", isEqualTo: menteeID).getDocuments() { (querySnapshot, err) in
+        db.collection("mentorStatus").whereField("mentorID", isEqualTo: MentorRequests.requests?.userID as Any).whereField("menteeID", isEqualTo: menteeID).getDocuments() { (querySnapshot, err) in
                 if let err = err {
                     print("Error getting document: \(err)")
                 } else {
@@ -98,18 +80,11 @@ class MentorRequests {
         
     }
     
-    func getRequestsIDs() -> [String] {
-        if let requests = MentorRequests.requests?.menteeIDs {
-            return requests
-        }
-        else {
-            return []
-        }
-    }
+
     
     func getID() -> String {
        
-        if let mentorID = MentorRequests.requests?.mentorID {
+        if let mentorID = MentorRequests.requests?.userID {
             return mentorID
         }
         else {

@@ -11,6 +11,8 @@ import FirebaseFirestore
 class RequesteeTableCell: UITableViewCell {
 
 
+    @IBOutlet weak var declineButton: UIButton!
+    @IBOutlet weak var acceptButton: UIButton!
     @IBOutlet weak var message: UILabel!
     @IBOutlet weak var profilePicture: UIImageView!
     var view: NotificationViewController = NotificationViewController()
@@ -19,6 +21,13 @@ class RequesteeTableCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        User.currentUser() {
+            user in
+            if user.role == "mentee" {
+                self.declineButton.isHidden = true
+                self.acceptButton.isHidden = true
+            }
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
