@@ -49,6 +49,9 @@
          location = "container:ReferralPlease/View"
          name = "View">
          <FileRef
+            location = "group:/Users/arfullight/Desktop/data-pirates-group-project/ReferralPlease/ReferralPlease/View/NotificationViewController.swift">
+         </FileRef>
+         <FileRef
             location = "container:ReferralPlease/View/CreateAccountViewController.swift">
          </FileRef>
          <FileRef
@@ -85,20 +88,12 @@
       <FileRef
          location = "container:ReferralPlease/SceneDelegate.swift">
       </FileRef>
-      <Group
-         location = "container:ReferralPlease"
-         name = "Main.storyboard">
-         <FileRef
-            location = "container:ReferralPlease/Base.lproj/Main.storyboard">
-         </FileRef>
-      </Group>
-      <Group
-         location = "container:ReferralPlease"
-         name = "LaunchScreen.storyboard">
-         <FileRef
-            location = "container:ReferralPlease/Base.lproj/LaunchScreen.storyboard">
-         </FileRef>
-      </Group>
+      <FileRef
+         location = "group:Base.lproj/LaunchScreen.storyboard">
+      </FileRef>
+      <FileRef
+         location = "group:Base.lproj/Main.storyboard">
+      </FileRef>
    </Group>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
