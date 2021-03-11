@@ -22,7 +22,7 @@ class MatchingViewController: UIViewController {
     @IBOutlet weak var requestBtn: UIButton!
     var mentorId : String = ""
     
-    let requestQueue = DispatchQueue(label: "requestQueue")
+//    let requestQueue = DispatchQueue(label: "requestQueue")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,24 +67,24 @@ class MatchingViewController: UIViewController {
     @IBAction func sendRequest(_ sender: Any) {
         print("Request btn clicked")
         User.currentUser() { user in
-            self.requestQueue.async {
-                MentorRequests.createRequest(self.mentorId, user.userID)
-            }
             
-            DispatchQueue.main.async {
-                print("congrats")
-                self.requestBtn.setTitle("Sent!", for: .normal)
-                self.showNotificationBanner()
-                
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                guard let vc = storyboard.instantiateViewController(withIdentifier: "mainTabViewController") as? MainTabController else
-                {
-                    assertionFailure("couldn't find vc")
-                    return
-                }
-    
-                self.navigationController?.pushViewController(vc, animated: true)
+            MentorRequests.createRequest(self.mentorId, user.userID)
+         
+            
+          
+            print("congrats")
+            self.requestBtn.setTitle("Sent!", for: .normal)
+            self.showNotificationBanner()
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            guard let vc = storyboard.instantiateViewController(withIdentifier: "mainTabViewController") as? MainTabController else
+            {
+                assertionFailure("couldn't find vc")
+                return
             }
+
+            self.navigationController?.pushViewController(vc, animated: true)
+        
             
             
 //            print("congrats")
@@ -101,7 +101,7 @@ class MatchingViewController: UIViewController {
     }
     
     func showNotificationBanner(){
-        let banner = StatusBarNotificationBanner(title: "Request sent", style: .success, colors: nil)
+        let banner = GrowingNotificationBanner(title: "Request sent successfully!", style: .success, colors: nil)
    
         banner.show()
     }
