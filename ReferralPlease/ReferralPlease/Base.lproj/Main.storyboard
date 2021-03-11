@@ -16,18 +16,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JIO-hQ-oeI">
-                                <rect key="frame" x="178" y="367" width="72" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="JIO-hQ-oeI">
+                                <rect key="frame" x="166.33333333333334" y="353.66666666666669" width="95.333333333333343" height="49.333333333333314"/>
+                                <fontDescription key="fontDescription" name="NotoSansOriya-Bold" family="Noto Sans Oriya" pointSize="35"/>
+                                <color key="textColor" red="0.16470588235294117" green="0.24313725490196078" blue="0.3411764705882353" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Xj-nJ-Zhu">
-                                <rect key="frame" x="89" y="443" width="250" height="40"/>
+                                <rect key="frame" x="60" y="443" width="308" height="40"/>
                                 <color key="backgroundColor" red="0.93333333333333335" green="0.42352941176470588" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Mch-YD-UUh"/>
-                                    <constraint firstAttribute="width" constant="250" id="vFt-NZ-dmj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="NotoSansOriya-Bold" family="Noto Sans Oriya" pointSize="20"/>
                                 <state key="normal" title="Sign in with LinkedIn">
@@ -50,15 +49,14 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.91764705882352937" green="0.88627450980392153" blue="0.71764705882352942" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="JIO-hQ-oeI" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="AXp-In-aeQ"/>
+                            <constraint firstItem="5Xj-nJ-Zhu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="13O-vA-GMh"/>
                             <constraint firstItem="5Xj-nJ-Zhu" firstAttribute="top" secondItem="JIO-hQ-oeI" secondAttribute="bottom" constant="40" id="COB-Iy-cFm"/>
-                            <constraint firstItem="5Xj-nJ-Zhu" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="RGl-Qc-AmN"/>
                             <constraint firstItem="5Xj-nJ-Zhu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="X4r-Hp-gfk"/>
                             <constraint firstItem="Vng-4g-eZo" firstAttribute="top" secondItem="5Xj-nJ-Zhu" secondAttribute="bottom" constant="20" id="ZQg-1e-jPq"/>
                             <constraint firstItem="Vng-4g-eZo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Za4-0y-Rpu"/>
                             <constraint firstItem="JIO-hQ-oeI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dXa-Cu-Ls9"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Vng-4g-eZo" secondAttribute="trailing" constant="20" id="gPa-LR-Mml"/>
                             <constraint firstItem="Vng-4g-eZo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="om4-oK-rpi"/>
+                            <constraint firstItem="5Xj-nJ-Zhu" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vCf-h9-aFt"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="UJZ-if-yEe"/>
@@ -359,10 +357,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tell us who you are!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9c-5O-Ijx">
-                                <rect key="frame" x="89" y="367" width="250" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tell us who you are!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="w9c-5O-Ijx">
+                                <rect key="frame" x="36.666666666666657" y="353.66666666666669" width="354.66666666666674" height="49.333333333333314"/>
+                                <fontDescription key="fontDescription" name="NotoSansOriya-Bold" family="Noto Sans Oriya" pointSize="35"/>
+                                <color key="textColor" red="0.1647058824" green="0.24313725489999999" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RVF-A2-pTJ">
@@ -401,11 +399,11 @@
                         <viewLayoutGuide key="safeArea" id="vV2-Da-vjw"/>
                         <color key="backgroundColor" red="0.91764705879999997" green="0.8862745098" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="TAT-k7-HGm" firstAttribute="centerY" secondItem="uhj-Ek-KUy" secondAttribute="centerY" id="HBl-dg-wBx"/>
                             <constraint firstItem="RVF-A2-pTJ" firstAttribute="top" secondItem="w9c-5O-Ijx" secondAttribute="bottom" constant="40" id="QKA-pJ-C2D"/>
-                            <constraint firstItem="TAT-k7-HGm" firstAttribute="centerY" secondItem="uhj-Ek-KUy" secondAttribute="centerY" id="RtJ-MO-t9Z"/>
+                            <constraint firstItem="RVF-A2-pTJ" firstAttribute="centerY" secondItem="uhj-Ek-KUy" secondAttribute="centerY" id="VRD-nP-JxH"/>
                             <constraint firstItem="vV2-Da-vjw" firstAttribute="trailing" secondItem="TAT-k7-HGm" secondAttribute="trailing" constant="70" id="cwf-Q2-SgG"/>
                             <constraint firstItem="RVF-A2-pTJ" firstAttribute="leading" secondItem="vV2-Da-vjw" secondAttribute="leading" constant="70" id="lbr-eC-G2M"/>
-                            <constraint firstItem="RVF-A2-pTJ" firstAttribute="centerY" secondItem="uhj-Ek-KUy" secondAttribute="centerY" id="nPC-k9-T2L"/>
                             <constraint firstItem="w9c-5O-Ijx" firstAttribute="centerX" secondItem="uhj-Ek-KUy" secondAttribute="centerX" id="odq-JQ-dGS"/>
                             <constraint firstItem="TAT-k7-HGm" firstAttribute="top" secondItem="w9c-5O-Ijx" secondAttribute="bottom" constant="40" id="zKZ-nI-2pl"/>
                         </constraints>
@@ -465,7 +463,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vXV-Yh-tIQ">
-                                <rect key="frame" x="30" y="370.66666666666669" width="90" height="38"/>
+                                <rect key="frame" x="30" y="370.66666666666669" width="90" height="41"/>
                                 <color key="backgroundColor" red="0.93333333330000001" green="0.42352941179999998" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="hSP-gx-1Jn"/>
@@ -1153,7 +1151,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BDE-3r-Ddd">
-                                <rect key="frame" x="312" y="401.66666666666669" width="86" height="36"/>
+                                <rect key="frame" x="312" y="401.66666666666669" width="86" height="41"/>
                                 <color key="backgroundColor" red="0.93333333330000001" green="0.42352941179999998" blue="0.30196078430000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="86" id="l06-lx-JqS"/>
