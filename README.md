@@ -9,6 +9,9 @@ https://trello.com/b/DL6QL9XR/data-pirates
 
 See [team members wiki](https://github.com/narrator0/data-pirates-group-project/wiki/Team-Members) for details.
 
+## Sprint Planning #5
+
+See [sprint planning 5 wiki](https://github.com/narrator0/data-pirates-group-project/wiki/Sprint-Planning-5).
 
 ## Sprint Planning #4
 
