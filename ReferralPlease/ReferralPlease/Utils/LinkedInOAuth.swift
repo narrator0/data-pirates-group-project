@@ -77,11 +77,11 @@ struct LinkedInOAuth {
                     let firstName = self.getSTName(data: linkedInProfileModel.firstName)
                     let lastName = self.getSTName(data: linkedInProfileModel.lastName)
                     let userID = linkedInProfileModel.id
-                    let avatarURL = linkedInProfileModel.profilePicture.displayImage.elements[0].identifiers[0].identifier
+                    let avatarURL = linkedInProfileModel.profilePicture?.displayImage?.elements[0].identifiers[0].identifier
                     
                     Storage.currentUserID = userID
                     
-                    let user = User(userID, firstName, lastName, avatarURL)
+                    let user = User(userID, firstName, lastName, avatarURL ?? "")
                     
                     self.getUserEmail(token: token, user: user, complete: complete)
                 } catch DecodingError.dataCorrupted(let context) {

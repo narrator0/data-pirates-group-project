@@ -9,6 +9,16 @@ import Foundation
 import Firebase
 import FirebaseFirestore
 
+extension User: Equatable {
+    static func == (lhs: User, rhs: User) -> Bool {
+        return
+            lhs.userID == rhs.userID &&
+            lhs.email == rhs.email &&
+            lhs.lastName == rhs.lastName &&
+            lhs.firstName == rhs.firstName
+    }
+}
+
 class User {
     var phone: String = ""
     var userID: String = ""
@@ -36,6 +46,7 @@ class User {
     
     var db = Firestore.firestore()
     static var db = Firestore.firestore()
+
     
     static func getAll(complete: @escaping (_ currUsers: [User]) -> Void) -> Void {
         // dispatch queue

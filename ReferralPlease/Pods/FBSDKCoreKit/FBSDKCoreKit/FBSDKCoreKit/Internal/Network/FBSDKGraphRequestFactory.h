@@ -18,21 +18,13 @@
 
 #import <Foundation/Foundation.h>
 
-#if SWIFT_PACKAGE
- #import "FBSDKAuthenticationToken.h"
-#else
- #import <FBSDKCoreKit/FBSDKAuthenticationToken.h>
-#endif
-
-@class FBSDKAuthenticationTokenClaims;
+#import "FBSDKGraphRequestProviding.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FBSDKAuthenticationToken (Internal)
-
-- (nullable FBSDKAuthenticationTokenClaims *)claims;
-- (NSString *)jti;
-
+/// A factory for providing objects that conform to `GraphRequest`
+NS_SWIFT_NAME(GraphRequestFactory)
+@interface FBSDKGraphRequestFactory : NSObject <FBSDKGraphRequestProviding>
 @end
 
 NS_ASSUME_NONNULL_END

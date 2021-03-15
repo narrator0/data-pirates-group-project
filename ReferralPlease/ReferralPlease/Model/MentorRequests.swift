@@ -52,7 +52,6 @@ class MentorRequests {
             else {
                 User.getAllStatus(MentorRequests.requests?.userID ?? "" , "menteeID", true ) {
                     userRecords in
-                    print(userRecords)
                     MentorRequests.requests?.mentees = userRecords
                 }
                 

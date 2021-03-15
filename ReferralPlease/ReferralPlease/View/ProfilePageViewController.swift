@@ -25,7 +25,7 @@ class ProfilePageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         userImage.layer.cornerRadius = userImage.frame.size.width / 2
         userImage.clipsToBounds = true
         userImage.layer.shadowOpacity = 0.5
@@ -70,6 +70,7 @@ class ProfilePageViewController: UIViewController {
             }
         }
         
+        changeButtonTitle()
         // change the color of the navigation back button
         self.navigationController?.navigationBar.tintColor = .orange
     }
@@ -83,9 +84,20 @@ class ProfilePageViewController: UIViewController {
     }
     
     @IBAction func sendRequest() {
-        User.currentUser() { user in
-            MentorRequests.createRequest(self.user.userID, user.userID)
+        if (MentorRequests.shared.getMentees().contains(self.user)) {
+            if let url = URL(string: "mailto:\(self.user.email)") {
+                UIApplication.shared.open(url)
+
+            }
         }
+        else {
+            User.currentUser() { user in
+                MentorRequests.createRequest(self.user.userID, user.userID)
+            }
+            
+            changeButtonTitle()
+        }
+ 
     }
     
     @IBAction func settingsButtonPressed(_ sender: Any) {
@@ -99,4 +111,21 @@ class ProfilePageViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    func changeButtonTitle() {
+        MentorRequests.update()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+            print(MentorRequests.shared.getRequestees().count)
+            print(MentorRequests.shared.getMentees().count)
+            
+        if (MentorRequests.shared.getRequestees().contains(self.user)) {
+            self.requestBtn.setTitle("Request sent", for: .normal)
+            self.requestBtn.isUserInteractionEnabled = false
+            
+        }
+        else if (MentorRequests.shared.getMentees().contains(self.user)){
+            self.requestBtn.setTitle("Send email", for: .normal)
+            
+        }
+    }
+    }
 }

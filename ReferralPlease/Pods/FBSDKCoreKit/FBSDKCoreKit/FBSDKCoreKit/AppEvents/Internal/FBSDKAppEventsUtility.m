@@ -313,13 +313,20 @@ static NSArray<NSString *> *standardEvents;
     token = [FBSDKAccessToken currentAccessToken];
   }
 
-  NSString *appID = [FBSDKAppEvents loggingOverrideAppID] ?: token.appID ?: [FBSDKSettings appID];
+  NSString *loggingOverrideAppID = [FBSDKAppEvents loggingOverrideAppID];
+
+  NSString *appID = loggingOverrideAppID ?: token.appID ?: [FBSDKSettings appID];
   NSString *tokenString = token.tokenString;
+  NSString *clientTokenString = [FBSDKSettings clientToken];
+
   if (!tokenString || ![appID isEqualToString:token.appID]) {
-    // If there's an logging override app id present, then we don't want to use the client token since the client token
-    // is intended to match up with the primary app id (and AppEvents doesn't require a client token).
-    NSString *clientTokenString = [FBSDKSettings clientToken];
-    if (clientTokenString && appID && [appID isEqualToString:token.appID]) {
+    // If there's a logging override app id present
+    // then we don't want to use the client token since the client token
+    // is intended to match up with the primary app id
+    // and AppEvents doesn't require a client token.
+    if (clientTokenString && loggingOverrideAppID) {
+      tokenString = nil;
+    } else if (clientTokenString && appID && ([appID isEqualToString:token.appID] || token == nil)) {
       tokenString = [NSString stringWithFormat:@"%@|%@", appID, clientTokenString];
     } else if (appID) {
       tokenString = nil;
@@ -338,41 +345,9 @@ static NSArray<NSString *> *standardEvents;
   return (time_t)round([date timeIntervalSince1970]);
 }
 
-+ (NSNumber *)getNumberValue:(NSString *)text
-{
-  NSNumber *value = @0;
-
-  NSLocale *locale = [NSLocale currentLocale];
-
-  NSString *ds = [locale objectForKey:NSLocaleDecimalSeparator] ?: @".";
-  NSString *gs = [locale objectForKey:NSLocaleGroupingSeparator] ?: @",";
-  NSString *separators = [ds stringByAppendingString:gs];
-
-  NSString *regex = [NSString stringWithFormat:@"[+-]?([0-9]+[%1$@]?)?[%1$@]?([0-9]+[%1$@]?)+", separators];
-  NSRegularExpression *re = [NSRegularExpression regularExpressionWithPattern:regex
-                                                                      options:0
-                                                                        error:nil];
-  NSTextCheckingResult *match = [re firstMatchInString:text
-                                               options:0
-                                                 range:NSMakeRange(0, text.length)];
-  if (match) {
-    NSString *validText = [text substringWithRange:match.range];
-    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-    formatter.locale = locale;
-    formatter.numberStyle = NSNumberFormatterDecimalStyle;
-
-    value = [formatter numberFromString:validText];
-    if (nil == value) {
-      value = @(validText.floatValue);
-    }
-  }
-
-  return value;
-}
-
 + (BOOL)isDebugBuild
 {
-#if TARGET_IPHONE_SIMULATOR
+#if TARGET_OS_SIMULATOR
   return YES;
 #else
   BOOL isDevelopment = NO;

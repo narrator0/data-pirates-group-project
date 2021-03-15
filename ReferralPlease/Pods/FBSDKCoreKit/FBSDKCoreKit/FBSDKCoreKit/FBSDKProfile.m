@@ -46,13 +46,14 @@ static FBSDKProfile *g_currentProfile;
  #define FBSDKPROFILE_REFRESHDATE_KEY @"refreshDate"
  #define FBSDKPROFILE_IMAGEURL_KEY @"imageURL"
  #define FBSDKPROFILE_EMAIL_KEY @"email"
+ #define FBSDKPROFILE_FRIENDIDS_KEY @"friendIDs"
 
 // Once a day
  #define FBSDKPROFILE_STALE_IN_SECONDS (60 * 60 * 24)
 
 @implementation FBSDKProfile
 
-- (instancetype)initWithUserID:(NSString *)userID
+- (instancetype)initWithUserID:(FBSDKUserIdentifier *)userID
                      firstName:(NSString *)firstName
                     middleName:(NSString *)middleName
                       lastName:(NSString *)lastName
@@ -68,10 +69,11 @@ static FBSDKProfile *g_currentProfile;
                       linkURL:linkURL
                   refreshDate:refreshDate
                      imageURL:nil
-                        email:nil];
+                        email:nil
+                    friendIDs:nil];
 }
 
-- (instancetype)initWithUserID:(NSString *)userID
+- (instancetype)initWithUserID:(FBSDKUserIdentifier *)userID
                      firstName:(NSString *)firstName
                     middleName:(NSString *)middleName
                       lastName:(NSString *)lastName
@@ -80,6 +82,29 @@ static FBSDKProfile *g_currentProfile;
                    refreshDate:(NSDate *)refreshDate
                       imageURL:(NSURL *)imageURL
                          email:(NSString *)email
+{
+  return [self initWithUserID:userID
+                    firstName:firstName
+                   middleName:middleName
+                     lastName:lastName
+                         name:name
+                      linkURL:linkURL
+                  refreshDate:refreshDate
+                     imageURL:imageURL
+                        email:email
+                    friendIDs:nil];
+}
+
+- (instancetype)initWithUserID:(FBSDKUserIdentifier *)userID
+                     firstName:(NSString *)firstName
+                    middleName:(NSString *)middleName
+                      lastName:(NSString *)lastName
+                          name:(NSString *)name
+                       linkURL:(NSURL *)linkURL
+                   refreshDate:(NSDate *)refreshDate
+                      imageURL:(NSURL *)imageURL
+                         email:(NSString *)email
+                     friendIDs:(NSArray<FBSDKUserIdentifier *> *)friendIDs
 {
   if ((self = [super init])) {
     _userID = [userID copy];
@@ -91,6 +116,7 @@ static FBSDKProfile *g_currentProfile;
     _refreshDate = [refreshDate copy] ?: [NSDate date];
     _imageURL = [imageURL copy];
     _email = [email copy];
+    _friendIDs = [friendIDs copy];
   }
   return self;
 }
@@ -168,6 +194,7 @@ static FBSDKProfile *g_currentProfile;
     self.refreshDate.hash,
     self.imageURL.hash,
     self.email.hash,
+    self.friendIDs.hash,
   };
   return [FBSDKMath hashWithIntegerArray:subhashes count:sizeof(subhashes) / sizeof(subhashes[0])];
 }
@@ -193,7 +220,8 @@ static FBSDKProfile *g_currentProfile;
     && [_linkURL isEqual:profile.linkURL]
     && [_refreshDate isEqualToDate:profile.refreshDate])
   && [_imageURL isEqual:profile.imageURL]
-  && [_email isEqualToString:profile.email];
+  && [_email isEqualToString:profile.email]
+  && [_friendIDs isEqualToArray:profile.friendIDs];
 }
 
  #pragma mark NSCoding
@@ -205,7 +233,7 @@ static FBSDKProfile *g_currentProfile;
 
 - (instancetype)initWithCoder:(NSCoder *)decoder
 {
-  NSString *userID = [decoder decodeObjectOfClass:[NSString class] forKey:FBSDKPROFILE_USERID_KEY];
+  FBSDKUserIdentifier *userID = [decoder decodeObjectOfClass:[FBSDKUserIdentifier class] forKey:FBSDKPROFILE_USERID_KEY];
   NSString *firstName = [decoder decodeObjectOfClass:[NSString class] forKey:FBSDKPROFILE_FIRSTNAME_KEY];
   NSString *middleName = [decoder decodeObjectOfClass:[NSString class] forKey:FBSDKPROFILE_MIDDLENAME_KEY];
   NSString *lastName = [decoder decodeObjectOfClass:[NSString class] forKey:FBSDKPROFILE_LASTNAME_KEY];
@@ -214,6 +242,7 @@ static FBSDKProfile *g_currentProfile;
   NSDate *refreshDate = [decoder decodeObjectOfClass:[NSURL class] forKey:FBSDKPROFILE_REFRESHDATE_KEY];
   NSURL *imageURL = [decoder decodeObjectOfClass:[NSURL class] forKey:FBSDKPROFILE_IMAGEURL_KEY];
   NSString *email = [decoder decodeObjectOfClass:[NSString class] forKey:FBSDKPROFILE_EMAIL_KEY];
+  NSArray<FBSDKUserIdentifier *> *friendIDs = [decoder decodeObjectOfClass:[NSArray class] forKey:FBSDKPROFILE_FRIENDIDS_KEY];
   return [self initWithUserID:userID
                     firstName:firstName
                    middleName:middleName
@@ -222,7 +251,8 @@ static FBSDKProfile *g_currentProfile;
                       linkURL:linkURL
                   refreshDate:refreshDate
                      imageURL:imageURL
-                        email:email];
+                        email:email
+                    friendIDs:friendIDs];
 }
 
 - (void)encodeWithCoder:(NSCoder *)encoder
@@ -236,6 +266,7 @@ static FBSDKProfile *g_currentProfile;
   [encoder encodeObject:self.refreshDate forKey:FBSDKPROFILE_REFRESHDATE_KEY];
   [encoder encodeObject:self.imageURL forKey:FBSDKPROFILE_IMAGEURL_KEY];
   [encoder encodeObject:self.email forKey:FBSDKPROFILE_EMAIL_KEY];
+  [encoder encodeObject:self.friendIDs forKey:FBSDKPROFILE_FRIENDIDS_KEY];
 }
 
 @end
@@ -270,7 +301,7 @@ static FBSDKProfile *g_currentProfile;
   return nil;
 }
 
-+ (NSURL *)imageURLForProfileID:(NSString *)profileId
++ (NSURL *)imageURLForProfileID:(FBSDKUserIdentifier *)profileId
                     PictureMode:(FBSDKProfilePictureMode)mode
                            size:(CGSize)size
 {
@@ -321,6 +352,10 @@ static FBSDKProfile *g_currentProfile;
     graphPath = [graphPath stringByAppendingString:@",email"];
   }
 
+  if ([token.permissions containsObject:@"user_friends"]) {
+    graphPath = [graphPath stringByAppendingString:@",friends"];
+  }
+
   FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc] initWithGraphPath:graphPath
                                                                  parameters:nil
                                                                       flags:FBSDKGraphRequestFlagDoNotInvalidateTokenOnError | FBSDKGraphRequestFlagDisableErrorRecovery];
@@ -334,22 +369,29 @@ static FBSDKProfile *g_currentProfile;
   FBSDKParseProfileBlock parseBlock = ^void (id result, FBSDKProfile **profileRef) {
     if (profileRef == NULL
         || result == nil
-        || result[@"id"] == nil
-        || ((NSString *) result[@"id"]).length == 0) {
+        || [FBSDKTypeUtility dictionaryValue:result] == nil) {
       return;
     }
+
+    NSString *profileID = [FBSDKTypeUtility stringValue:result[@"id"]];
+    if (profileID == nil || profileID.length == 0) {
+      return;
+    }
+
     NSString *urlString = [FBSDKTypeUtility stringValue:result[@"link"]];
     NSURL *linkUrl = [FBSDKTypeUtility URLValue:[NSURL URLWithString:urlString]];
+    NSArray<FBSDKUserIdentifier *> *friendIDs = [self friendIDsFromGraphResult:[FBSDKTypeUtility dictionaryValue:result[@"friends"]]];
 
-    FBSDKProfile *profile = [[FBSDKProfile alloc] initWithUserID:result[@"id"]
-                                                       firstName:result[@"first_name"]
-                                                      middleName:result[@"middle_name"]
-                                                        lastName:result[@"last_name"]
-                                                            name:result[@"name"]
+    FBSDKProfile *profile = [[FBSDKProfile alloc] initWithUserID:profileID
+                                                       firstName:[FBSDKTypeUtility stringValue:result[@"first_name"]]
+                                                      middleName:[FBSDKTypeUtility stringValue:result[@"middle_name"]]
+                                                        lastName:[FBSDKTypeUtility stringValue:result[@"last_name"]]
+                                                            name:[FBSDKTypeUtility stringValue:result[@"name"]]
                                                          linkURL:linkUrl
                                                      refreshDate:[NSDate date]
                                                         imageURL:nil
-                                                           email:result[@"email"]];
+                                                           email:[FBSDKTypeUtility stringValue:result[@"email"]]
+                                                       friendIDs:friendIDs];
     *profileRef = [profile copy];
   };
   [[self class] loadProfileWithToken:token completion:completion graphRequest:request parseBlock:parseBlock];
@@ -394,6 +436,24 @@ static FBSDKProfile *g_currentProfile;
 {
   FBSDKAccessToken *token = notification.userInfo[FBSDKAccessTokenChangeNewKey];
   [self loadProfileWithToken:token completion:NULL];
+}
+
++ (NSArray<FBSDKUserIdentifier *> *)friendIDsFromGraphResult:(NSDictionary<NSString *, id> *)result
+{
+  NSArray *rawFriends = [FBSDKTypeUtility arrayValue:result[@"data"]];
+  NSMutableArray *friendIDs = NSMutableArray.new;
+
+  for (NSDictionary *rawFriend in rawFriends) {
+    if ([FBSDKTypeUtility dictionaryValue:rawFriend]) {
+      FBSDKUserIdentifier *friendID = [FBSDKTypeUtility stringValue:rawFriend[@"id"]];
+      [FBSDKTypeUtility array:friendIDs addObject:friendID];
+    }
+  }
+
+  if (friendIDs.count <= 0) {
+    return nil;
+  }
+  return friendIDs;
 }
 
  #pragma clang diagnostic pop
