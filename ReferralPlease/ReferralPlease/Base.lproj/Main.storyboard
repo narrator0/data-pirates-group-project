@@ -77,14 +77,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search for your mentor here ..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bQe-Iv-Skc">
-                                <rect key="frame" x="30" y="108" width="368" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aZE-IO-Ktb">
-                                <rect key="frame" x="30" y="162" width="368" height="661"/>
+                                <rect key="frame" x="30" y="259" width="368" height="564"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="564" id="g15-Pb-oSz"/>
+                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="110" id="Gxg-s2-EZF" customClass="TableViewCell" customModule="ReferralPlease" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="368" height="110"/>
@@ -101,19 +99,19 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="as6-z0-8ZX">
-                                                    <rect key="frame" x="112" y="48.666666666666664" width="226" height="18.333333333333336"/>
+                                                    <rect key="frame" x="112" y="48.333333333333336" width="226" height="18.333333333333336"/>
                                                     <fontDescription key="fontDescription" name="NotoSansOriya" family="Noto Sans Oriya" pointSize="13"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="ACY-DX-Grb">
-                                                    <rect key="frame" x="112" y="15.000000000000002" width="246" height="28.666666666666671"/>
+                                                    <rect key="frame" x="112" y="14.999999999999998" width="246" height="28.333333333333329"/>
                                                     <fontDescription key="fontDescription" name="NotoSansOriya-Bold" family="Noto Sans Oriya" pointSize="20"/>
                                                     <color key="textColor" red="0.93333333333333335" green="0.42352941176470588" blue="0.30196078431372547" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="position" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="45L-tk-myT">
-                                                    <rect key="frame" x="112" y="72" width="226" height="18.333333333333329"/>
+                                                    <rect key="frame" x="112" y="71.666666666666671" width="226" height="18.333333333333329"/>
                                                     <fontDescription key="fontDescription" name="NotoSansOriya" family="Noto Sans Oriya" pointSize="13"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -145,22 +143,56 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6mP-Gp-hmE">
+                                <rect key="frame" x="100" y="88" width="228" height="34"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BhQ-hh-xzO">
+                                        <rect key="frame" x="0.0" y="0.0" width="228" height="34"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <color key="tintColor" red="0.27450980390000002" green="0.40784313729999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Distance"/>
+                                        <connections>
+                                            <action selector="distanceFilter:" destination="8gN-NS-SFH" eventType="touchUpInside" id="p0N-tS-EUj"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gR3-Qr-7h0">
+                                        <rect key="frame" x="0.0" y="0.0" width="228" height="0.0"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" red="0.93333333330000001" green="0.42352941179999998" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Within 10 miles"/>
+                                        <connections>
+                                            <action selector="distanceTap:" destination="8gN-NS-SFH" eventType="touchUpInside" id="qAs-Nk-7We"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ls-a9-usE">
+                                        <rect key="frame" x="0.0" y="0.0" width="228" height="0.0"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" red="0.93333333330000001" green="0.42352941179999998" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Within 20 miles"/>
+                                        <connections>
+                                            <action selector="distanceTap:" destination="8gN-NS-SFH" eventType="touchUpInside" id="PEQ-qO-4In"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iON-tX-N7J"/>
                         <color key="backgroundColor" red="0.1647058824" green="0.24313725489999999" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="iON-tX-N7J" firstAttribute="trailing" secondItem="bQe-Iv-Skc" secondAttribute="trailing" constant="30" id="0b8-be-hnt"/>
+                            <constraint firstItem="iON-tX-N7J" firstAttribute="trailing" secondItem="6mP-Gp-hmE" secondAttribute="trailing" constant="100" id="1HM-Un-hd2"/>
                             <constraint firstItem="aZE-IO-Ktb" firstAttribute="leading" secondItem="iON-tX-N7J" secondAttribute="leading" constant="30" id="1rc-fc-lIq"/>
                             <constraint firstItem="iON-tX-N7J" firstAttribute="bottom" secondItem="aZE-IO-Ktb" secondAttribute="bottom" constant="20" id="2da-09-yC2"/>
-                            <constraint firstItem="aZE-IO-Ktb" firstAttribute="top" secondItem="bQe-Iv-Skc" secondAttribute="bottom" constant="20" id="7YA-K8-xLt"/>
-                            <constraint firstItem="bQe-Iv-Skc" firstAttribute="top" secondItem="iON-tX-N7J" secondAttribute="top" constant="20" id="U4n-JZ-qjC"/>
-                            <constraint firstItem="bQe-Iv-Skc" firstAttribute="leading" secondItem="iON-tX-N7J" secondAttribute="leading" constant="30" id="hVS-en-hE3"/>
+                            <constraint firstItem="6mP-Gp-hmE" firstAttribute="leading" secondItem="iON-tX-N7J" secondAttribute="leading" constant="100" id="cvq-u1-tOr"/>
+                            <constraint firstItem="6mP-Gp-hmE" firstAttribute="top" secondItem="iON-tX-N7J" secondAttribute="top" id="e7J-uo-wLv"/>
                             <constraint firstItem="iON-tX-N7J" firstAttribute="trailing" secondItem="aZE-IO-Ktb" secondAttribute="trailing" constant="30" id="oLr-ef-qmg"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="cMP-Sx-097"/>
                     <connections>
                         <outlet property="tableView" destination="aZE-IO-Ktb" id="KxE-Q4-D01"/>
+                        <outletCollection property="distanceSelection" destination="gR3-Qr-7h0" collectionClass="NSMutableArray" id="uEX-Ln-s25"/>
+                        <outletCollection property="distanceSelection" destination="0Ls-a9-usE" collectionClass="NSMutableArray" id="WhU-Jf-7sN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ga3-Hw-HYS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

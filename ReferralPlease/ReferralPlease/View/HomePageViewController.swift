@@ -12,14 +12,14 @@ import FirebaseFirestore
 import SDWebImage
 
 class HomePageViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
     
-    
-
     var user: User?
     var db: Firestore?
     var currentUsers: [User] = []
 
+    @IBOutlet var distanceSelection: [UIButton]!
+    @IBOutlet weak var nearmeButton: UIButton!
+    
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,10 +31,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         self.tableView.dataSource = self
         self.tableView.delegate = self
 
-        
         MentorRequests.update()
-        
-        
         
         // dispatch queue
         User.getAll() { mentors in
@@ -98,6 +95,41 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         cell.layer.mask = maskLayer
         self.tableView.contentInset.bottom = -verticalPadding/2
         self.tableView.contentInset.top = -verticalPadding/2
+    }
+    
+    
+    @IBAction func distanceFilter(_ sender: UIButton) {
+        
+        distanceSelection.forEach { (button) in
+            UIView.animate(withDuration: 0.3, animations: {
+                            button.isHidden = !button.isHidden
+                self.view.layoutIfNeeded()
+            })
+            
+            
+        }
+    }
+    enum Miles:String {
+        case tenMile = "within 10 mile"
+        case twentyMile = "within 20 mile"
+    }
+    
+    
+    @IBAction func distanceTap(_ sender: UIButton) {
+        guard let title = sender.currentTitle, let mile = Miles(rawValue: title) else {
+            return
+        }
+        
+        switch mile {
+        case .tenMile:
+            // add action when users clicked the 10 mile button
+            print("within 10 mile")
+        
+        case .twentyMile:
+            // add action when users clicked the 20 mile button
+            print("within 20 mile")
+        }
+        
     }
 }
 
