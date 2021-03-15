@@ -41,6 +41,9 @@ class User {
     
     var role: String = ""
     
+    var latitude: Double = 0.0
+    var longitude: Double = 0.0
+    
     var db = Firestore.firestore()
     static var db = Firestore.firestore()
 
@@ -78,6 +81,11 @@ class User {
                         user.racePreference = data["racePreference"] as? String ?? ""
                         user.genderPreference = data["genderPreference"] as? String ?? ""
                         user.yearsPreference = data["yearsPreference"] as? String ?? ""
+                        
+                        user.latitude = data["latitude"] as? Double ?? 0.0
+                        user.longitude = data["longitude"] as? Double ?? 0.0
+
+                        
                         
                         mentors.append(user)
                     }
@@ -166,6 +174,9 @@ class User {
                 user.genderPreference = data?["genderPreference"] as? String ?? ""
                 user.yearsPreference = data?["yearsPreference"] as? String ?? ""
                 
+                user.latitude = data?["latitude"] as? Double ?? 0.0
+                user.longitude = data?["longitude"] as? Double ?? 0.0
+                
                 DispatchQueue.main.async {
                     complete(user)
                 }
@@ -208,6 +219,22 @@ class User {
     func update(field: String, value: String) -> Void {
         switch field {
         case "role", "company", "position", "about", "race", "gender", "years", "companyPreference", "racePreference", "genderPreference", "yearsPreference", "phone":
+            self.db.collection("users").document(self.userID).setData([field: value], merge: true) { err in
+                if let err = err {
+                    print("Error updating \(field) for: \(self.userID)")
+                    print("Error message \(err)")
+                } else {
+                    print("Updated \(self.userID) \(field) to \(value)")
+                }
+            }
+        default:
+            return
+        }
+    }
+    
+    func updateLocation(field: String, value: Double) -> Void {
+        switch field {
+        case "longitude", "latitude":
             self.db.collection("users").document(self.userID).setData([field: value], merge: true) { err in
                 if let err = err {
                     print("Error updating \(field) for: \(self.userID)")
