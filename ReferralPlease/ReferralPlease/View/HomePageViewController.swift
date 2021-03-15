@@ -86,33 +86,11 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
     }
 
     @IBAction func findNearbyBtnClick(_ sender: Any) {
-//        let request = MKDirections.Request()
-//        let sourceP         = CLLocationCoordinate2DMake(self.currentLatitude, self.currentlongitude)
-//        let destP           = CLLocationCoordinate2DMake(p2.coordinate.latitude, p2.coordinate.longitude)
-//        let source = MKPlacemark(coordinate: sourceP)
-
-
 
         print("Number of users: \(self.currentUsers.count)")
+        self.nearbyUsers = []
         for user in self.currentUsers {
             print("longitude: \(user.longitude), Latitude: \(user.latitude)")
-//            let distance = self.getDistance(user)
-//            print("Distance \(distance)")
-//            let destP = CLLocationCoordinate2DMake(user.latitude, user.longitude)
-//            let destination     = MKPlacemark(coordinate: destP)
-//            request.source      = MKMapItem(placemark: source)
-//            request.destination = MKMapItem(placemark: destination)
-//            request.transportType = MKDirectionsTransportType.automobile //define the transportation method
-//            let directions = MKDirections(request: request) //request directions
-//            directions.calculate { (response, error) in
-//                if let response = response, let route = response.routes.first {
-//                    print("here", route.distance * 0.000621371) // You could have this returned in an async approach
-//                    let distance = route.distance * 0.000621371
-//                    if distance <= 30 {
-//                        self.nearbyUsers.append(user)
-//                    }
-//                }
-//            }
             
             let location = CLLocation(latitude: user.latitude, longitude: user.longitude)
             let distance = self.currentLocation.distance(from: location) // in meters
@@ -127,25 +105,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         print("Number of nearby users: \(self.nearbyUsers.count)")
         self.currentUsers = self.nearbyUsers
         self.tableView.reloadData()
-
-        
     }
-    
-//    func rad(_ x: Double) -> Double {
-//      return x * Double.pi / 180
-//    }
-//
-//    func getDistance(_ user2: User) -> Float {
-//        let R = Float(6371); // Earth’s mean radius in meter
-//        let dLat = rad(user2.latitude - self.currentLatitude);
-//        let dLong = rad(user2.longitude - self.currentlongitude);
-//        let a = sin(dLat / 2) * sin(dLat / 2)
-//        let b = Float(sin(dLong/2) * sin(dLong/2)) * cos(Float(self.currentLatitude)) * cos(Float(user?.latitude ?? 0))
-//        let z = Float(a)+b
-//        let c = 2 * atan2(sqrt(z), sqrt(1 - z))
-//        let d = R * c
-//        return d // returns the distance in meter
-//    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.currentUsers.count
@@ -237,4 +197,3 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         
     }
 }
-
