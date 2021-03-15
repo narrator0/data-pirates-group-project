@@ -186,10 +186,13 @@
                             <constraint firstItem="6mP-Gp-hmE" firstAttribute="leading" secondItem="iON-tX-N7J" secondAttribute="leading" constant="100" id="cvq-u1-tOr"/>
                             <constraint firstItem="6mP-Gp-hmE" firstAttribute="top" secondItem="iON-tX-N7J" secondAttribute="top" id="e7J-uo-wLv"/>
                             <constraint firstItem="iON-tX-N7J" firstAttribute="trailing" secondItem="aZE-IO-Ktb" secondAttribute="trailing" constant="30" id="oLr-ef-qmg"/>
+                            <constraint firstItem="aZE-IO-Ktb" firstAttribute="top" secondItem="rTs-4t-rJE" secondAttribute="bottom" constant="19" id="qpv-dO-1nz"/>
+                            <constraint firstItem="rTs-4t-rJE" firstAttribute="centerX" secondItem="Hhx-Re-QDb" secondAttribute="centerX" id="xQn-p1-xdH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="cMP-Sx-097"/>
                     <connections>
+                        <outlet property="findNearbyBtn" destination="rTs-4t-rJE" id="sHX-05-8Qn"/>
                         <outlet property="tableView" destination="aZE-IO-Ktb" id="KxE-Q4-D01"/>
                         <outletCollection property="distanceSelection" destination="gR3-Qr-7h0" collectionClass="NSMutableArray" id="uEX-Ln-s25"/>
                         <outletCollection property="distanceSelection" destination="0Ls-a9-usE" collectionClass="NSMutableArray" id="WhU-Jf-7sN"/>

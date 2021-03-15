@@ -10,12 +10,20 @@ import Firebase
 import FirebaseCore
 import FirebaseFirestore
 import SDWebImage
+import CoreLocation
+import MapKit
 
-class HomePageViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
+
+class HomePageViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate, MKMapViewDelegate{
     var user: User?
     var db: Firestore?
     var currentUsers: [User] = []
+    var nearbyUsers: [User] = []
+    var currentlongitude: CLLocationDegrees = 0.0
+    var currentLatitude: CLLocationDegrees = 0.0
+    var currentLocation = CLLocation()
+    @IBOutlet weak var findNearbyBtn: UIButton!
+    var manager: CLLocationManager?
 
     @IBOutlet var distanceSelection: [UIButton]!
     @IBOutlet weak var nearmeButton: UIButton!
@@ -37,10 +45,107 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         User.getAll() { mentors in
             self.currentUsers = mentors
             self.tableView.reloadData()
-            
+//            print("Number of users: \(self.currentUsers.count)")
+
         }
+        
 
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        manager = CLLocationManager()
+        manager?.delegate = self
+        manager?.desiredAccuracy = kCLLocationAccuracyBest
+        manager?.requestWhenInUseAuthorization()
+        manager?.startUpdatingLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let last = locations.last else {
+            return
+        }
+        
+        self.currentlongitude = last.coordinate.longitude
+        self.currentLatitude =  last.coordinate.latitude
+                
+        // save locations
+        self.currentLocation = CLLocation(latitude: last.coordinate.latitude, longitude: last.coordinate.longitude)
+//
+        print("longitude \(self.currentlongitude); latitude \(self.currentLatitude)")
+//        print("location: \(userLocation)")
+
+        
+        User.currentUser() { user in
+            user.updateLocation(field: "longitude", value:  self.currentlongitude)
+            user.updateLocation(field: "latitude", value: self.currentLatitude)
+
+        }
+        
+        
+    }
+
+    @IBAction func findNearbyBtnClick(_ sender: Any) {
+//        let request = MKDirections.Request()
+//        let sourceP         = CLLocationCoordinate2DMake(self.currentLatitude, self.currentlongitude)
+//        let destP           = CLLocationCoordinate2DMake(p2.coordinate.latitude, p2.coordinate.longitude)
+//        let source = MKPlacemark(coordinate: sourceP)
+
+
+
+        print("Number of users: \(self.currentUsers.count)")
+        for user in self.currentUsers {
+            print("longitude: \(user.longitude), Latitude: \(user.latitude)")
+//            let distance = self.getDistance(user)
+//            print("Distance \(distance)")
+//            let destP = CLLocationCoordinate2DMake(user.latitude, user.longitude)
+//            let destination     = MKPlacemark(coordinate: destP)
+//            request.source      = MKMapItem(placemark: source)
+//            request.destination = MKMapItem(placemark: destination)
+//            request.transportType = MKDirectionsTransportType.automobile //define the transportation method
+//            let directions = MKDirections(request: request) //request directions
+//            directions.calculate { (response, error) in
+//                if let response = response, let route = response.routes.first {
+//                    print("here", route.distance * 0.000621371) // You could have this returned in an async approach
+//                    let distance = route.distance * 0.000621371
+//                    if distance <= 30 {
+//                        self.nearbyUsers.append(user)
+//                    }
+//                }
+//            }
+            
+            let location = CLLocation(latitude: user.latitude, longitude: user.longitude)
+            let distance = self.currentLocation.distance(from: location) // in meters
+            let distanceInMiles =  distance / 1609 // in meters
+
+            print("Distance from currentLocation: \(distanceInMiles) miles")
+
+            if distanceInMiles <= 30 {
+                self.nearbyUsers.append(user)
+            }
+        }
+        print("Number of nearby users: \(self.nearbyUsers.count)")
+        self.currentUsers = self.nearbyUsers
+        self.tableView.reloadData()
+
+        
+    }
+    
+//    func rad(_ x: Double) -> Double {
+//      return x * Double.pi / 180
+//    }
+//
+//    func getDistance(_ user2: User) -> Float {
+//        let R = Float(6371); // Earth’s mean radius in meter
+//        let dLat = rad(user2.latitude - self.currentLatitude);
+//        let dLong = rad(user2.longitude - self.currentlongitude);
+//        let a = sin(dLat / 2) * sin(dLat / 2)
+//        let b = Float(sin(dLong/2) * sin(dLong/2)) * cos(Float(self.currentLatitude)) * cos(Float(user?.latitude ?? 0))
+//        let z = Float(a)+b
+//        let c = 2 * atan2(sqrt(z), sqrt(1 - z))
+//        let d = R * c
+//        return d // returns the distance in meter
+//    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.currentUsers.count
