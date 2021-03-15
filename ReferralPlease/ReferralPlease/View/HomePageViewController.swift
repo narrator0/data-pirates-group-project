@@ -22,7 +22,6 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
     var currentlongitude: CLLocationDegrees = 0.0
     var currentLatitude: CLLocationDegrees = 0.0
     var currentLocation = CLLocation()
-    @IBOutlet weak var findNearbyBtn: UIButton!
     var manager: CLLocationManager?
 
     @IBOutlet var distanceSelection: [UIButton]!
@@ -85,26 +84,29 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         
     }
 
-    @IBAction func findNearbyBtnClick(_ sender: Any) {
+    func filterByMiles(miles: Double) {
 
         print("Number of users: \(self.currentUsers.count)")
         self.nearbyUsers = []
-        for user in self.currentUsers {
-            print("longitude: \(user.longitude), Latitude: \(user.latitude)")
-            
-            let location = CLLocation(latitude: user.latitude, longitude: user.longitude)
-            let distance = self.currentLocation.distance(from: location) // in meters
-            let distanceInMiles =  distance / 1609 // in meters
 
-            print("Distance from currentLocation: \(distanceInMiles) miles")
+        User.getAll() { users in
+            for user in users {
+                print("longitude: \(user.longitude), Latitude: \(user.latitude)")
+                
+                let location = CLLocation(latitude: user.latitude, longitude: user.longitude)
+                let distance = self.currentLocation.distance(from: location) // in meters
+                let distanceInMiles =  distance / 1609 // in meters
 
-            if distanceInMiles <= 30 {
-                self.nearbyUsers.append(user)
+                print("Distance from currentLocation: \(distanceInMiles) miles")
+
+                if distanceInMiles <= miles || miles == 0 {
+                    self.nearbyUsers.append(user)
+                }
             }
+            print("Number of nearby users: \(self.nearbyUsers.count)")
+            self.currentUsers = self.nearbyUsers
+            self.tableView.reloadData()
         }
-        print("Number of nearby users: \(self.nearbyUsers.count)")
-        self.currentUsers = self.nearbyUsers
-        self.tableView.reloadData()
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -162,38 +164,42 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         self.tableView.contentInset.top = -verticalPadding/2
     }
     
-    
-    @IBAction func distanceFilter(_ sender: UIButton) {
-        
-        distanceSelection.forEach { (button) in
+    func toggleDropdown() {
+        self.distanceSelection.forEach { (button) in
             UIView.animate(withDuration: 0.3, animations: {
-                            button.isHidden = !button.isHidden
+                button.isHidden = !button.isHidden
                 self.view.layoutIfNeeded()
             })
-            
-            
         }
+    }
+    
+    @IBAction func distanceFilter(_ sender: UIButton) {
+        self.toggleDropdown()
     }
     enum Miles:String {
         case tenMile = "within 10 mile"
         case twentyMile = "within 20 mile"
     }
     
-    
     @IBAction func distanceTap(_ sender: UIButton) {
-        guard let title = sender.currentTitle, let mile = Miles(rawValue: title) else {
+        guard let title = sender.currentTitle else {
             return
         }
         
-        switch mile {
-        case .tenMile:
+        switch title {
+        case "Within 10 miles":
             // add action when users clicked the 10 mile button
             print("within 10 mile")
-        
-        case .twentyMile:
+            self.filterByMiles(miles: 10.0)
+
+        case "Within 30 miles":
             // add action when users clicked the 20 mile button
-            print("within 20 mile")
+            print("within 30 mile")
+            self.filterByMiles(miles: 30.0)
+        default:
+            self.filterByMiles(miles: 0)
         }
         
+        self.toggleDropdown()
     }
 }

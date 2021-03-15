@@ -156,22 +156,32 @@
                                             <action selector="distanceFilter:" destination="8gN-NS-SFH" eventType="touchUpInside" id="p0N-tS-EUj"/>
                                         </connections>
                                     </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gR3-Qr-7h0">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gR3-Qr-7h0">
                                         <rect key="frame" x="0.0" y="0.0" width="228" height="0.0"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" red="0.93333333330000001" green="0.42352941179999998" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Within 10 miles"/>
                                         <connections>
-                                            <action selector="distanceTap:" destination="8gN-NS-SFH" eventType="touchUpInside" id="qAs-Nk-7We"/>
+                                            <action selector="distanceTap:" destination="8gN-NS-SFH" eventType="touchUpInside" id="agB-on-QQR"/>
                                         </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ls-a9-usE">
                                         <rect key="frame" x="0.0" y="0.0" width="228" height="0.0"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" red="0.93333333330000001" green="0.42352941179999998" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Within 20 miles"/>
+                                        <state key="normal" title="Within 30 miles"/>
                                         <connections>
-                                            <action selector="distanceTap:" destination="8gN-NS-SFH" eventType="touchUpInside" id="PEQ-qO-4In"/>
+                                            <action selector="distanceTap:" destination="8gN-NS-SFH" eventType="touchUpInside" id="vLk-h1-lTX"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="TyW-Lm-mob">
+                                        <rect key="frame" x="0.0" y="34" width="228" height="0.0"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" red="0.93333333330000001" green="0.42352941179999998" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="No preference"/>
+                                        <connections>
+                                            <action selector="distanceTap:" destination="8gN-NS-SFH" eventType="touchUpInside" id="7k9-hy-4JD"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -186,16 +196,16 @@
                             <constraint firstItem="6mP-Gp-hmE" firstAttribute="leading" secondItem="iON-tX-N7J" secondAttribute="leading" constant="100" id="cvq-u1-tOr"/>
                             <constraint firstItem="6mP-Gp-hmE" firstAttribute="top" secondItem="iON-tX-N7J" secondAttribute="top" id="e7J-uo-wLv"/>
                             <constraint firstItem="iON-tX-N7J" firstAttribute="trailing" secondItem="aZE-IO-Ktb" secondAttribute="trailing" constant="30" id="oLr-ef-qmg"/>
-                            <constraint firstItem="aZE-IO-Ktb" firstAttribute="top" secondItem="rTs-4t-rJE" secondAttribute="bottom" constant="19" id="qpv-dO-1nz"/>
-                            <constraint firstItem="rTs-4t-rJE" firstAttribute="centerX" secondItem="Hhx-Re-QDb" secondAttribute="centerX" id="xQn-p1-xdH"/>
+                            <constraint firstAttribute="centerX" secondItem="Hhx-Re-QDb" secondAttribute="centerX" id="xQn-p1-xdH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="cMP-Sx-097"/>
                     <connections>
-                        <outlet property="findNearbyBtn" destination="rTs-4t-rJE" id="sHX-05-8Qn"/>
+                        <outlet property="nearmeButton" destination="BhQ-hh-xzO" id="ZPT-Wg-IZx"/>
                         <outlet property="tableView" destination="aZE-IO-Ktb" id="KxE-Q4-D01"/>
                         <outletCollection property="distanceSelection" destination="gR3-Qr-7h0" collectionClass="NSMutableArray" id="uEX-Ln-s25"/>
                         <outletCollection property="distanceSelection" destination="0Ls-a9-usE" collectionClass="NSMutableArray" id="WhU-Jf-7sN"/>
+                        <outletCollection property="distanceSelection" destination="TyW-Lm-mob" collectionClass="NSMutableArray" id="uHy-Kh-D0t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ga3-Hw-HYS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
