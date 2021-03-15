@@ -26,6 +26,9 @@
  #import "FBSDKAppLinkTarget.h"
  #import "FBSDKInternalUtility.h"
 
+ #pragma clang diagnostic push
+ #pragma clang diagnostic ignored "-Wdeprecated-implementations"
+
 static const CGFloat FBSDKMarginX = 8.5f;
 static const CGFloat FBSDKMarginY = 8.5f;
 
@@ -299,4 +302,5 @@ static const CGFloat FBSDKCloseButtonHeight = 12.0;
 
 @end
 
+ #pragma clang diagnostic pop
 #endif

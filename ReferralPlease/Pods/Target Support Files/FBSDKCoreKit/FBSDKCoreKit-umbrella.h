@@ -24,6 +24,7 @@
 #import "FBSDKAccessToken.h"
 #import "FBSDKApplicationDelegate.h"
 #import "FBSDKAuthenticationToken.h"
+#import "FBSDKAuthenticationTokenClaims.h"
 #import "FBSDKButton.h"
 #import "FBSDKConstants.h"
 #import "FBSDKCopying.h"
@@ -53,6 +54,8 @@
 #import "FBSDKGraphRequest.h"
 #import "FBSDKGraphRequestConnection.h"
 #import "FBSDKGraphRequestDataAttachment.h"
+#import "FBSDKGraphRequestHTTPMethod.h"
+#import "FBSDKGraphRequestProtocol.h"
 
 FOUNDATION_EXPORT double FBSDKCoreKitVersionNumber;
 FOUNDATION_EXPORT const unsigned char FBSDKCoreKitVersionString[];

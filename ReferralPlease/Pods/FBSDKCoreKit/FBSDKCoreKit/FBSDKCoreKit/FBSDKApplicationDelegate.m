@@ -28,6 +28,7 @@
 #import "FBSDKEventDeactivationManager.h"
 #import "FBSDKFeatureManager.h"
 #import "FBSDKGateKeeperManager.h"
+#import "FBSDKGraphRequestFactory.h"
 #import "FBSDKInstrumentManager.h"
 #import "FBSDKInternalUtility.h"
 #import "FBSDKLogger.h"
@@ -72,7 +73,7 @@ static UIApplicationState _applicationState;
     return;
   }
 
-  g_isSDKInitialized = YES;
+  [self setIsSdkInitialized];
 
   FBSDKApplicationDelegate *delegate = [self sharedInstance];
   [FBSDKSettings recordInstall];
@@ -234,7 +235,7 @@ static UIApplicationState _applicationState;
 
 - (void)applicationDidEnterBackground:(NSNotification *)notification
 {
-  _applicationState = UIApplicationStateBackground;
+  [self setApplicationState:UIApplicationStateBackground];
   NSArray<id<FBSDKApplicationObserving>> *observers = [_applicationObservers allObjects];
   for (id<FBSDKApplicationObserving> observer in observers) {
     if ([observer respondsToSelector:@selector(applicationDidEnterBackground:)]) {
@@ -245,7 +246,7 @@ static UIApplicationState _applicationState;
 
 - (void)applicationDidBecomeActive:(NSNotification *)notification
 {
-  _applicationState = UIApplicationStateActive;
+  [self setApplicationState:UIApplicationStateActive];
   // Auto log basic events in case autoLogAppEventsEnabled is set
   if (FBSDKSettings.isAutoLogAppEventsEnabled) {
     [FBSDKAppEvents activateApp];
@@ -264,7 +265,7 @@ static UIApplicationState _applicationState;
 
 - (void)applicationWillResignActive:(NSNotification *)notification
 {
-  _applicationState = UIApplicationStateInactive;
+  [self setApplicationState:UIApplicationStateInactive];
   NSArray<id<FBSDKApplicationObserving>> *const observers = [_applicationObservers copy];
   for (id<FBSDKApplicationObserving> observer in observers) {
     if ([observer respondsToSelector:@selector(applicationWillResignActive:)]) {
@@ -294,6 +295,12 @@ static UIApplicationState _applicationState;
 + (UIApplicationState)applicationState
 {
   return _applicationState;
+}
+
+- (void)setApplicationState:(UIApplicationState)state
+{
+  _applicationState = state;
+  [FBSDKAppEvents setApplicationState:state];
 }
 
 #pragma mark - Helper Methods
@@ -428,9 +435,23 @@ static UIApplicationState _applicationState;
   return g_isSDKInitialized;
 }
 
++ (void)setIsSdkInitialized
+{
+  g_isSDKInitialized = YES;
+  [FBSDKGraphRequestConnection setCanMakeRequests];
+  [FBSDKAppEvents setCanLogEvents];
+  [FBSDKGateKeeperManager configureWithSettings:FBSDKSettings.class
+                                requestProvider:[FBSDKGraphRequestFactory new]];
+}
+
 // MARK: - Testability
 
 #if DEBUG
+
++ (void)resetIsSdkInitialized
+{
+  g_isSDKInitialized = NO;
+}
 
 - (BOOL)isAppLaunched
 {

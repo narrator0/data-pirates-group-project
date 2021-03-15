@@ -46,21 +46,25 @@ NS_ASSUME_NONNULL_BEGIN
 /// End-User's full name in displayable form including all name parts.
 @property (nullable, nonatomic, readonly, strong) NSString *name;
 
-/// End-User's preferred e-mail address.
+/**
+ End-User's preferred e-mail address.
+
+ IMPORTANT: This field will only be populated if your user has granted your application the 'email' permission.
+ */
 @property (nullable, nonatomic, readonly, strong) NSString *email;
 
 /// URL of the End-User's profile picture.
 @property (nullable, nonatomic, readonly, strong) NSString *picture;
 
+/**
+ End-User's friends.
+
+ IMPORTANT: This field is not broadly available to developers at this time.
+ */
+@property (nullable, nonatomic, readonly, strong) NSArray<NSString *> *userFriends;
+
 - (instancetype)init NS_UNAVAILABLE;
 + (instancetype)new NS_UNAVAILABLE;
-
-/**
- Returns a new instance, when one can be created from the parameters given, otherwise `nil`.
- @param encodedClaims Base64-encoded string of the claims.
- @param nonce The expected nonce string.
- */
-+ (nullable FBSDKAuthenticationTokenClaims *)validatedClaimsWithEncodedString:(NSString *)encodedClaims nonce:(NSString *)nonce;
 
 @end
 

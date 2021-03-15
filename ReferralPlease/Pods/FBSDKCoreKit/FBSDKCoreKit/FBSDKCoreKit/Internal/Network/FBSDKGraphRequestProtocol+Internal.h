@@ -18,27 +18,19 @@
 
 #import <Foundation/Foundation.h>
 
-#if SWIFT_PACKAGE
-#import "FBSDKCoreKit.h"
-#else
-#import <FBSDKCoreKit/FBSDKCoreKit.h>
-#endif
+#import "FBSDKGraphRequestFlags.h"
+
+@protocol FBSDKGraphRequest;
 
 NS_ASSUME_NONNULL_BEGIN
 
-/// An internal protocol used to describe an object that can handle graph requests
-NS_SWIFT_NAME(GraphRequestConnectionProviding)
-@protocol FBSDKGraphRequestConnectionProviding <NSObject>
+NS_SWIFT_NAME(GraphRequestInternalProtocol)
+@protocol FBSDKGraphRequestInternal <FBSDKGraphRequest>
 
-- (void)addRequest:(FBSDKGraphRequest *)request
- completionHandler:(FBSDKGraphRequestBlock)handler;
-- (void)start;
+@property (nonatomic, assign) FBSDKGraphRequestFlags flags;
+@property (nonatomic, readonly, getter = isGraphErrorRecoveryDisabled) BOOL graphErrorRecoveryDisabled;
+@property (nonatomic, readonly) BOOL hasAttachments;
 
-@end
-
-// MARK: Default Protocol Conformances
-
-@interface FBSDKGraphRequestConnection (GraphRequestConnection) <FBSDKGraphRequestConnectionProviding>
 @end
 
 NS_ASSUME_NONNULL_END

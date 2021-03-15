@@ -11,11 +11,11 @@ import Foundation
 struct LinkedInProfileModel: Codable {
     let firstName, lastName: StName
     let id: String
-    let profilePicture: ProfilePicture
+    let profilePicture: ProfilePicture?
 }
 
 struct ProfilePicture: Codable {
-    let displayImage: DisplayImage
+    let displayImage: DisplayImage?
     
     enum CodingKeys: String, CodingKey {
         case displayImage = "displayImage~"

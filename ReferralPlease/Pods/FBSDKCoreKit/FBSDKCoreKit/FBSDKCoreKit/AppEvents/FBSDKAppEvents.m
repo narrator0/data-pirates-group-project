@@ -25,6 +25,7 @@
 #import <objc/runtime.h>
 
 #import "FBSDKAccessToken.h"
+#import "FBSDKAppEventsAtePublisher.h"
 #import "FBSDKAppEventsConfiguration.h"
 #import "FBSDKAppEventsConfigurationManager.h"
 #import "FBSDKAppEventsDeviceInfo.h"
@@ -322,6 +323,7 @@ NSString *const FBSDKAPPEventsWKWebViewMessagesProtocolKey = @"fbmq-0.1";
 #define FBUnityUtilityUpdateBindingsSelector @"triggerUpdateBindings:"
 
 static NSString *g_overrideAppID = nil;
+static BOOL g_explicitEventsLoggedYet;
 
 @interface FBSDKAppEvents ()
 
@@ -335,11 +337,12 @@ static NSString *g_overrideAppID = nil;
 
 @property (nonatomic, copy) NSString *userID;
 
+@property (nonatomic, strong) id<FBSDKAtePublishing> atePublisher;
+
 @end
 
 @implementation FBSDKAppEvents
 {
-  BOOL _explicitEventsLoggedYet;
   FBSDKServerConfiguration *_serverConfiguration;
   FBSDKAppEventsState *_appEventsState;
 #if !TARGET_OS_TV
@@ -349,6 +352,10 @@ static NSString *g_overrideAppID = nil;
 }
 
 #pragma mark - Object Lifecycle
+
+static BOOL _canLogEvents = NO;
+
+static UIApplicationState _applicationState = UIApplicationStateInactive;
 
 + (void)initialize
 {
@@ -360,18 +367,33 @@ static NSString *g_overrideAppID = nil;
 
 - (instancetype)init
 {
+  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+  NSString *userID = [defaults stringForKey:USER_ID_USER_DEFAULTS_KEY];
+  FBSDKAppEventsAtePublisher *publisher = [[FBSDKAppEventsAtePublisher alloc] initWithAppIdentifier:self.appID];
+  return [self initWithFlushBehavior:FBSDKAppEventsFlushBehaviorAuto
+                flushPeriodInSeconds:FLUSH_PERIOD_IN_SECONDS
+                              userID:userID
+                        atePublisher:publisher];
+}
+
+- (instancetype)initWithFlushBehavior:(FBSDKAppEventsFlushBehavior)flushBehavior
+                 flushPeriodInSeconds:(int)flushPeriodInSeconds
+                               userID:(nonnull NSString *)userID
+                         atePublisher:(nonnull id<FBSDKAtePublishing>)atePublisher
+{
   self = [super init];
   if (self) {
-    _flushBehavior = FBSDKAppEventsFlushBehaviorAuto;
+    _flushBehavior = flushBehavior;
 
     __weak FBSDKAppEvents *weakSelf = self;
-    self.flushTimer = [FBSDKUtility startGCDTimerWithInterval:FLUSH_PERIOD_IN_SECONDS
+    self.flushTimer = [FBSDKUtility startGCDTimerWithInterval:flushPeriodInSeconds
                                                         block:^{
                                                           [weakSelf flushTimerFired:nil];
                                                         }];
 
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    _userID = [defaults stringForKey:USER_ID_USER_DEFAULTS_KEY];
+    _userID = userID;
+    _atePublisher = atePublisher;
+
     [self fetchServerConfiguration:nil];
   }
 
@@ -632,9 +654,11 @@ static NSString *g_overrideAppID = nil;
 
 + (void)activateApp
 {
-  if (![FBSDKApplicationDelegate isSDKInitialized]) {
-    NSLog(@"<Warning> App events cannot be activated before the Facebook SDK is initialized. "
-    "Learn more: https://github.com/facebook/facebook-ios-sdk/blob/master/CHANGELOG.md#900");
+  if (![self canLogEvents]) {
+    NSLog(
+      @"<Warning> App events cannot be activated before the Facebook SDK is initialized. "
+      "Learn more: https://github.com/facebook/facebook-ios-sdk/blob/master/CHANGELOG.md#900"
+    );
     return;
   }
 
@@ -696,7 +720,7 @@ static NSString *g_overrideAppID = nil;
 {
   if (![g_overrideAppID isEqualToString:appID]) {
     FBSDKConditionalLog(
-      ![FBSDKAppEvents singleton]->_explicitEventsLoggedYet,
+      !g_explicitEventsLoggedYet,
       FBSDKLoggingBehaviorDeveloperErrors,
       @"[FBSDKAppEvents setLoggingOverrideAppID:] should only be called prior to any events being logged."
     );
@@ -996,49 +1020,9 @@ static NSString *g_overrideAppID = nil;
 {
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
-    NSString *appID = [self appID];
-    if (appID.length == 0) {
-      [FBSDKLogger singleShotLogEntry:FBSDKLoggingBehaviorDeveloperErrors logEntry:@"Missing [FBSDKAppEvents appID] for [FBSDKAppEvents publishATE:]"];
-      return;
+    if (self.atePublisher) {
+      [self.atePublisher publishATE];
     }
-    NSString *lastATEPingString = [NSString stringWithFormat:@"com.facebook.sdk:lastATEPing%@", appID];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    id lastPublishDate = [defaults objectForKey:lastATEPingString];
-    if ([lastPublishDate isKindOfClass:[NSDate class]] && [(NSDate *)lastPublishDate timeIntervalSinceNow] * -1 < 24 * 60 * 60) {
-      return;
-    }
-
-    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-    [FBSDKTypeUtility dictionary:parameters setObject:@"CUSTOM_APP_EVENTS" forKey:@"event"];
-
-    NSOperatingSystemVersion operatingSystemVersion = [FBSDKInternalUtility operatingSystemVersion];
-    NSString *osVersion = [NSString stringWithFormat:@"%ti.%ti.%ti",
-                           operatingSystemVersion.majorVersion,
-                           operatingSystemVersion.minorVersion,
-                           operatingSystemVersion.patchVersion];
-
-    NSArray *event = @[
-      @{
-        @"_eventName" : @"fb_mobile_ate_status",
-        @"ate_status" : @([FBSDKSettings getAdvertisingTrackingStatus]).stringValue,
-        @"os_version" : osVersion,
-      }
-    ];
-    [FBSDKTypeUtility dictionary:parameters setObject:[FBSDKBasicUtility JSONStringForObject:event error:NULL invalidObjectHandler:NULL] forKey:@"custom_events"];
-
-    [FBSDKAppEventsDeviceInfo extendDictionaryWithDeviceInfo:parameters];
-
-    NSString *path = [NSString stringWithFormat:@"%@/activities", appID];
-    FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc] initWithGraphPath:path
-                                                                   parameters:parameters
-                                                                  tokenString:nil
-                                                                   HTTPMethod:FBSDKHTTPMethodPOST
-                                                                        flags:FBSDKGraphRequestFlagDoNotInvalidateTokenOnError | FBSDKGraphRequestFlagDisableErrorRecovery];
-    [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
-      if (!error) {
-        [defaults setObject:[NSDate date] forKey:lastATEPingString];
-      }
-    }];
   });
 }
 
@@ -1053,6 +1037,26 @@ static NSString *g_overrideAppID = nil;
       [FBSDKTypeUtility dictionary:parameters setObject:@([FBSDKAppEventsUtility convertToUnixTime:installTimestamp]) forKey:@"install_timestamp"];
     }
   }
+}
+
++ (void)setCanLogEvents
+{
+  _canLogEvents = YES;
+}
+
++ (BOOL)canLogEvents
+{
+  return _canLogEvents;
+}
+
++ (void)setApplicationState:(UIApplicationState)state
+{
+  _applicationState = state;
+}
+
++ (UIApplicationState)applicationState
+{
+  return _applicationState;
 }
 
 #if !TARGET_OS_TV
@@ -1173,8 +1177,8 @@ static NSString *g_overrideAppID = nil;
     return;
   }
 
-  if (!isImplicitlyLogged && !_explicitEventsLoggedYet) {
-    _explicitEventsLoggedYet = YES;
+  if (!isImplicitlyLogged && !g_explicitEventsLoggedYet) {
+    g_explicitEventsLoggedYet = YES;
   }
   __block BOOL failed = ![FBSDKAppEventsUtility validateIdentifier:eventName];
 
@@ -1233,7 +1237,7 @@ static NSString *g_overrideAppID = nil;
     applicationState = [UIApplication sharedApplication].applicationState;
   } else {
     currentViewControllerName = @"off_thread";
-    applicationState = [FBSDKApplicationDelegate applicationState];
+    applicationState = [self.class applicationState];
   }
   [FBSDKTypeUtility dictionary:eventDictionary setObject:currentViewControllerName forKey:@"_ui"];
 
@@ -1522,5 +1526,21 @@ static NSString *g_overrideAppID = nil;
 
   return request;
 }
+
+#pragma mark - Testability
+
+#if DEBUG
+
++ (void)resetCanLogEvents
+{
+  _canLogEvents = NO;
+}
+
++ (void)resetApplicationState
+{
+  _applicationState = UIApplicationStateInactive;
+}
+
+#endif
 
 @end
