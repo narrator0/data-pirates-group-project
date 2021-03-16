@@ -191,12 +191,12 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         self.nearmeButton.setTitle(title, for: .normal)
         switch title {
-        case "Within 10 miles":
+        case "10 miles":
             // add action when users clicked the 10 mile button
             print("within 10 mile")
             self.filterByMiles(miles: 10.0)
 
-        case "Within 30 miles":
+        case "30 miles":
             // add action when users clicked the 20 mile button
             print("within 30 mile")
             self.filterByMiles(miles: 30.0)
