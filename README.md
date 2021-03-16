@@ -5,9 +5,9 @@ An app that provides a platform for people who want to get connected as mentors 
 
 ## Final Submission Notes
 
-### Feature Added After Demo
+### Features Added After Demo
 
-We added GPS to our app as our magic moment. Now that mentees can see mentors that are within 10 or 30 miles when they log in.
+We added GPS to our app as our magic moment. Now that mentees can see mentors that are within 10 or 30 miles when they log in. Another feature we added is emailing. As a mentee, you can visit your mentor's profile and send them an email after scolling to the bottom. 
 
 > Some of our feature only work if you build it on your phone. Features like GPS will show San Fransisco on simulator or email mentor option will only open the email app on a real phone.
 
@@ -19,7 +19,7 @@ We added GPS to our app as our magic moment. Now that mentees can see mentors th
 | Thu Vo | Created front-end pages for profile |
 | Justin Lim | Setup firebase and wrote API files retrieve mentor mentee relationship. |
 | Subin Yun | Created front-end pages such as login, signup |
-| Huichueh (Jessica) Lo	 | Setup LinkedIn login to get user information. |
+| Huichueh (Jessica) Lo	 | Setup LinkedIn login, Store and dispaly Mentor and mentee data on Home and Questionnaire VC|
 
 ## Link to Trello Board
 
