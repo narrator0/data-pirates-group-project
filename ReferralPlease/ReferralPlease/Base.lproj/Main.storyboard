@@ -77,12 +77,78 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aZE-IO-Ktb">
-                                <rect key="frame" x="20" y="331" width="388" height="492"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="er8-qc-3uq">
+                                <rect key="frame" x="298" y="108" width="110" height="140"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9IR-M7-UXv">
+                                        <rect key="frame" x="0.0" y="0.0" width="110" height="35"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="110" id="9DB-LT-oMw"/>
+                                            <constraint firstAttribute="height" constant="35" id="mY8-TP-Xif"/>
+                                        </constraints>
+                                        <state key="normal" title="Distance">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="distanceBtnPressed:" destination="8gN-NS-SFH" eventType="touchUpInside" id="o59-gE-DJs"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2LS-n7-ur3">
+                                        <rect key="frame" x="0.0" y="35" width="110" height="35"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="Mxo-ZA-ZBk"/>
+                                        </constraints>
+                                        <state key="normal" title="10 miles">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="distanceOptionsPressed:" destination="8gN-NS-SFH" eventType="touchUpInside" id="mjG-KV-wVz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SGq-ia-Phh">
+                                        <rect key="frame" x="0.0" y="70" width="110" height="35"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="uqh-7p-EZv"/>
+                                        </constraints>
+                                        <state key="normal" title="30 miles">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="distanceOptionsPressed:" destination="8gN-NS-SFH" eventType="touchUpInside" id="3bz-Lc-Rgw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zjl-Ns-JAw">
+                                        <rect key="frame" x="0.0" y="105" width="110" height="35"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="nIE-39-yYd"/>
+                                        </constraints>
+                                        <state key="normal" title="All Mentors">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="distanceOptionsPressed:" destination="8gN-NS-SFH" eventType="touchUpInside" id="Rfd-0f-GFe"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="492" id="g15-Pb-oSz"/>
+                                    <constraint firstItem="9IR-M7-UXv" firstAttribute="leading" secondItem="er8-qc-3uq" secondAttribute="leading" id="Hzf-P0-akM"/>
+                                    <constraint firstItem="SGq-ia-Phh" firstAttribute="leading" secondItem="er8-qc-3uq" secondAttribute="leading" id="KAQ-nM-LFc"/>
+                                    <constraint firstAttribute="trailing" secondItem="zjl-Ns-JAw" secondAttribute="trailing" id="L9F-tR-bOC"/>
+                                    <constraint firstItem="zjl-Ns-JAw" firstAttribute="leading" secondItem="er8-qc-3uq" secondAttribute="leading" id="Svf-9H-dJu"/>
+                                    <constraint firstAttribute="trailing" secondItem="9IR-M7-UXv" secondAttribute="trailing" id="YVK-4K-ZZN"/>
+                                    <constraint firstAttribute="trailing" secondItem="2LS-n7-ur3" secondAttribute="trailing" id="Z6A-Iu-td9"/>
+                                    <constraint firstAttribute="trailing" secondItem="SGq-ia-Phh" secondAttribute="trailing" id="e9d-v6-E8g"/>
+                                    <constraint firstItem="2LS-n7-ur3" firstAttribute="leading" secondItem="er8-qc-3uq" secondAttribute="leading" id="gl2-eU-Gjx"/>
+                                    <constraint firstItem="zjl-Ns-JAw" firstAttribute="top" secondItem="SGq-ia-Phh" secondAttribute="bottom" id="t1o-Qu-cUI"/>
                                 </constraints>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aZE-IO-Ktb">
+                                <rect key="frame" x="20" y="151" width="388" height="692"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="110" id="Gxg-s2-EZF" customClass="TableViewCell" customModule="ReferralPlease" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="388" height="110"/>
@@ -143,73 +209,41 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6mP-Gp-hmE">
-                                <rect key="frame" x="100" y="98" width="228" height="34"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BhQ-hh-xzO">
-                                        <rect key="frame" x="0.0" y="0.0" width="228" height="34"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                        <color key="tintColor" red="0.27450980390000002" green="0.40784313729999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Distance"/>
-                                        <connections>
-                                            <action selector="distanceFilter:" destination="8gN-NS-SFH" eventType="touchUpInside" id="p0N-tS-EUj"/>
-                                        </connections>
-                                    </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gR3-Qr-7h0">
-                                        <rect key="frame" x="0.0" y="0.0" width="228" height="0.0"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="tintColor" red="0.93333333330000001" green="0.42352941179999998" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Within 10 miles"/>
-                                        <connections>
-                                            <action selector="distanceTap:" destination="8gN-NS-SFH" eventType="touchUpInside" id="agB-on-QQR"/>
-                                        </connections>
-                                    </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ls-a9-usE">
-                                        <rect key="frame" x="0.0" y="0.0" width="228" height="0.0"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="tintColor" red="0.93333333330000001" green="0.42352941179999998" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Within 30 miles"/>
-                                        <connections>
-                                            <action selector="distanceTap:" destination="8gN-NS-SFH" eventType="touchUpInside" id="vLk-h1-lTX"/>
-                                        </connections>
-                                    </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="TyW-Lm-mob">
-                                        <rect key="frame" x="0.0" y="34" width="228" height="0.0"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="tintColor" red="0.93333333330000001" green="0.42352941179999998" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="No preference"/>
-                                        <connections>
-                                            <action selector="distanceTap:" destination="8gN-NS-SFH" eventType="touchUpInside" id="7k9-hy-4JD"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iON-tX-N7J"/>
                         <color key="backgroundColor" red="0.1647058824" green="0.24313725489999999" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="6mP-Gp-hmE" firstAttribute="centerX" secondItem="Hhx-Re-QDb" secondAttribute="centerX" id="05e-Ou-0NQ"/>
-                            <constraint firstItem="iON-tX-N7J" firstAttribute="bottom" secondItem="aZE-IO-Ktb" secondAttribute="bottom" constant="20" id="2da-09-yC2"/>
+                            <constraint firstItem="aZE-IO-Ktb" firstAttribute="top" secondItem="iON-tX-N7J" secondAttribute="top" constant="63" id="44E-ap-tTZ"/>
                             <constraint firstItem="iON-tX-N7J" firstAttribute="trailing" secondItem="aZE-IO-Ktb" secondAttribute="trailing" constant="20" id="5b8-cJ-B96"/>
                             <constraint firstItem="aZE-IO-Ktb" firstAttribute="leading" secondItem="iON-tX-N7J" secondAttribute="leading" constant="20" id="8Kv-9X-chb"/>
-                            <constraint firstItem="6mP-Gp-hmE" firstAttribute="top" secondItem="iON-tX-N7J" secondAttribute="top" constant="10" id="e7J-uo-wLv"/>
+                            <constraint firstItem="iON-tX-N7J" firstAttribute="bottom" secondItem="aZE-IO-Ktb" secondAttribute="bottom" id="CJV-SV-y7K"/>
+                            <constraint firstItem="iON-tX-N7J" firstAttribute="trailing" secondItem="er8-qc-3uq" secondAttribute="trailing" constant="20" id="qUw-Sd-bqy"/>
+                            <constraint firstItem="er8-qc-3uq" firstAttribute="top" secondItem="iON-tX-N7J" secondAttribute="top" constant="20" id="v77-xQ-Nt5"/>
                             <constraint firstAttribute="centerX" secondItem="Hhx-Re-QDb" secondAttribute="centerX" id="xQn-p1-xdH"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="aBt-Nn-ebF" appends="YES" id="Nww-uN-9UR"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="cMP-Sx-097"/>
                     <connections>
-                        <outlet property="nearmeButton" destination="BhQ-hh-xzO" id="ZPT-Wg-IZx"/>
+                        <outlet property="nearmeButton" destination="9IR-M7-UXv" id="Wyg-oC-8QH"/>
+                        <outlet property="stackView" destination="er8-qc-3uq" id="w8l-4C-w2v"/>
                         <outlet property="tableView" destination="aZE-IO-Ktb" id="KxE-Q4-D01"/>
-                        <outletCollection property="distanceSelection" destination="gR3-Qr-7h0" collectionClass="NSMutableArray" id="uEX-Ln-s25"/>
-                        <outletCollection property="distanceSelection" destination="0Ls-a9-usE" collectionClass="NSMutableArray" id="WhU-Jf-7sN"/>
-                        <outletCollection property="distanceSelection" destination="TyW-Lm-mob" collectionClass="NSMutableArray" id="uHy-Kh-D0t"/>
+                        <outletCollection property="distanceSelection" destination="2LS-n7-ur3" collectionClass="NSMutableArray" id="Icx-do-mCN"/>
+                        <outletCollection property="distanceSelection" destination="SGq-ia-Phh" collectionClass="NSMutableArray" id="5wD-pB-G8X"/>
+                        <outletCollection property="distanceSelection" destination="zjl-Ns-JAw" collectionClass="NSMutableArray" id="CHE-PP-ta3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ga3-Hw-HYS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="aBt-Nn-ebF">
+                    <connections>
+                        <action selector="tap:" destination="8gN-NS-SFH" id="xmp-lz-a2U"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="5564" y="-774.96251874062978"/>
+            <point key="canvasLocation" x="5595" y="-854"/>
         </scene>
         <!--Profile-->
         <scene sceneID="7cb-NP-ZSc">

@@ -24,8 +24,14 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
     var currentLocation = CLLocation()
     var manager: CLLocationManager?
 
-    @IBOutlet var distanceSelection: [UIButton]!
+//    @IBOutlet var distanceSelection: [UIButton]!
+//    @IBOutlet weak var nearmeButton: UIButton!
+    
+    @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var nearmeButton: UIButton!
+    
+    @IBOutlet var distanceSelection: [UIButton]!
+    
     
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
@@ -37,6 +43,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         print("home page view called")
         self.tableView.dataSource = self
         self.tableView.delegate = self
+    
 
         MentorRequests.update()
         
@@ -47,6 +54,15 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
 //            print("Number of users: \(self.currentUsers.count)")
 
         }
+        
+        // distance btn setting
+        distanceSelection.forEach{ (btn) in
+            btn.isHidden = true
+            btn.alpha = 0
+        }
+        
+ 
+        
         
 
     }
@@ -164,28 +180,16 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         self.tableView.contentInset.top = -verticalPadding/2
     }
     
-    func toggleDropdown() {
-        self.distanceSelection.forEach { (button) in
-            UIView.animate(withDuration: 0.3, animations: {
-                button.isHidden = !button.isHidden
-                self.view.layoutIfNeeded()
-            })
-        }
-    }
-    
-    @IBAction func distanceFilter(_ sender: UIButton) {
+    @IBAction func distanceBtnPressed(_ sender: UIButton) {
         self.toggleDropdown()
     }
-    enum Miles:String {
-        case tenMile = "within 10 mile"
-        case twentyMile = "within 20 mile"
-    }
     
-    @IBAction func distanceTap(_ sender: UIButton) {
+    
+    @IBAction func distanceOptionsPressed(_ sender: UIButton) {
         guard let title = sender.currentTitle else {
             return
         }
-        
+        self.nearmeButton.setTitle(title, for: .normal)
         switch title {
         case "Within 10 miles":
             // add action when users clicked the 10 mile button
@@ -199,7 +203,29 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         default:
             self.filterByMiles(miles: 0)
         }
-        
+
         self.toggleDropdown()
     }
+    
+    
+    
+    
+    func toggleDropdown() {
+        self.distanceSelection.forEach { (button) in
+            UIView.animate(withDuration: 0.3, animations: {
+                button.isHidden = !button.isHidden
+                button.alpha = button.alpha == 0 ? 0.8 : 0
+               self.view.layoutIfNeeded()
+               self.view.bringSubviewToFront(self.stackView)
+            })
+        }
+    }
+    
+
+    @IBAction func tap(_ sender: Any) {
+        self.toggleDropdown()
+        self.view.endEditing(true)
+    }
+    
+
 }
