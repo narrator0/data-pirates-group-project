@@ -11,7 +11,7 @@ We added GPS to our app as our magic moment. Now that mentees can see mentors th
 
 > Some of our feature only work if you build it on your phone. Features like GPS will show San Francisco on simulator or email mentor option will only open the email app on a real phone.
 
-> When you have a build problem, please see if you can change the Bundle Identifier to .ReferralPlease instead of .MentorMe. This was our previous name for our App, but sometimes the identifier gets mixed up. Additionally, please remove "arm64" in Build Setting for the target under Deployment. We couldn't find a way to keep our updated change on Xcode, so you might need to do these changes manually if build fails.
+> Build Settings when running on a phone: To run our app on an iPhone, you must (1) change the Bundle Identifier to .ReferralPlease instead of .MentorMe. ReferralPlease was our previous name for our App, and for some reason we couldn't change the setting for that to build on a phone. (2) Please remove "arm64" in Build Setting for the target. We couldn't find a way to have one build setting to run on both simulator and iPhone, so you need to do these changes manually if build fails.
 
 ### What Each Member Did
 
