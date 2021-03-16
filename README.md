@@ -16,7 +16,7 @@ We added GPS to our app as our magic moment. Now that mentees can see mentors th
 | Name | Description |
 |------|-------------|
 | Hao Huang | Wrote API files for interacting with firebase to get and set user data. |
-| Thu Vo | Created front-end pages for profile |
+| Thu (Chloe) Vo | Created front-end pages for profile, Setup user's current GPS and filter by location feature |
 | Justin Lim | Setup firebase and wrote API files retrieve mentor mentee relationship. |
 | Subin Yun | Created front-end pages such as login, signup |
 | Huichueh (Jessica) Lo	 | Setup LinkedIn login, Store and dispaly Mentor and mentee data on Home and Questionnaire VC|
