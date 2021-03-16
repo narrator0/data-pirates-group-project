@@ -5,21 +5,23 @@ An app that provides a platform for people who want to get connected as mentors 
 
 ## Final Submission Notes
 
-### Feature Added After Demo
+### Features Added After Demo
 
-We added GPS to our app as our magic moment. Now that mentees can see mentors that are within 10 or 30 miles when they log in.
+We added GPS to our app as our magic moment. Now that mentees can see mentors that are within 10 or 30 miles when they log in. Another feature we added is emailing. As a mentee, you can visit your mentor's profile and send them an email after scolling to the bottom. 
 
-> Some of our feature only work if you build it on your phone. Features like GPS will show San Fransisco on simulator or email mentor option will only open the email app on a real phone.
+> Some of our feature only work if you build it on your phone. Features like GPS will show San Francisco on simulator or email mentor option will only open the email app on a real phone.
+
+> Build Settings when running on a phone: To run our app on an iPhone, you must (1) change the Bundle Identifier to .ReferralPlease instead of .MentorMe. ReferralPlease was our previous name for our App, and for some reason we couldn't change the setting for that to build on a phone. (2) Please remove "arm64" in Build Setting for the target. We couldn't find a way to have one build setting to run on both simulator and iPhone, so you need to do these changes manually if build fails.
 
 ### What Each Member Did
 
 | Name | Description |
 |------|-------------|
 | Hao Huang | Wrote API files for interacting with firebase to get and set user data. |
-| Thu Vo | Created front-end pages for profile |
+| Thu (Chloe) Vo | Created front-end pages for profile, Setup user's current GPS and filter by location feature |
 | Justin Lim | Setup firebase and wrote API files retrieve mentor mentee relationship. |
 | Subin Yun | Created front-end pages such as login, signup |
-| Huichueh (Jessica) Lo	 | Setup LinkedIn login to get user information. |
+| Huichueh (Jessica) Lo	 | Setup LinkedIn login, Store and dispaly Mentor and mentee data on Home and Questionnaire VC|
 
 ## Link to Trello Board
 
