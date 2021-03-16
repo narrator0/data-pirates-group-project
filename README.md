@@ -9,6 +9,8 @@ An app that provides a platform for people who want to get connected as mentors 
 
 We added GPS to our app as our magic moment. Now that mentees can see mentors that are within 10 or 30 miles when they log in.
 
+> Some of our feature only work if you build it on your phone. Features like GPS will show San Fransisco on simulator or email mentor option will only open the email app on a real phone.
+
 ### What Each Member Did
 
 | Name | Description |
