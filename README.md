@@ -1,5 +1,23 @@
 
-# ECS189E Data Pirates Project Group
+# MentorMe
+
+An app that provides a platform for people who want to get connected as mentors and mentees. Users can view profiles and send request mentorship to receive the other's contact information.
+
+## Final Submission Notes
+
+### Feature Added After Demo
+
+We added GPS to our app as our magic moment. Now that mentees can see mentors that are within 10 or 30 miles when they log in.
+
+### What Each Member Did
+
+| Name | Description |
+|------|-------------|
+| Hao Huang | Wrote API files for interacting with firebase to get and set user data. |
+| Thu Vo | Created front-end pages for profile |
+| Justin Lim | Setup firebase and wrote API files retrieve mentor mentee relationship. |
+| Subin Yun | Created front-end pages such as login, signup |
+| Huichueh (Jessica) Lo	 | Setup LinkedIn login to get user information. |
 
 ## Link to Trello Board
 
