@@ -9,7 +9,8 @@ An app that provides a platform for people who want to get connected as mentors 
 
 We added GPS to our app as our magic moment. Now that mentees can see mentors that are within 10 or 30 miles when they log in. Another feature we added is emailing. As a mentee, you can visit your mentor's profile and send them an email after scolling to the bottom. 
 
-> Some of our feature only work if you build it on your phone. Features like GPS will show San Fransisco on simulator or email mentor option will only open the email app on a real phone.
+> Some of our feature only work if you build it on your phone. Features like GPS will show San Francisco on simulator or email mentor option will only open the email app on a real phone.
+> When you have a build problem, please see if you can change the Bundle Identifier to .ReferralPlease instead of .MentorMe. This was our previous name for our App, but sometimes the identifier gets mixed up. Additionally, please remove "arm64" in Build Setting for the target under Deployment. We couldn't find a way to keep our updated change on Xcode, so you might need to do these changes manually if build fails.
 
 ### What Each Member Did
 
